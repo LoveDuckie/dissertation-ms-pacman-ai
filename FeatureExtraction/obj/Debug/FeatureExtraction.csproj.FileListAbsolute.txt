@@ -1,0 +1,16 @@
+C:\School\Pacman\Pacman\FeatureExtraction\bin\Debug\FeatureExtraction.exe
+C:\School\Pacman\Pacman\FeatureExtraction\bin\Debug\FeatureExtraction.pdb
+C:\School\Pacman\Pacman\FeatureExtraction\obj\Debug\ResolveAssemblyReference.cache
+C:\School\Pacman\Pacman\FeatureExtraction\obj\Debug\FeatureExtraction.Properties.Resources.resources
+C:\School\Pacman\Pacman\FeatureExtraction\obj\Debug\FeatureExtraction.csproj.GenerateResource.Cache
+C:\School\Pacman\Pacman\FeatureExtraction\obj\Debug\FeatureExtraction.exe
+C:\School\Pacman\Pacman\FeatureExtraction\obj\Debug\FeatureExtraction.pdb
+C:\School\Pacman\Pacman\FeatureExtraction\obj\Debug\FeatureExtraction.Main.resources
+C:\Users\Luc\Documents\Visual Studio 2008\Projects\PacmanProject\FeatureExtraction\bin\Debug\FeatureExtraction.exe
+C:\Users\Luc\Documents\Visual Studio 2008\Projects\PacmanProject\FeatureExtraction\bin\Debug\FeatureExtraction.pdb
+C:\Users\Luc\Documents\Visual Studio 2008\Projects\PacmanProject\FeatureExtraction\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Luc\Documents\Visual Studio 2008\Projects\PacmanProject\FeatureExtraction\obj\Debug\FeatureExtraction.Main.resources
+C:\Users\Luc\Documents\Visual Studio 2008\Projects\PacmanProject\FeatureExtraction\obj\Debug\FeatureExtraction.Properties.Resources.resources
+C:\Users\Luc\Documents\Visual Studio 2008\Projects\PacmanProject\FeatureExtraction\obj\Debug\FeatureExtraction.csproj.GenerateResource.Cache
+C:\Users\Luc\Documents\Visual Studio 2008\Projects\PacmanProject\FeatureExtraction\obj\Debug\FeatureExtraction.exe
+C:\Users\Luc\Documents\Visual Studio 2008\Projects\PacmanProject\FeatureExtraction\obj\Debug\FeatureExtraction.pdb

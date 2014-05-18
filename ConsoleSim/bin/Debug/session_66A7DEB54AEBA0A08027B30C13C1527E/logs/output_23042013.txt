@@ -1,0 +1,5 @@
+[23-04-2013 09:53:39 97]: MCTS Generation Time: 203 ms
+[23-04-2013 09:53:40 33]: Chosen direction is Left
+[23-04-2013 09:53:40 58]: MCTS Generation Time: 219 ms
+[23-04-2013 09:53:41 73]: Chosen direction is Left
+[23-04-2013 09:53:42 07]: MCTS Generation Time: 296 ms

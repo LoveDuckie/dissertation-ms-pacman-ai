@@ -1,0 +1,1564 @@
+[27-04-2013 23:33:49 97]: ======= AI STARTED =======
+[27-04-2013 23:33:50 47]: MCTS Generation Time: 250 ms
+[27-04-2013 23:33:50 93]: Chosen direction is Down
+[27-04-2013 23:33:51 29]: MCTS Generation Time: 297 ms
+[27-04-2013 23:33:54 32]: Chosen direction is Left
+[27-04-2013 23:33:54 58]: MCTS Generation Time: 234 ms
+[27-04-2013 23:33:55 59]: Chosen direction is Left
+[27-04-2013 23:33:55 92]: MCTS Generation Time: 296 ms
+[27-04-2013 23:33:56 74]: New State: Ambush
+[27-04-2013 23:33:57 05]: Power pill eaten!
+[27-04-2013 23:33:57 05]: New State: Hunt
+[27-04-2013 23:34:00 13]: RETURNING TO WANDER
+[27-04-2013 23:34:00 13]: New State: Wander
+[27-04-2013 23:34:00 13]: New State: EndGame
+[27-04-2013 23:34:00 18]: New State: Flee
+[27-04-2013 23:34:03 08]: New State: EndGame
+[27-04-2013 23:34:03 89]: New State: Wander
+[27-04-2013 23:34:03 89]: New State: Flee
+[27-04-2013 23:34:04 58]: New State: Wander
+[27-04-2013 23:34:04 88]: MCTS Generation Time: 265 ms
+[27-04-2013 23:34:06 11]: New State: EndGame
+[27-04-2013 23:34:06 13]: New State: Wander
+[27-04-2013 23:34:06 13]: New State: EndGame
+[27-04-2013 23:34:06 20]: New State: Wander
+[27-04-2013 23:34:06 20]: New State: Flee
+[27-04-2013 23:34:07 13]: New State: Wander
+[27-04-2013 23:34:07 41]: MCTS Generation Time: 234 ms
+[27-04-2013 23:34:07 89]: Chosen direction is Left
+[27-04-2013 23:34:08 18]: MCTS Generation Time: 265 ms
+[27-04-2013 23:34:09 22]: Chosen direction is Left
+[27-04-2013 23:34:09 49]: MCTS Generation Time: 234 ms
+[27-04-2013 23:34:09 50]: New State: EndGame
+[27-04-2013 23:34:09 57]: New State: Wander
+[27-04-2013 23:34:09 57]: New State: Flee
+[27-04-2013 23:34:10 57]: Eaten by a ghost!
+[27-04-2013 23:34:10 58]: New State: Wander
+[27-04-2013 23:34:10 58]: New State: Flee
+[27-04-2013 23:34:10 58]: New State: Wander
+[27-04-2013 23:34:10 87]: MCTS Generation Time: 250 ms
+[27-04-2013 23:34:11 24]: Chosen direction is Left
+[27-04-2013 23:34:11 55]: MCTS Generation Time: 280 ms
+[27-04-2013 23:34:11 95]: New State: EndGame
+[27-04-2013 23:34:12 04]: New State: Wander
+[27-04-2013 23:34:12 37]: MCTS Generation Time: 312 ms
+[27-04-2013 23:34:13 28]: Chosen direction is Up
+[27-04-2013 23:34:13 54]: MCTS Generation Time: 219 ms
+[27-04-2013 23:34:13 78]: Chosen direction is Down
+[27-04-2013 23:34:14 07]: MCTS Generation Time: 250 ms
+[27-04-2013 23:34:14 80]: Chosen direction is Down
+[27-04-2013 23:34:15 10]: MCTS Generation Time: 281 ms
+[27-04-2013 23:34:15 34]: Chosen direction is Left
+[27-04-2013 23:34:15 65]: MCTS Generation Time: 281 ms
+[27-04-2013 23:34:16 59]: Chosen direction is Up
+[27-04-2013 23:34:16 85]: MCTS Generation Time: 234 ms
+[27-04-2013 23:34:17 56]: Chosen direction is Down
+[27-04-2013 23:34:17 93]: MCTS Generation Time: 343 ms
+[27-04-2013 23:34:18 95]: Chosen direction is Left
+[27-04-2013 23:34:19 26]: MCTS Generation Time: 281 ms
+[27-04-2013 23:34:20 28]: Chosen direction is Left
+[27-04-2013 23:34:20 55]: MCTS Generation Time: 250 ms
+[27-04-2013 23:34:21 61]: Chosen direction is Left
+[27-04-2013 23:34:21 92]: MCTS Generation Time: 280 ms
+[27-04-2013 23:34:21 93]: New State: EndGame
+[27-04-2013 23:34:22 00]: New State: Wander
+[27-04-2013 23:34:22 28]: MCTS Generation Time: 265 ms
+[27-04-2013 23:34:22 91]: Chosen direction is Right
+[27-04-2013 23:34:23 21]: MCTS Generation Time: 281 ms
+[27-04-2013 23:34:24 60]: Chosen direction is Up
+[27-04-2013 23:34:24 87]: MCTS Generation Time: 234 ms
+[27-04-2013 23:34:26 63]: New State: EndGame
+[27-04-2013 23:34:26 76]: New State: Wander
+[27-04-2013 23:34:27 02]: MCTS Generation Time: 234 ms
+[27-04-2013 23:34:27 66]: New State: EndGame
+[27-04-2013 23:34:27 74]: New State: Wander
+[27-04-2013 23:34:28 05]: MCTS Generation Time: 281 ms
+[27-04-2013 23:34:28 46]: Chosen direction is Up
+[27-04-2013 23:34:28 75]: MCTS Generation Time: 250 ms
+[27-04-2013 23:34:28 97]: Chosen direction is Up
+[27-04-2013 23:34:29 25]: MCTS Generation Time: 234 ms
+[27-04-2013 23:34:31 21]: Chosen direction is Down
+[27-04-2013 23:34:31 50]: MCTS Generation Time: 265 ms
+[27-04-2013 23:34:33 50]: Chosen direction is Down
+[27-04-2013 23:34:33 80]: MCTS Generation Time: 265 ms
+[27-04-2013 23:34:34 00]: Chosen direction is Right
+[27-04-2013 23:34:34 31]: MCTS Generation Time: 281 ms
+[27-04-2013 23:34:34 97]: New State: Ambush
+[27-04-2013 23:34:35 21]: Power pill eaten!
+[27-04-2013 23:34:35 21]: New State: Hunt
+[27-04-2013 23:34:35 71]: RETURNING TO WANDER
+[27-04-2013 23:34:35 72]: New State: Wander
+[27-04-2013 23:34:35 72]: New State: EndGame
+[27-04-2013 23:34:35 86]: New State: Wander
+[27-04-2013 23:34:36 14]: MCTS Generation Time: 250 ms
+[27-04-2013 23:34:36 43]: Chosen direction is Right
+[27-04-2013 23:34:36 68]: MCTS Generation Time: 218 ms
+[27-04-2013 23:34:37 23]: New State: EndGame
+[27-04-2013 23:34:37 24]: New State: Wander
+[27-04-2013 23:34:37 25]: New State: EndGame
+[27-04-2013 23:34:37 30]: New State: Flee
+[27-04-2013 23:34:37 61]: Eaten by a ghost!
+[27-04-2013 23:34:37 62]: New State: Wander
+[27-04-2013 23:34:37 63]: New State: EndGame
+[27-04-2013 23:34:37 84]: New State: Wander
+[27-04-2013 23:34:38 13]: MCTS Generation Time: 265 ms
+[27-04-2013 23:34:39 78]: Chosen direction is Up
+[27-04-2013 23:34:40 10]: MCTS Generation Time: 297 ms
+[27-04-2013 23:34:41 07]: Chosen direction is Up
+[27-04-2013 23:34:41 40]: MCTS Generation Time: 280 ms
+[27-04-2013 23:34:42 38]: New State: Ambush
+[27-04-2013 23:34:42 62]: Power pill eaten!
+[27-04-2013 23:34:42 63]: New State: Hunt
+[27-04-2013 23:34:44 23]: RETURNING TO WANDER
+[27-04-2013 23:34:44 23]: New State: Wander
+[27-04-2013 23:34:44 24]: New State: Flee
+[27-04-2013 23:34:45 58]: New State: Wander
+[27-04-2013 23:34:45 94]: MCTS Generation Time: 296 ms
+[27-04-2013 23:34:47 07]: New State: EndGame
+[27-04-2013 23:34:47 09]: New State: Wander
+[27-04-2013 23:34:47 09]: New State: EndGame
+[27-04-2013 23:34:47 17]: Eaten by a ghost!
+[27-04-2013 23:34:47 18]: New State: Wander
+[27-04-2013 23:34:47 18]: New State: Flee
+[27-04-2013 23:34:47 18]: New State: Wander
+[27-04-2013 23:34:47 49]: MCTS Generation Time: 265 ms
+[27-04-2013 23:34:47 92]: Chosen direction is Down
+[27-04-2013 23:34:48 32]: MCTS Generation Time: 359 ms
+[27-04-2013 23:34:51 68]: Chosen direction is Left
+[27-04-2013 23:34:51 96]: MCTS Generation Time: 234 ms
+[27-04-2013 23:34:52 90]: Chosen direction is Left
+[27-04-2013 23:34:53 21]: MCTS Generation Time: 281 ms
+[27-04-2013 23:34:54 08]: New State: Ambush
+[27-04-2013 23:34:54 39]: Power pill eaten!
+[27-04-2013 23:34:54 40]: New State: Hunt
+[27-04-2013 23:34:56 83]: RETURNING TO WANDER
+[27-04-2013 23:34:56 83]: New State: Wander
+[27-04-2013 23:34:57 22]: MCTS Generation Time: 328 ms
+[27-04-2013 23:34:58 00]: New State: Flee
+[27-04-2013 23:34:58 88]: Power pill eaten!
+[27-04-2013 23:34:58 88]: New State: Hunt
+[27-04-2013 23:35:03 98]: RETURNING TO WANDER
+[27-04-2013 23:35:03 98]: New State: Wander
+[27-04-2013 23:35:04 33]: MCTS Generation Time: 296 ms
+[27-04-2013 23:35:04 55]: New State: Flee
+[27-04-2013 23:35:05 10]: Eaten by a ghost!
+[27-04-2013 23:35:05 13]: New State: Wander
+[27-04-2013 23:35:05 13]: New State: Flee
+[27-04-2013 23:35:05 14]: New State: Wander
+[27-04-2013 23:35:05 43]: MCTS Generation Time: 234 ms
+[27-04-2013 23:35:05 78]: Chosen direction is Left
+[27-04-2013 23:35:06 12]: MCTS Generation Time: 312 ms
+[27-04-2013 23:35:06 83]: Chosen direction is Left
+[27-04-2013 23:35:07 14]: MCTS Generation Time: 265 ms
+[27-04-2013 23:35:08 12]: Chosen direction is Left
+[27-04-2013 23:35:08 47]: MCTS Generation Time: 328 ms
+[27-04-2013 23:35:09 18]: Chosen direction is Up
+[27-04-2013 23:35:09 45]: MCTS Generation Time: 250 ms
+[27-04-2013 23:35:10 51]: Chosen direction is Right
+[27-04-2013 23:35:10 88]: MCTS Generation Time: 328 ms
+[27-04-2013 23:35:10 89]: New State: EndGame
+[27-04-2013 23:35:10 96]: New State: Wander
+[27-04-2013 23:35:11 21]: MCTS Generation Time: 218 ms
+[27-04-2013 23:35:11 45]: Chosen direction is Down
+[27-04-2013 23:35:11 76]: MCTS Generation Time: 281 ms
+[27-04-2013 23:35:12 23]: New State: EndGame
+[27-04-2013 23:35:12 25]: New State: Wander
+[27-04-2013 23:35:12 25]: New State: EndGame
+[27-04-2013 23:35:12 30]: Eaten by a ghost!
+[27-04-2013 23:35:12 32]: New State: Wander
+[27-04-2013 23:35:12 32]: New State: EndGame
+[27-04-2013 23:35:12 42]: New State: Wander
+[27-04-2013 23:35:12 75]: MCTS Generation Time: 281 ms
+[27-04-2013 23:35:13 76]: New State: EndGame
+[27-04-2013 23:35:13 78]: New State: Wander
+[27-04-2013 23:35:13 78]: New State: EndGame
+[27-04-2013 23:35:13 85]: New State: Wander
+[27-04-2013 23:35:14 18]: MCTS Generation Time: 312 ms
+[27-04-2013 23:35:17 06]: Chosen direction is Up
+[27-04-2013 23:35:17 40]: MCTS Generation Time: 312 ms
+[27-04-2013 23:35:20 45]: Chosen direction is Left
+[27-04-2013 23:35:20 72]: MCTS Generation Time: 234 ms
+[27-04-2013 23:35:21 63]: Chosen direction is Down
+[27-04-2013 23:35:22 00]: MCTS Generation Time: 327 ms
+[27-04-2013 23:35:22 01]: New State: EndGame
+[27-04-2013 23:35:22 08]: New State: Wander
+[27-04-2013 23:35:22 08]: New State: Flee
+[27-04-2013 23:35:22 13]: Eaten by a ghost!
+[27-04-2013 23:35:22 14]: New State: Wander
+[27-04-2013 23:35:22 14]: New State: Flee
+[27-04-2013 23:35:22 14]: New State: Wander
+[27-04-2013 23:35:22 43]: MCTS Generation Time: 265 ms
+[27-04-2013 23:35:22 81]: Chosen direction is Down
+[27-04-2013 23:35:23 14]: MCTS Generation Time: 296 ms
+[27-04-2013 23:35:26 23]: Chosen direction is Left
+[27-04-2013 23:35:26 50]: MCTS Generation Time: 234 ms
+[27-04-2013 23:35:27 53]: Chosen direction is Left
+[27-04-2013 23:35:27 82]: MCTS Generation Time: 265 ms
+[27-04-2013 23:35:28 63]: New State: Ambush
+[27-04-2013 23:35:28 94]: Power pill eaten!
+[27-04-2013 23:35:28 94]: New State: Hunt
+[27-04-2013 23:35:29 45]: RETURNING TO WANDER
+[27-04-2013 23:35:29 45]: New State: Wander
+[27-04-2013 23:35:29 75]: MCTS Generation Time: 250 ms
+[27-04-2013 23:35:29 75]: New State: EndGame
+[27-04-2013 23:35:29 77]: New State: Flee
+[27-04-2013 23:35:29 82]: New State: EndGame
+[27-04-2013 23:35:29 88]: New State: Wander
+[27-04-2013 23:35:29 88]: New State: Flee
+[27-04-2013 23:35:29 95]: New State: Wander
+[27-04-2013 23:35:30 27]: MCTS Generation Time: 280 ms
+[27-04-2013 23:35:31 16]: Chosen direction is Left
+[27-04-2013 23:35:31 47]: MCTS Generation Time: 281 ms
+[27-04-2013 23:35:32 48]: Chosen direction is Right
+[27-04-2013 23:35:32 79]: MCTS Generation Time: 281 ms
+[27-04-2013 23:35:33 82]: Chosen direction is Right
+[27-04-2013 23:35:34 15]: MCTS Generation Time: 297 ms
+[27-04-2013 23:35:34 50]: New State: Ambush
+[27-04-2013 23:35:34 63]: Power pill eaten!
+[27-04-2013 23:35:34 63]: New State: Hunt
+[27-04-2013 23:35:35 18]: RETURNING TO WANDER
+[27-04-2013 23:35:35 18]: New State: Wander
+[27-04-2013 23:35:35 18]: New State: EndGame
+[27-04-2013 23:35:36 23]: New State: Wander
+[27-04-2013 23:35:36 53]: MCTS Generation Time: 265 ms
+[27-04-2013 23:35:38 22]: Chosen direction is Down
+[27-04-2013 23:35:38 52]: MCTS Generation Time: 265 ms
+[27-04-2013 23:35:39 50]: Chosen direction is Right
+[27-04-2013 23:35:39 85]: MCTS Generation Time: 312 ms
+[27-04-2013 23:35:40 80]: Chosen direction is Right
+[27-04-2013 23:35:41 11]: MCTS Generation Time: 281 ms
+[27-04-2013 23:35:42 21]: Chosen direction is Left
+[27-04-2013 23:35:42 48]: MCTS Generation Time: 234 ms
+[27-04-2013 23:35:43 52]: Chosen direction is Left
+[27-04-2013 23:35:43 86]: MCTS Generation Time: 296 ms
+[27-04-2013 23:35:44 62]: Chosen direction is Up
+[27-04-2013 23:35:44 90]: MCTS Generation Time: 249 ms
+[27-04-2013 23:35:45 86]: Chosen direction is Down
+[27-04-2013 23:35:46 16]: MCTS Generation Time: 265 ms
+[27-04-2013 23:35:47 23]: Chosen direction is Left
+[27-04-2013 23:35:47 53]: MCTS Generation Time: 249 ms
+[27-04-2013 23:35:48 69]: New State: EndGame
+[27-04-2013 23:35:48 71]: New State: Wander
+[27-04-2013 23:35:48 71]: New State: EndGame
+[27-04-2013 23:35:48 80]: New State: Flee
+[27-04-2013 23:35:49 31]: New State: EndGame
+[27-04-2013 23:35:49 40]: Eaten by a ghost!
+[27-04-2013 23:35:49 42]: New State: Wander
+[27-04-2013 23:35:49 42]: New State: Flee
+[27-04-2013 23:35:49 42]: New State: Wander
+[27-04-2013 23:35:49 68]: MCTS Generation Time: 218 ms
+[27-04-2013 23:35:50 01]: Chosen direction is Left
+[27-04-2013 23:35:50 36]: MCTS Generation Time: 280 ms
+[27-04-2013 23:35:50 70]: New State: EndGame
+[27-04-2013 23:35:50 78]: New State: Wander
+[27-04-2013 23:35:51 11]: MCTS Generation Time: 296 ms
+[27-04-2013 23:35:51 93]: Chosen direction is Right
+[27-04-2013 23:35:52 23]: MCTS Generation Time: 280 ms
+[27-04-2013 23:35:52 43]: Chosen direction is Down
+[27-04-2013 23:35:52 79]: MCTS Generation Time: 343 ms
+[27-04-2013 23:35:53 47]: Chosen direction is Left
+[27-04-2013 23:35:53 78]: MCTS Generation Time: 281 ms
+[27-04-2013 23:35:54 04]: Chosen direction is Up
+[27-04-2013 23:35:54 38]: MCTS Generation Time: 297 ms
+[27-04-2013 23:35:54 98]: Chosen direction is Up
+[27-04-2013 23:35:55 26]: MCTS Generation Time: 250 ms
+[27-04-2013 23:35:55 51]: Chosen direction is Down
+[27-04-2013 23:35:55 52]: New State: EndGame
+[27-04-2013 23:35:55 59]: New State: Wander
+[27-04-2013 23:35:55 92]: MCTS Generation Time: 296 ms
+[27-04-2013 23:35:57 07]: Chosen direction is Up
+[27-04-2013 23:35:57 37]: MCTS Generation Time: 265 ms
+[27-04-2013 23:35:58 32]: New State: EndGame
+[27-04-2013 23:35:58 42]: New State: Wander
+[27-04-2013 23:35:58 69]: MCTS Generation Time: 250 ms
+[27-04-2013 23:35:59 14]: Chosen direction is Up
+[27-04-2013 23:35:59 46]: MCTS Generation Time: 296 ms
+[27-04-2013 23:36:01 81]: New State: EndGame
+[27-04-2013 23:36:01 83]: New State: Wander
+[27-04-2013 23:36:01 83]: New State: EndGame
+[27-04-2013 23:36:01 93]: New State: Wander
+[27-04-2013 23:36:02 23]: MCTS Generation Time: 281 ms
+[27-04-2013 23:36:02 23]: New State: EndGame
+[27-04-2013 23:36:02 25]: New State: Wander
+[27-04-2013 23:36:02 25]: New State: EndGame
+[27-04-2013 23:36:02 37]: New State: Wander
+[27-04-2013 23:36:02 66]: MCTS Generation Time: 281 ms
+[27-04-2013 23:36:04 33]: Chosen direction is Up
+[27-04-2013 23:36:04 68]: MCTS Generation Time: 312 ms
+[27-04-2013 23:36:05 65]: Chosen direction is Right
+[27-04-2013 23:36:06 00]: MCTS Generation Time: 312 ms
+[27-04-2013 23:36:06 81]: New State: EndGame
+[27-04-2013 23:36:06 88]: New State: Wander
+[27-04-2013 23:36:07 23]: MCTS Generation Time: 328 ms
+[27-04-2013 23:36:07 41]: Chosen direction is Up
+[27-04-2013 23:36:07 78]: MCTS Generation Time: 296 ms
+[27-04-2013 23:36:08 64]: New State: Ambush
+[27-04-2013 23:36:09 06]: Power pill eaten!
+[27-04-2013 23:36:09 06]: New State: Hunt
+[27-04-2013 23:36:09 60]: RETURNING TO WANDER
+[27-04-2013 23:36:09 60]: New State: Wander
+[27-04-2013 23:36:09 60]: New State: Flee
+[27-04-2013 23:36:10 75]: Eaten by a ghost!
+[27-04-2013 23:36:10 76]: New State: Wander
+[27-04-2013 23:36:10 77]: New State: Flee
+[27-04-2013 23:36:10 78]: New State: EndGame
+[27-04-2013 23:36:12 28]: New State: Wander
+[27-04-2013 23:36:12 60]: MCTS Generation Time: 265 ms
+[27-04-2013 23:36:14 75]: New State: EndGame
+[27-04-2013 23:36:14 78]: New State: Wander
+[27-04-2013 23:36:14 78]: New State: EndGame
+[27-04-2013 23:36:14 88]: New State: Wander
+[27-04-2013 23:36:15 16]: MCTS Generation Time: 250 ms
+[27-04-2013 23:36:16 54]: Chosen direction is Left
+[27-04-2013 23:36:16 83]: MCTS Generation Time: 265 ms
+[27-04-2013 23:36:17 01]: New State: EndGame
+[27-04-2013 23:36:17 02]: New State: Wander
+[27-04-2013 23:36:17 03]: New State: EndGame
+[27-04-2013 23:36:17 28]: New State: Wander
+[27-04-2013 23:36:17 68]: MCTS Generation Time: 359 ms
+[27-04-2013 23:36:18 62]: Chosen direction is Up
+[27-04-2013 23:36:18 95]: MCTS Generation Time: 281 ms
+[27-04-2013 23:36:19 84]: New State: EndGame
+[27-04-2013 23:36:19 97]: New State: Wander
+[27-04-2013 23:36:20 30]: MCTS Generation Time: 265 ms
+[27-04-2013 23:36:20 30]: New State: Flee
+[27-04-2013 23:36:20 36]: Eaten by a ghost!
+[27-04-2013 23:36:20 37]: New State: Wander
+[27-04-2013 23:36:20 37]: New State: Flee
+[27-04-2013 23:36:20 37]: New State: Wander
+[27-04-2013 23:36:20 66]: MCTS Generation Time: 250 ms
+[27-04-2013 23:36:21 10]: Chosen direction is Down
+[27-04-2013 23:36:21 45]: MCTS Generation Time: 312 ms
+[27-04-2013 23:36:24 85]: Chosen direction is Left
+[27-04-2013 23:36:25 12]: MCTS Generation Time: 234 ms
+[27-04-2013 23:36:26 14]: Chosen direction is Left
+[27-04-2013 23:36:26 45]: MCTS Generation Time: 280 ms
+[27-04-2013 23:36:27 31]: New State: Ambush
+[27-04-2013 23:36:27 62]: Power pill eaten!
+[27-04-2013 23:36:27 62]: New State: Hunt
+[27-04-2013 23:36:29 58]: RETURNING TO WANDER
+[27-04-2013 23:36:29 58]: New State: Wander
+[27-04-2013 23:36:29 59]: New State: Flee
+[27-04-2013 23:36:29 68]: New State: Wander
+[27-04-2013 23:36:30 04]: MCTS Generation Time: 296 ms
+[27-04-2013 23:36:30 78]: Chosen direction is Up
+[27-04-2013 23:36:31 12]: MCTS Generation Time: 312 ms
+[27-04-2013 23:36:31 33]: Chosen direction is Up
+[27-04-2013 23:36:31 65]: MCTS Generation Time: 297 ms
+[27-04-2013 23:36:33 58]: Chosen direction is Up
+[27-04-2013 23:36:33 88]: MCTS Generation Time: 266 ms
+[27-04-2013 23:36:34 96]: Chosen direction is Left
+[27-04-2013 23:36:35 29]: MCTS Generation Time: 297 ms
+[27-04-2013 23:36:37 76]: Chosen direction is Left
+[27-04-2013 23:36:38 09]: MCTS Generation Time: 296 ms
+[27-04-2013 23:36:38 29]: Chosen direction is Down
+[27-04-2013 23:36:38 63]: MCTS Generation Time: 312 ms
+[27-04-2013 23:36:38 92]: New State: Flee
+[27-04-2013 23:36:38 99]: New State: Wander
+[27-04-2013 23:36:39 32]: MCTS Generation Time: 296 ms
+[27-04-2013 23:36:40 84]: Chosen direction is Down
+[27-04-2013 23:36:41 17]: MCTS Generation Time: 297 ms
+[27-04-2013 23:36:41 48]: Chosen direction is Down
+[27-04-2013 23:36:41 78]: MCTS Generation Time: 265 ms
+[27-04-2013 23:36:42 69]: Chosen direction is Right
+[27-04-2013 23:36:42 98]: MCTS Generation Time: 249 ms
+[27-04-2013 23:36:42 99]: New State: EndGame
+[27-04-2013 23:36:43 06]: New State: Wander
+[27-04-2013 23:36:43 06]: New State: Flee
+[27-04-2013 23:36:43 15]: Power pill eaten!
+[27-04-2013 23:36:43 15]: New State: Hunt
+[27-04-2013 23:36:43 57]: Power pill eaten!
+[27-04-2013 23:36:43 57]: New State: Hunt
+[27-04-2013 23:36:46 28]: RETURNING TO WANDER
+[27-04-2013 23:36:46 28]: New State: Wander
+[27-04-2013 23:36:46 28]: New State: EndGame
+[27-04-2013 23:36:46 98]: New State: Wander
+[27-04-2013 23:36:46 99]: New State: Flee
+[27-04-2013 23:36:50 20]: Eaten by a ghost!
+[27-04-2013 23:36:50 23]: New State: Wander
+[27-04-2013 23:36:50 23]: New State: EndGame
+[27-04-2013 23:36:50 58]: New State: Wander
+[27-04-2013 23:36:50 98]: MCTS Generation Time: 343 ms
+[27-04-2013 23:36:51 79]: Chosen direction is Left
+[27-04-2013 23:36:52 06]: MCTS Generation Time: 234 ms
+[27-04-2013 23:36:52 31]: Chosen direction is Down
+[27-04-2013 23:36:52 59]: MCTS Generation Time: 249 ms
+[27-04-2013 23:36:53 43]: Chosen direction is Left
+[27-04-2013 23:36:53 73]: MCTS Generation Time: 265 ms
+[27-04-2013 23:36:53 97]: Chosen direction is Up
+[27-04-2013 23:36:54 29]: MCTS Generation Time: 297 ms
+[27-04-2013 23:36:54 87]: Chosen direction is Up
+[27-04-2013 23:36:55 17]: MCTS Generation Time: 265 ms
+[27-04-2013 23:36:55 45]: Chosen direction is Down
+[27-04-2013 23:36:55 74]: MCTS Generation Time: 249 ms
+[27-04-2013 23:36:55 85]: New State: Ambush
+[27-04-2013 23:36:56 20]: Power pill eaten!
+[27-04-2013 23:36:56 20]: New State: Hunt
+[27-04-2013 23:37:00 98]: RETURNING TO WANDER
+[27-04-2013 23:37:00 98]: New State: Wander
+[27-04-2013 23:37:01 35]: MCTS Generation Time: 327 ms
+[27-04-2013 23:37:01 64]: New State: Flee
+[27-04-2013 23:37:01 93]: New State: Wander
+[27-04-2013 23:37:02 28]: MCTS Generation Time: 297 ms
+[27-04-2013 23:37:03 09]: Chosen direction is Down
+[27-04-2013 23:37:03 40]: MCTS Generation Time: 281 ms
+[27-04-2013 23:37:04 34]: Chosen direction is Right
+[27-04-2013 23:37:04 63]: MCTS Generation Time: 249 ms
+[27-04-2013 23:37:05 68]: Chosen direction is Left
+[27-04-2013 23:37:05 95]: MCTS Generation Time: 234 ms
+[27-04-2013 23:37:06 56]: New State: Flee
+[27-04-2013 23:37:06 59]: New State: Wander
+[27-04-2013 23:37:06 91]: MCTS Generation Time: 281 ms
+[27-04-2013 23:37:07 23]: Chosen direction is Down
+[27-04-2013 23:37:07 58]: MCTS Generation Time: 297 ms
+[27-04-2013 23:37:08 32]: New State: EndGame
+[27-04-2013 23:37:08 42]: New State: Flee
+[27-04-2013 23:37:08 62]: New State: EndGame
+[27-04-2013 23:37:08 70]: New State: Flee
+[27-04-2013 23:37:15 56]: Eaten by a ghost!
+[27-04-2013 23:37:15 59]: New State: Wander
+[27-04-2013 23:37:15 59]: New State: EndGame
+[27-04-2013 23:37:16 49]: New State: Wander
+[27-04-2013 23:37:16 86]: MCTS Generation Time: 328 ms
+[27-04-2013 23:37:17 32]: Chosen direction is Left
+[27-04-2013 23:37:17 65]: MCTS Generation Time: 266 ms
+[27-04-2013 23:37:18 39]: New State: EndGame
+[27-04-2013 23:37:18 47]: New State: Wander
+[27-04-2013 23:37:18 84]: MCTS Generation Time: 343 ms
+[27-04-2013 23:37:19 76]: New State: EndGame
+[27-04-2013 23:37:19 78]: New State: Wander
+[27-04-2013 23:37:19 78]: New State: EndGame
+[27-04-2013 23:37:20 19]: New State: Wander
+[27-04-2013 23:37:20 54]: MCTS Generation Time: 312 ms
+[27-04-2013 23:37:21 18]: Chosen direction is Up
+[27-04-2013 23:37:21 48]: MCTS Generation Time: 266 ms
+[27-04-2013 23:37:22 44]: Chosen direction is Up
+[27-04-2013 23:37:22 71]: MCTS Generation Time: 234 ms
+[27-04-2013 23:37:22 89]: Chosen direction is Down
+[27-04-2013 23:37:23 19]: MCTS Generation Time: 250 ms
+[27-04-2013 23:37:24 05]: Chosen direction is Right
+[27-04-2013 23:37:24 40]: MCTS Generation Time: 297 ms
+[27-04-2013 23:37:26 52]: Chosen direction is Right
+[27-04-2013 23:37:26 83]: MCTS Generation Time: 265 ms
+[27-04-2013 23:37:27 88]: Chosen direction is Left
+[27-04-2013 23:37:28 21]: MCTS Generation Time: 281 ms
+[27-04-2013 23:37:29 25]: Chosen direction is Left
+[27-04-2013 23:37:29 53]: MCTS Generation Time: 218 ms
+[27-04-2013 23:37:31 98]: New State: EndGame
+[27-04-2013 23:37:32 00]: New State: Wander
+[27-04-2013 23:37:32 01]: New State: EndGame
+[27-04-2013 23:37:32 20]: New State: Wander
+[27-04-2013 23:37:32 52]: MCTS Generation Time: 296 ms
+[27-04-2013 23:37:33 10]: Chosen direction is Right
+[27-04-2013 23:37:33 40]: MCTS Generation Time: 265 ms
+[27-04-2013 23:37:34 14]: Chosen direction is Left
+[27-04-2013 23:37:34 41]: MCTS Generation Time: 234 ms
+[27-04-2013 23:37:35 38]: Chosen direction is Right
+[27-04-2013 23:37:35 65]: MCTS Generation Time: 234 ms
+[27-04-2013 23:37:36 62]: Chosen direction is Right
+[27-04-2013 23:37:36 94]: MCTS Generation Time: 281 ms
+[27-04-2013 23:37:36 94]: New State: EndGame
+[27-04-2013 23:37:37 02]: New State: Wander
+[27-04-2013 23:37:37 32]: MCTS Generation Time: 266 ms
+[27-04-2013 23:37:37 83]: Chosen direction is Down
+[27-04-2013 23:37:38 13]: MCTS Generation Time: 234 ms
+[27-04-2013 23:37:39 15]: Chosen direction is Right
+[27-04-2013 23:37:39 45]: MCTS Generation Time: 265 ms
+[27-04-2013 23:37:39 46]: New State: EndGame
+[27-04-2013 23:37:39 54]: New State: Wander
+[27-04-2013 23:37:39 54]: New State: Flee
+[27-04-2013 23:37:39 72]: Eaten by a ghost!
+[27-04-2013 23:37:39 73]: New State: Wander
+[27-04-2013 23:37:39 73]: New State: EndGame
+[27-04-2013 23:37:39 75]: New State: Wander
+[27-04-2013 23:37:40 07]: MCTS Generation Time: 297 ms
+[27-04-2013 23:37:41 07]: Chosen direction is Left
+[27-04-2013 23:37:41 34]: MCTS Generation Time: 234 ms
+[27-04-2013 23:37:42 36]: Chosen direction is Left
+[27-04-2013 23:37:42 71]: MCTS Generation Time: 312 ms
+[27-04-2013 23:37:43 44]: Chosen direction is Up
+[27-04-2013 23:37:43 76]: MCTS Generation Time: 296 ms
+[27-04-2013 23:37:44 80]: Chosen direction is Down
+[27-04-2013 23:37:45 15]: MCTS Generation Time: 281 ms
+[27-04-2013 23:37:46 17]: Chosen direction is Left
+[27-04-2013 23:37:46 43]: MCTS Generation Time: 218 ms
+[27-04-2013 23:37:46 88]: New State: Ambush
+[27-04-2013 23:37:47 06]: Power pill eaten!
+[27-04-2013 23:37:47 06]: New State: Hunt
+[27-04-2013 23:37:47 53]: RETURNING TO WANDER
+[27-04-2013 23:37:47 53]: New State: Wander
+[27-04-2013 23:37:47 53]: New State: EndGame
+[27-04-2013 23:37:47 65]: New State: Wander
+[27-04-2013 23:37:47 92]: MCTS Generation Time: 234 ms
+[27-04-2013 23:37:48 13]: Chosen direction is Right
+[27-04-2013 23:37:48 47]: MCTS Generation Time: 312 ms
+[27-04-2013 23:37:49 34]: Chosen direction is Up
+[27-04-2013 23:37:49 65]: MCTS Generation Time: 265 ms
+[27-04-2013 23:37:50 92]: Chosen direction is Up
+[27-04-2013 23:37:51 18]: MCTS Generation Time: 203 ms
+[27-04-2013 23:37:51 39]: Chosen direction is Right
+[27-04-2013 23:37:51 71]: MCTS Generation Time: 297 ms
+[27-04-2013 23:37:52 61]: Chosen direction is Right
+[27-04-2013 23:37:52 91]: MCTS Generation Time: 265 ms
+[27-04-2013 23:37:53 90]: Chosen direction is Right
+[27-04-2013 23:37:54 17]: MCTS Generation Time: 234 ms
+[27-04-2013 23:37:54 92]: Chosen direction is Down
+[27-04-2013 23:37:55 27]: MCTS Generation Time: 327 ms
+[27-04-2013 23:37:57 33]: New State: Flee
+[27-04-2013 23:37:57 39]: Eaten by a ghost!
+[27-04-2013 23:37:57 41]: New State: Wander
+[27-04-2013 23:37:57 41]: New State: Flee
+[27-04-2013 23:37:57 41]: New State: Wander
+[27-04-2013 23:37:57 73]: MCTS Generation Time: 281 ms
+[27-04-2013 23:37:58 08]: Chosen direction is Left
+[27-04-2013 23:37:58 42]: MCTS Generation Time: 281 ms
+[27-04-2013 23:37:59 32]: Chosen direction is Right
+[27-04-2013 23:37:59 60]: MCTS Generation Time: 234 ms
+[27-04-2013 23:38:00 58]: Chosen direction is Right
+[27-04-2013 23:38:00 87]: MCTS Generation Time: 265 ms
+[27-04-2013 23:38:01 88]: Chosen direction is Down
+[27-04-2013 23:38:02 22]: MCTS Generation Time: 296 ms
+[27-04-2013 23:38:05 23]: Chosen direction is Right
+[27-04-2013 23:38:05 51]: MCTS Generation Time: 234 ms
+[27-04-2013 23:38:06 53]: Chosen direction is Left
+[27-04-2013 23:38:06 83]: MCTS Generation Time: 281 ms
+[27-04-2013 23:38:07 85]: Chosen direction is Left
+[27-04-2013 23:38:08 17]: MCTS Generation Time: 281 ms
+[27-04-2013 23:38:09 46]: New State: Flee
+[27-04-2013 23:38:09 54]: Eaten by a ghost!
+[27-04-2013 23:38:09 55]: New State: Wander
+[27-04-2013 23:38:09 55]: New State: Flee
+[27-04-2013 23:38:09 56]: New State: Wander
+[27-04-2013 23:38:09 88]: MCTS Generation Time: 281 ms
+[27-04-2013 23:38:10 19]: Chosen direction is Down
+[27-04-2013 23:38:10 51]: MCTS Generation Time: 297 ms
+[27-04-2013 23:38:13 34]: Chosen direction is Left
+[27-04-2013 23:38:13 66]: MCTS Generation Time: 281 ms
+[27-04-2013 23:38:14 62]: Chosen direction is Right
+[27-04-2013 23:38:14 91]: MCTS Generation Time: 234 ms
+[27-04-2013 23:38:15 94]: Chosen direction is Right
+[27-04-2013 23:38:16 20]: MCTS Generation Time: 218 ms
+[27-04-2013 23:38:16 21]: New State: EndGame
+[27-04-2013 23:38:16 27]: New State: Wander
+[27-04-2013 23:38:16 60]: MCTS Generation Time: 297 ms
+[27-04-2013 23:38:17 93]: Chosen direction is Up
+[27-04-2013 23:38:18 24]: MCTS Generation Time: 265 ms
+[27-04-2013 23:38:18 25]: New State: EndGame
+[27-04-2013 23:38:18 26]: New State: Wander
+[27-04-2013 23:38:18 27]: New State: EndGame
+[27-04-2013 23:38:18 35]: New State: Wander
+[27-04-2013 23:38:18 67]: MCTS Generation Time: 297 ms
+[27-04-2013 23:38:18 67]: New State: Flee
+[27-04-2013 23:38:18 71]: Eaten by a ghost!
+[27-04-2013 23:38:18 72]: New State: Wander
+[27-04-2013 23:38:18 73]: New State: EndGame
+[27-04-2013 23:38:18 75]: New State: Wander
+[27-04-2013 23:38:19 09]: MCTS Generation Time: 296 ms
+[27-04-2013 23:38:20 13]: Chosen direction is Left
+[27-04-2013 23:38:20 42]: MCTS Generation Time: 265 ms
+[27-04-2013 23:38:21 50]: Chosen direction is Left
+[27-04-2013 23:38:21 81]: MCTS Generation Time: 281 ms
+[27-04-2013 23:38:22 53]: Chosen direction is Up
+[27-04-2013 23:38:22 82]: MCTS Generation Time: 265 ms
+[27-04-2013 23:38:23 90]: Chosen direction is Down
+[27-04-2013 23:38:24 22]: MCTS Generation Time: 296 ms
+[27-04-2013 23:38:25 17]: Chosen direction is Down
+[27-04-2013 23:38:25 45]: MCTS Generation Time: 234 ms
+[27-04-2013 23:38:25 73]: Chosen direction is Left
+[27-04-2013 23:38:26 01]: MCTS Generation Time: 249 ms
+[27-04-2013 23:38:26 30]: New State: Ambush
+[27-04-2013 23:38:26 47]: Power pill eaten!
+[27-04-2013 23:38:26 48]: New State: Hunt
+[27-04-2013 23:38:26 93]: RETURNING TO WANDER
+[27-04-2013 23:38:26 94]: New State: Wander
+[27-04-2013 23:38:26 95]: New State: EndGame
+[27-04-2013 23:38:27 03]: New State: Wander
+[27-04-2013 23:38:27 03]: New State: Flee
+[27-04-2013 23:38:27 28]: New State: EndGame
+[27-04-2013 23:38:27 35]: New State: Wander
+[27-04-2013 23:38:27 66]: MCTS Generation Time: 281 ms
+[27-04-2013 23:38:27 88]: Chosen direction is Down
+[27-04-2013 23:38:28 15]: MCTS Generation Time: 234 ms
+[27-04-2013 23:38:30 00]: Chosen direction is Down
+[27-04-2013 23:38:30 34]: MCTS Generation Time: 296 ms
+[27-04-2013 23:38:31 43]: Chosen direction is Down
+[27-04-2013 23:38:31 73]: MCTS Generation Time: 265 ms
+[27-04-2013 23:38:32 81]: Chosen direction is Left
+[27-04-2013 23:38:33 14]: MCTS Generation Time: 265 ms
+[27-04-2013 23:38:33 15]: New State: EndGame
+[27-04-2013 23:38:33 18]: New State: Flee
+[27-04-2013 23:38:33 65]: New State: EndGame
+[27-04-2013 23:38:33 74]: New State: Wander
+[27-04-2013 23:38:34 10]: MCTS Generation Time: 296 ms
+[27-04-2013 23:38:34 80]: Chosen direction is Up
+[27-04-2013 23:38:35 11]: MCTS Generation Time: 234 ms
+[27-04-2013 23:38:37 45]: New State: Flee
+[27-04-2013 23:38:37 57]: Eaten by a ghost!
+[27-04-2013 23:38:37 59]: New State: Wander
+[27-04-2013 23:38:37 60]: New State: EndGame
+[27-04-2013 23:38:37 65]: New State: Wander
+[27-04-2013 23:38:37 98]: MCTS Generation Time: 281 ms
+[27-04-2013 23:38:38 86]: Chosen direction is Left
+[27-04-2013 23:38:39 17]: MCTS Generation Time: 281 ms
+[27-04-2013 23:38:39 39]: Chosen direction is Down
+[27-04-2013 23:38:39 70]: MCTS Generation Time: 280 ms
+[27-04-2013 23:38:40 47]: Chosen direction is Left
+[27-04-2013 23:38:40 86]: MCTS Generation Time: 343 ms
+[27-04-2013 23:38:41 11]: Chosen direction is Up
+[27-04-2013 23:38:41 42]: MCTS Generation Time: 280 ms
+[27-04-2013 23:38:42 02]: Chosen direction is Up
+[27-04-2013 23:38:42 31]: MCTS Generation Time: 250 ms
+[27-04-2013 23:38:42 54]: Chosen direction is Down
+[27-04-2013 23:38:42 87]: MCTS Generation Time: 296 ms
+[27-04-2013 23:38:42 99]: New State: Ambush
+[27-04-2013 23:38:43 18]: Power pill eaten!
+[27-04-2013 23:38:43 18]: New State: Hunt
+[27-04-2013 23:38:43 50]: RETURNING TO WANDER
+[27-04-2013 23:38:43 50]: New State: Wander
+[27-04-2013 23:38:43 51]: New State: Flee
+[27-04-2013 23:38:43 54]: New State: Wander
+[27-04-2013 23:38:43 91]: MCTS Generation Time: 328 ms
+[27-04-2013 23:38:44 44]: Chosen direction is Down
+[27-04-2013 23:38:44 77]: MCTS Generation Time: 280 ms
+[27-04-2013 23:38:45 02]: Chosen direction is Up
+[27-04-2013 23:38:45 35]: MCTS Generation Time: 281 ms
+[27-04-2013 23:38:46 26]: Chosen direction is Left
+[27-04-2013 23:38:46 57]: MCTS Generation Time: 281 ms
+[27-04-2013 23:38:48 44]: Chosen direction is Down
+[27-04-2013 23:38:48 71]: MCTS Generation Time: 249 ms
+[27-04-2013 23:38:48 95]: Chosen direction is Right
+[27-04-2013 23:38:49 28]: MCTS Generation Time: 296 ms
+[27-04-2013 23:38:51 09]: Chosen direction is Up
+[27-04-2013 23:38:51 40]: MCTS Generation Time: 281 ms
+[27-04-2013 23:38:51 69]: Chosen direction is Down
+[27-04-2013 23:38:51 93]: MCTS Generation Time: 218 ms
+[27-04-2013 23:38:52 55]: New State: Flee
+[27-04-2013 23:38:52 59]: Eaten by a ghost!
+[27-04-2013 23:38:52 61]: New State: Wander
+[27-04-2013 23:38:52 61]: New State: EndGame
+[27-04-2013 23:38:52 86]: New State: Wander
+[27-04-2013 23:38:53 14]: MCTS Generation Time: 249 ms
+[27-04-2013 23:38:53 81]: New State: Ambush
+[27-04-2013 23:38:54 17]: Power pill eaten!
+[27-04-2013 23:38:54 17]: New State: Hunt
+[27-04-2013 23:38:54 56]: RETURNING TO WANDER
+[27-04-2013 23:38:54 56]: New State: Wander
+[27-04-2013 23:38:54 57]: New State: EndGame
+[27-04-2013 23:38:54 57]: New State: Flee
+[27-04-2013 23:38:54 83]: New State: Wander
+[27-04-2013 23:38:55 13]: MCTS Generation Time: 265 ms
+[27-04-2013 23:38:56 22]: Chosen direction is Down
+[27-04-2013 23:38:56 53]: MCTS Generation Time: 265 ms
+[27-04-2013 23:38:56 77]: Chosen direction is Down
+[27-04-2013 23:38:57 05]: MCTS Generation Time: 250 ms
+[27-04-2013 23:38:57 99]: Chosen direction is Down
+[27-04-2013 23:38:58 27]: MCTS Generation Time: 234 ms
+[27-04-2013 23:39:00 25]: Chosen direction is Right
+[27-04-2013 23:39:00 54]: MCTS Generation Time: 249 ms
+[27-04-2013 23:39:01 51]: New State: EndGame
+[27-04-2013 23:39:01 58]: New State: Wander
+[27-04-2013 23:39:01 59]: New State: Flee
+[27-04-2013 23:39:02 12]: New State: EndGame
+[27-04-2013 23:39:02 20]: Eaten by a ghost!
+[27-04-2013 23:39:02 22]: New State: Wander
+[27-04-2013 23:39:02 22]: New State: EndGame
+[27-04-2013 23:39:02 26]: New State: Wander
+[27-04-2013 23:39:02 65]: MCTS Generation Time: 281 ms
+[27-04-2013 23:39:03 48]: Chosen direction is Left
+[27-04-2013 23:39:03 76]: MCTS Generation Time: 234 ms
+[27-04-2013 23:39:04 02]: Chosen direction is Down
+[27-04-2013 23:39:04 29]: MCTS Generation Time: 234 ms
+[27-04-2013 23:39:05 04]: Chosen direction is Left
+[27-04-2013 23:39:05 36]: MCTS Generation Time: 297 ms
+[27-04-2013 23:39:05 60]: Chosen direction is Up
+[27-04-2013 23:39:05 94]: MCTS Generation Time: 312 ms
+[27-04-2013 23:39:06 52]: Chosen direction is Up
+[27-04-2013 23:39:06 83]: MCTS Generation Time: 281 ms
+[27-04-2013 23:39:07 07]: Chosen direction is Down
+[27-04-2013 23:39:07 38]: MCTS Generation Time: 265 ms
+[27-04-2013 23:39:07 50]: New State: Ambush
+[27-04-2013 23:39:07 79]: Power pill eaten!
+[27-04-2013 23:39:07 79]: New State: Hunt
+[27-04-2013 23:39:11 28]: RETURNING TO WANDER
+[27-04-2013 23:39:11 29]: New State: Wander
+[27-04-2013 23:39:11 29]: New State: Flee
+[27-04-2013 23:39:11 40]: Eaten by a ghost!
+[27-04-2013 23:39:11 43]: New State: Wander
+[27-04-2013 23:39:11 44]: New State: Flee
+[27-04-2013 23:39:11 45]: New State: Wander
+[27-04-2013 23:39:11 77]: MCTS Generation Time: 265 ms
+[27-04-2013 23:39:12 14]: Chosen direction is Down
+[27-04-2013 23:39:12 50]: MCTS Generation Time: 297 ms
+[27-04-2013 23:39:15 50]: Chosen direction is Left
+[27-04-2013 23:39:15 76]: MCTS Generation Time: 234 ms
+[27-04-2013 23:39:16 84]: Chosen direction is Left
+[27-04-2013 23:39:17 17]: MCTS Generation Time: 297 ms
+[27-04-2013 23:39:17 92]: New State: Ambush
+[27-04-2013 23:39:18 23]: Power pill eaten!
+[27-04-2013 23:39:18 23]: New State: Hunt
+[27-04-2013 23:39:22 63]: RETURNING TO WANDER
+[27-04-2013 23:39:22 63]: New State: Wander
+[27-04-2013 23:39:22 98]: MCTS Generation Time: 281 ms
+[27-04-2013 23:39:24 01]: New State: EndGame
+[27-04-2013 23:39:24 08]: New State: Wander
+[27-04-2013 23:39:24 37]: MCTS Generation Time: 265 ms
+[27-04-2013 23:39:24 98]: Chosen direction is Left
+[27-04-2013 23:39:25 25]: MCTS Generation Time: 234 ms
+[27-04-2013 23:39:27 51]: Chosen direction is Right
+[27-04-2013 23:39:27 79]: MCTS Generation Time: 234 ms
+[27-04-2013 23:39:28 07]: Chosen direction is Down
+[27-04-2013 23:39:28 37]: MCTS Generation Time: 249 ms
+[27-04-2013 23:39:29 32]: Chosen direction is Left
+[27-04-2013 23:39:29 61]: MCTS Generation Time: 249 ms
+[27-04-2013 23:39:29 62]: New State: EndGame
+[27-04-2013 23:39:29 67]: New State: Wander
+[27-04-2013 23:39:29 93]: MCTS Generation Time: 203 ms
+[27-04-2013 23:39:30 05]: New State: Flee
+[27-04-2013 23:39:30 09]: Eaten by a ghost!
+[27-04-2013 23:39:30 10]: New State: Wander
+[27-04-2013 23:39:30 11]: New State: Flee
+[27-04-2013 23:39:30 11]: New State: Wander
+[27-04-2013 23:39:30 41]: MCTS Generation Time: 265 ms
+[27-04-2013 23:39:30 77]: Chosen direction is Down
+[27-04-2013 23:39:31 11]: MCTS Generation Time: 297 ms
+[27-04-2013 23:39:34 16]: Chosen direction is Up
+[27-04-2013 23:39:34 44]: MCTS Generation Time: 234 ms
+[27-04-2013 23:39:36 95]: New State: Flee
+[27-04-2013 23:39:37 05]: Eaten by a ghost!
+[27-04-2013 23:39:37 07]: New State: Wander
+[27-04-2013 23:39:37 07]: New State: Flee
+[27-04-2013 23:39:37 08]: New State: Wander
+[27-04-2013 23:39:37 40]: MCTS Generation Time: 281 ms
+[27-04-2013 23:39:37 82]: Chosen direction is Down
+[27-04-2013 23:39:38 15]: MCTS Generation Time: 296 ms
+[27-04-2013 23:39:41 38]: Chosen direction is Left
+[27-04-2013 23:39:41 65]: MCTS Generation Time: 234 ms
+[27-04-2013 23:39:42 71]: Chosen direction is Left
+[27-04-2013 23:39:43 04]: MCTS Generation Time: 297 ms
+[27-04-2013 23:39:43 88]: New State: Ambush
+[27-04-2013 23:39:44 34]: Power pill eaten!
+[27-04-2013 23:39:44 34]: New State: Hunt
+[27-04-2013 23:39:44 62]: New State: Wander
+[27-04-2013 23:39:44 94]: MCTS Generation Time: 296 ms
+[27-04-2013 23:39:46 33]: Chosen direction is Up
+[27-04-2013 23:39:46 64]: MCTS Generation Time: 280 ms
+[27-04-2013 23:39:47 73]: Chosen direction is Up
+[27-04-2013 23:39:48 10]: MCTS Generation Time: 343 ms
+[27-04-2013 23:39:49 19]: New State: Ambush
+[27-04-2013 23:39:49 49]: Power pill eaten!
+[27-04-2013 23:39:49 49]: New State: Hunt
+[27-04-2013 23:39:51 48]: RETURNING TO WANDER
+[27-04-2013 23:39:51 48]: New State: Wander
+[27-04-2013 23:39:51 49]: New State: Flee
+[27-04-2013 23:39:53 21]: Eaten by a ghost!
+[27-04-2013 23:39:53 24]: New State: Wander
+[27-04-2013 23:39:53 24]: New State: Flee
+[27-04-2013 23:39:53 25]: New State: Wander
+[27-04-2013 23:39:53 63]: MCTS Generation Time: 312 ms
+[27-04-2013 23:39:53 97]: Chosen direction is Left
+[27-04-2013 23:39:54 35]: MCTS Generation Time: 343 ms
+[27-04-2013 23:39:55 33]: Chosen direction is Right
+[27-04-2013 23:39:55 66]: MCTS Generation Time: 280 ms
+[27-04-2013 23:39:56 65]: Chosen direction is Right
+[27-04-2013 23:39:56 92]: MCTS Generation Time: 250 ms
+[27-04-2013 23:39:58 05]: Chosen direction is Down
+[27-04-2013 23:39:58 36]: MCTS Generation Time: 281 ms
+[27-04-2013 23:40:01 53]: Chosen direction is Up
+[27-04-2013 23:40:01 79]: MCTS Generation Time: 218 ms
+[27-04-2013 23:40:04 43]: New State: Flee
+[27-04-2013 23:40:04 50]: Eaten by a ghost!
+[27-04-2013 23:40:04 52]: New State: Wander
+[27-04-2013 23:40:04 52]: New State: Flee
+[27-04-2013 23:40:04 53]: New State: Wander
+[27-04-2013 23:40:04 79]: MCTS Generation Time: 234 ms
+[27-04-2013 23:40:05 15]: Chosen direction is Left
+[27-04-2013 23:40:05 49]: MCTS Generation Time: 296 ms
+[27-04-2013 23:40:06 43]: Chosen direction is Right
+[27-04-2013 23:40:06 71]: MCTS Generation Time: 234 ms
+[27-04-2013 23:40:07 70]: Chosen direction is Right
+[27-04-2013 23:40:07 97]: MCTS Generation Time: 234 ms
+[27-04-2013 23:40:08 98]: Chosen direction is Down
+[27-04-2013 23:40:09 32]: MCTS Generation Time: 312 ms
+[27-04-2013 23:40:12 30]: Chosen direction is Up
+[27-04-2013 23:40:12 59]: MCTS Generation Time: 249 ms
+[27-04-2013 23:40:15 25]: New State: Flee
+[27-04-2013 23:40:15 32]: Eaten by a ghost!
+[27-04-2013 23:40:15 34]: New State: Wander
+[27-04-2013 23:40:15 34]: New State: Flee
+[27-04-2013 23:40:15 35]: New State: Wander
+[27-04-2013 23:40:15 61]: MCTS Generation Time: 234 ms
+[27-04-2013 23:40:15 95]: Chosen direction is Down
+[27-04-2013 23:40:16 32]: MCTS Generation Time: 328 ms
+[27-04-2013 23:40:19 32]: Chosen direction is Up
+[27-04-2013 23:40:19 64]: MCTS Generation Time: 281 ms
+[27-04-2013 23:40:20 66]: New State: EndGame
+[27-04-2013 23:40:20 76]: New State: Wander
+[27-04-2013 23:40:21 11]: MCTS Generation Time: 328 ms
+[27-04-2013 23:40:21 77]: Chosen direction is Up
+[27-04-2013 23:40:22 08]: MCTS Generation Time: 265 ms
+[27-04-2013 23:40:23 31]: New State: Flee
+[27-04-2013 23:40:23 66]: New State: Wander
+[27-04-2013 23:40:23 97]: MCTS Generation Time: 281 ms
+[27-04-2013 23:40:24 70]: Chosen direction is Left
+[27-04-2013 23:40:25 03]: MCTS Generation Time: 296 ms
+[27-04-2013 23:40:25 83]: New State: Ambush
+[27-04-2013 23:40:26 03]: Power pill eaten!
+[27-04-2013 23:40:26 03]: New State: Hunt
+[27-04-2013 23:40:26 56]: RETURNING TO WANDER
+[27-04-2013 23:40:26 57]: New State: Wander
+[27-04-2013 23:40:26 57]: New State: Flee
+[27-04-2013 23:40:26 63]: New State: Wander
+[27-04-2013 23:40:26 96]: MCTS Generation Time: 312 ms
+[27-04-2013 23:40:27 97]: Chosen direction is Up
+[27-04-2013 23:40:28 24]: MCTS Generation Time: 218 ms
+[27-04-2013 23:40:28 49]: Chosen direction is Left
+[27-04-2013 23:40:28 84]: MCTS Generation Time: 312 ms
+[27-04-2013 23:40:29 34]: New State: Ambush
+[27-04-2013 23:40:29 42]: Power pill eaten!
+[27-04-2013 23:40:29 42]: New State: Hunt
+[27-04-2013 23:40:29 88]: RETURNING TO WANDER
+[27-04-2013 23:40:29 88]: New State: Wander
+[27-04-2013 23:40:29 89]: New State: EndGame
+[27-04-2013 23:40:29 98]: New State: Wander
+[27-04-2013 23:40:30 27]: MCTS Generation Time: 249 ms
+[27-04-2013 23:40:30 45]: Chosen direction is Right
+[27-04-2013 23:40:30 77]: MCTS Generation Time: 296 ms
+[27-04-2013 23:40:31 32]: New State: EndGame
+[27-04-2013 23:40:31 34]: New State: Wander
+[27-04-2013 23:40:31 35]: New State: EndGame
+[27-04-2013 23:40:31 49]: New State: Wander
+[27-04-2013 23:40:31 76]: MCTS Generation Time: 234 ms
+[27-04-2013 23:40:31 77]: New State: Flee
+[27-04-2013 23:40:31 87]: New State: Wander
+[27-04-2013 23:40:32 12]: MCTS Generation Time: 219 ms
+[27-04-2013 23:40:32 64]: Chosen direction is Right
+[27-04-2013 23:40:32 94]: MCTS Generation Time: 250 ms
+[27-04-2013 23:40:33 27]: New State: Flee
+[27-04-2013 23:40:33 31]: New State: Wander
+[27-04-2013 23:40:33 57]: MCTS Generation Time: 234 ms
+[27-04-2013 23:40:34 91]: Chosen direction is Right
+[27-04-2013 23:40:35 24]: MCTS Generation Time: 297 ms
+[27-04-2013 23:40:35 95]: Chosen direction is Up
+[27-04-2013 23:40:36 27]: MCTS Generation Time: 280 ms
+[27-04-2013 23:40:37 73]: Chosen direction is Up
+[27-04-2013 23:40:38 02]: MCTS Generation Time: 250 ms
+[27-04-2013 23:40:38 26]: Chosen direction is Right
+[27-04-2013 23:40:38 60]: MCTS Generation Time: 296 ms
+[27-04-2013 23:40:39 28]: Chosen direction is Up
+[27-04-2013 23:40:39 60]: MCTS Generation Time: 265 ms
+[27-04-2013 23:40:40 61]: Chosen direction is Left
+[27-04-2013 23:40:40 93]: MCTS Generation Time: 281 ms
+[27-04-2013 23:40:41 99]: New State: Flee
+[27-04-2013 23:40:42 04]: Eaten by a ghost!
+[27-04-2013 23:40:42 06]: New State: Wander
+[27-04-2013 23:40:42 06]: New State: Flee
+[27-04-2013 23:40:42 07]: New State: Wander
+[27-04-2013 23:40:42 35]: MCTS Generation Time: 249 ms
+[27-04-2013 23:40:42 65]: Chosen direction is Down
+[27-04-2013 23:40:43 02]: MCTS Generation Time: 327 ms
+[27-04-2013 23:40:43 41]: New State: EndGame
+[27-04-2013 23:40:43 50]: New State: Wander
+[27-04-2013 23:40:43 82]: MCTS Generation Time: 281 ms
+[27-04-2013 23:40:44 85]: Chosen direction is Left
+[27-04-2013 23:40:45 16]: MCTS Generation Time: 280 ms
+[27-04-2013 23:40:46 25]: Chosen direction is Right
+[27-04-2013 23:40:46 56]: MCTS Generation Time: 280 ms
+[27-04-2013 23:40:47 50]: Chosen direction is Down
+[27-04-2013 23:40:47 77]: MCTS Generation Time: 234 ms
+[27-04-2013 23:40:48 77]: Chosen direction is Down
+[27-04-2013 23:40:49 11]: MCTS Generation Time: 296 ms
+[27-04-2013 23:40:49 12]: New State: EndGame
+[27-04-2013 23:40:49 20]: New State: Wander
+[27-04-2013 23:40:49 45]: MCTS Generation Time: 218 ms
+[27-04-2013 23:40:49 86]: New State: EndGame
+[27-04-2013 23:40:49 87]: New State: Wander
+[27-04-2013 23:40:49 88]: New State: EndGame
+[27-04-2013 23:40:49 94]: Eaten by a ghost!
+[27-04-2013 23:40:49 96]: New State: Wander
+[27-04-2013 23:40:49 97]: New State: Flee
+[27-04-2013 23:40:49 97]: New State: Wander
+[27-04-2013 23:40:50 24]: MCTS Generation Time: 218 ms
+[27-04-2013 23:40:50 54]: Chosen direction is Down
+[27-04-2013 23:40:50 88]: MCTS Generation Time: 312 ms
+[27-04-2013 23:40:51 63]: New State: EndGame
+[27-04-2013 23:40:51 74]: New State: Wander
+[27-04-2013 23:40:52 02]: MCTS Generation Time: 249 ms
+[27-04-2013 23:40:52 46]: Chosen direction is Right
+[27-04-2013 23:40:52 74]: MCTS Generation Time: 250 ms
+[27-04-2013 23:40:53 77]: New State: EndGame
+[27-04-2013 23:40:53 78]: New State: Wander
+[27-04-2013 23:40:53 79]: New State: EndGame
+[27-04-2013 23:40:53 85]: New State: Wander
+[27-04-2013 23:40:54 17]: MCTS Generation Time: 281 ms
+[27-04-2013 23:40:54 56]: New State: Ambush
+[27-04-2013 23:40:54 76]: Power pill eaten!
+[27-04-2013 23:40:54 77]: New State: Hunt
+[27-04-2013 23:40:55 29]: RETURNING TO WANDER
+[27-04-2013 23:40:55 29]: New State: Wander
+[27-04-2013 23:40:55 60]: MCTS Generation Time: 265 ms
+[27-04-2013 23:40:56 68]: Chosen direction is Up
+[27-04-2013 23:40:57 01]: MCTS Generation Time: 281 ms
+[27-04-2013 23:40:57 77]: Chosen direction is Up
+[27-04-2013 23:40:58 08]: MCTS Generation Time: 265 ms
+[27-04-2013 23:40:59 05]: Chosen direction is Left
+[27-04-2013 23:40:59 32]: MCTS Generation Time: 234 ms
+[27-04-2013 23:40:59 59]: Chosen direction is Right
+[27-04-2013 23:40:59 96]: MCTS Generation Time: 343 ms
+[27-04-2013 23:41:00 51]: New State: Ambush
+[27-04-2013 23:41:00 93]: Power pill eaten!
+[27-04-2013 23:41:00 93]: New State: Hunt
+[27-04-2013 23:41:01 43]: RETURNING TO WANDER
+[27-04-2013 23:41:01 44]: New State: Wander
+[27-04-2013 23:41:01 44]: New State: EndGame
+[27-04-2013 23:41:01 64]: Eaten by a ghost!
+[27-04-2013 23:41:01 66]: New State: Wander
+[27-04-2013 23:41:01 66]: New State: Flee
+[27-04-2013 23:41:01 66]: New State: Wander
+[27-04-2013 23:41:01 93]: MCTS Generation Time: 234 ms
+[27-04-2013 23:41:02 32]: Chosen direction is Down
+[27-04-2013 23:41:02 66]: MCTS Generation Time: 297 ms
+[27-04-2013 23:41:05 70]: Chosen direction is Left
+[27-04-2013 23:41:05 96]: MCTS Generation Time: 234 ms
+[27-04-2013 23:41:06 99]: Chosen direction is Left
+[27-04-2013 23:41:07 30]: MCTS Generation Time: 281 ms
+[27-04-2013 23:41:08 14]: New State: Ambush
+[27-04-2013 23:41:08 35]: Power pill eaten!
+[27-04-2013 23:41:08 36]: New State: Hunt
+[27-04-2013 23:41:08 37]: New State: Wander
+[27-04-2013 23:41:08 68]: MCTS Generation Time: 280 ms
+[27-04-2013 23:41:09 84]: Chosen direction is Right
+[27-04-2013 23:41:10 14]: MCTS Generation Time: 265 ms
+[27-04-2013 23:41:10 77]: Chosen direction is Down
+[27-04-2013 23:41:11 09]: MCTS Generation Time: 281 ms
+[27-04-2013 23:41:11 34]: Chosen direction is Down
+[27-04-2013 23:41:11 66]: MCTS Generation Time: 281 ms
+[27-04-2013 23:41:12 46]: Chosen direction is Down
+[27-04-2013 23:41:12 77]: MCTS Generation Time: 266 ms
+[27-04-2013 23:41:12 98]: Chosen direction is Up
+[27-04-2013 23:41:13 26]: MCTS Generation Time: 234 ms
+[27-04-2013 23:41:14 01]: Chosen direction is Up
+[27-04-2013 23:41:14 29]: MCTS Generation Time: 234 ms
+[27-04-2013 23:41:14 51]: Chosen direction is Down
+[27-04-2013 23:41:14 81]: MCTS Generation Time: 281 ms
+[27-04-2013 23:41:15 54]: Chosen direction is Down
+[27-04-2013 23:41:15 82]: MCTS Generation Time: 234 ms
+[27-04-2013 23:41:16 06]: Chosen direction is Left
+[27-04-2013 23:41:16 38]: MCTS Generation Time: 281 ms
+[27-04-2013 23:41:17 24]: Chosen direction is Left
+[27-04-2013 23:41:17 55]: MCTS Generation Time: 265 ms
+[27-04-2013 23:41:18 28]: Chosen direction is Down
+[27-04-2013 23:41:18 65]: MCTS Generation Time: 297 ms
+[27-04-2013 23:41:19 69]: New State: EndGame
+[27-04-2013 23:41:19 71]: New State: Wander
+[27-04-2013 23:41:19 71]: New State: EndGame
+[27-04-2013 23:41:19 77]: New State: Wander
+[27-04-2013 23:41:20 03]: MCTS Generation Time: 249 ms
+[27-04-2013 23:41:22 66]: Chosen direction is Right
+[27-04-2013 23:41:23 04]: MCTS Generation Time: 343 ms
+[27-04-2013 23:41:24 03]: Chosen direction is Up
+[27-04-2013 23:41:24 32]: MCTS Generation Time: 250 ms
+[27-04-2013 23:41:26 01]: New State: Flee
+[27-04-2013 23:41:26 15]: New State: Wander
+[27-04-2013 23:41:26 16]: New State: Ambush
+[27-04-2013 23:41:26 19]: Power pill eaten!
+[27-04-2013 23:41:26 19]: New State: Hunt
+[27-04-2013 23:41:26 81]: New State: Wander
+[27-04-2013 23:41:27 18]: MCTS Generation Time: 327 ms
+[27-04-2013 23:41:28 32]: Chosen direction is Down
+[27-04-2013 23:41:28 70]: MCTS Generation Time: 312 ms
+[27-04-2013 23:41:29 73]: Chosen direction is Left
+[27-04-2013 23:41:30 05]: MCTS Generation Time: 265 ms
+[27-04-2013 23:41:30 05]: New State: EndGame
+[27-04-2013 23:41:30 13]: New State: Wander
+[27-04-2013 23:41:30 47]: MCTS Generation Time: 296 ms
+[27-04-2013 23:41:30 66]: Chosen direction is Up
+[27-04-2013 23:41:30 98]: MCTS Generation Time: 281 ms
+[27-04-2013 23:41:31 86]: Chosen direction is Up
+[27-04-2013 23:41:32 16]: MCTS Generation Time: 266 ms
+[27-04-2013 23:41:33 13]: New State: Ambush
+[27-04-2013 23:41:33 41]: Power pill eaten!
+[27-04-2013 23:41:33 42]: New State: Hunt
+[27-04-2013 23:41:33 95]: RETURNING TO WANDER
+[27-04-2013 23:41:33 96]: New State: Wander
+[27-04-2013 23:41:34 25]: MCTS Generation Time: 265 ms
+[27-04-2013 23:41:34 50]: New State: Flee
+[27-04-2013 23:41:34 59]: New State: Wander
+[27-04-2013 23:41:34 95]: MCTS Generation Time: 281 ms
+[27-04-2013 23:41:35 32]: New State: Ambush
+[27-04-2013 23:41:35 50]: Power pill eaten!
+[27-04-2013 23:41:35 50]: New State: Hunt
+[27-04-2013 23:41:35 98]: RETURNING TO WANDER
+[27-04-2013 23:41:35 99]: New State: Wander
+[27-04-2013 23:41:35 99]: New State: Flee
+[27-04-2013 23:41:36 06]: New State: EndGame
+[27-04-2013 23:41:36 13]: New State: Wander
+[27-04-2013 23:41:36 43]: MCTS Generation Time: 249 ms
+[27-04-2013 23:41:36 99]: Chosen direction is Right
+[27-04-2013 23:41:37 32]: MCTS Generation Time: 297 ms
+[27-04-2013 23:41:37 59]: New State: Flee
+[27-04-2013 23:41:37 68]: Eaten by a ghost!
+[27-04-2013 23:41:37 69]: New State: Wander
+[27-04-2013 23:41:37 70]: New State: EndGame
+[27-04-2013 23:41:37 77]: New State: Wander
+[27-04-2013 23:41:38 06]: MCTS Generation Time: 265 ms
+[27-04-2013 23:41:38 50]: Chosen direction is Left
+[27-04-2013 23:41:38 86]: MCTS Generation Time: 312 ms
+[27-04-2013 23:41:40 20]: Chosen direction is Left
+[27-04-2013 23:41:40 51]: MCTS Generation Time: 281 ms
+[27-04-2013 23:41:40 80]: Chosen direction is Down
+[27-04-2013 23:41:41 05]: MCTS Generation Time: 219 ms
+[27-04-2013 23:41:41 96]: Chosen direction is Left
+[27-04-2013 23:41:42 22]: MCTS Generation Time: 234 ms
+[27-04-2013 23:41:42 22]: New State: EndGame
+[27-04-2013 23:41:42 30]: New State: Wander
+[27-04-2013 23:41:42 61]: MCTS Generation Time: 281 ms
+[27-04-2013 23:41:43 07]: Chosen direction is Up
+[27-04-2013 23:41:43 38]: MCTS Generation Time: 265 ms
+[27-04-2013 23:41:44 40]: New State: EndGame
+[27-04-2013 23:41:44 42]: New State: Wander
+[27-04-2013 23:41:44 42]: New State: EndGame
+[27-04-2013 23:41:44 58]: New State: Wander
+[27-04-2013 23:41:44 90]: MCTS Generation Time: 297 ms
+[27-04-2013 23:41:45 47]: Chosen direction is Down
+[27-04-2013 23:41:45 74]: MCTS Generation Time: 234 ms
+[27-04-2013 23:41:46 10]: New State: Flee
+[27-04-2013 23:41:46 22]: Eaten by a ghost!
+[27-04-2013 23:41:46 23]: New State: Wander
+[27-04-2013 23:41:46 24]: New State: EndGame
+[27-04-2013 23:41:47 93]: New State: Wander
+[27-04-2013 23:41:48 25]: MCTS Generation Time: 281 ms
+[27-04-2013 23:41:48 62]: New State: EndGame
+[27-04-2013 23:41:48 64]: New State: Wander
+[27-04-2013 23:41:48 64]: New State: EndGame
+[27-04-2013 23:41:48 88]: New State: Wander
+[27-04-2013 23:41:49 14]: MCTS Generation Time: 218 ms
+[27-04-2013 23:41:50 28]: New State: EndGame
+[27-04-2013 23:41:50 30]: New State: Wander
+[27-04-2013 23:41:50 31]: New State: EndGame
+[27-04-2013 23:41:50 40]: Eaten by a ghost!
+[27-04-2013 23:41:50 41]: New State: Wander
+[27-04-2013 23:41:50 42]: New State: EndGame
+[27-04-2013 23:41:50 44]: New State: Wander
+[27-04-2013 23:41:50 78]: MCTS Generation Time: 296 ms
+[27-04-2013 23:41:51 82]: Chosen direction is Left
+[27-04-2013 23:41:52 10]: MCTS Generation Time: 249 ms
+[27-04-2013 23:41:53 14]: Chosen direction is Left
+[27-04-2013 23:41:53 46]: MCTS Generation Time: 281 ms
+[27-04-2013 23:41:54 16]: Chosen direction is Up
+[27-04-2013 23:41:54 47]: MCTS Generation Time: 266 ms
+[27-04-2013 23:41:55 52]: Chosen direction is Down
+[27-04-2013 23:41:55 85]: MCTS Generation Time: 296 ms
+[27-04-2013 23:41:56 85]: Chosen direction is Down
+[27-04-2013 23:41:57 14]: MCTS Generation Time: 249 ms
+[27-04-2013 23:41:57 41]: Chosen direction is Left
+[27-04-2013 23:41:57 73]: MCTS Generation Time: 281 ms
+[27-04-2013 23:41:58 03]: New State: Ambush
+[27-04-2013 23:41:58 20]: Power pill eaten!
+[27-04-2013 23:41:58 20]: New State: Hunt
+[27-04-2013 23:41:59 53]: RETURNING TO WANDER
+[27-04-2013 23:41:59 53]: New State: Wander
+[27-04-2013 23:41:59 96]: MCTS Generation Time: 328 ms
+[27-04-2013 23:42:00 09]: New State: Flee
+[27-04-2013 23:42:00 43]: New State: Wander
+[27-04-2013 23:42:00 83]: MCTS Generation Time: 344 ms
+[27-04-2013 23:42:01 12]: New State: Ambush
+[27-04-2013 23:42:03 63]: Power pill eaten!
+[27-04-2013 23:42:03 64]: New State: Hunt
+[27-04-2013 23:42:08 73]: RETURNING TO WANDER
+[27-04-2013 23:42:08 73]: New State: Wander
+[27-04-2013 23:42:08 74]: New State: Flee
+[27-04-2013 23:42:09 03]: New State: Wander
+[27-04-2013 23:42:09 40]: MCTS Generation Time: 312 ms
+[27-04-2013 23:42:10 11]: New State: EndGame
+[27-04-2013 23:42:10 19]: New State: Wander
+[27-04-2013 23:42:10 53]: MCTS Generation Time: 296 ms
+[27-04-2013 23:42:11 97]: New State: EndGame
+[27-04-2013 23:42:11 99]: New State: Wander
+[27-04-2013 23:42:12 00]: New State: EndGame
+[27-04-2013 23:42:12 10]: New State: Wander
+[27-04-2013 23:42:12 10]: New State: Flee
+[27-04-2013 23:42:14 76]: Eaten by a ghost!
+[27-04-2013 23:42:14 80]: New State: Wander
+[27-04-2013 23:42:14 81]: New State: EndGame
+[27-04-2013 23:42:15 09]: New State: Wander
+[27-04-2013 23:42:15 45]: MCTS Generation Time: 312 ms
+[27-04-2013 23:42:16 06]: Chosen direction is Up
+[27-04-2013 23:42:16 32]: MCTS Generation Time: 234 ms
+[27-04-2013 23:42:17 37]: Chosen direction is Up
+[27-04-2013 23:42:17 64]: MCTS Generation Time: 234 ms
+[27-04-2013 23:42:17 88]: Chosen direction is Down
+[27-04-2013 23:42:18 20]: MCTS Generation Time: 280 ms
+[27-04-2013 23:42:19 09]: Chosen direction is Up
+[27-04-2013 23:42:19 41]: MCTS Generation Time: 281 ms
+[27-04-2013 23:42:20 39]: Chosen direction is Left
+[27-04-2013 23:42:20 66]: MCTS Generation Time: 234 ms
+[27-04-2013 23:42:21 03]: New State: EndGame
+[27-04-2013 23:42:21 11]: New State: Wander
+[27-04-2013 23:42:21 45]: MCTS Generation Time: 296 ms
+[27-04-2013 23:42:22 28]: Chosen direction is Left
+[27-04-2013 23:42:22 58]: MCTS Generation Time: 281 ms
+[27-04-2013 23:42:22 83]: Chosen direction is Down
+[27-04-2013 23:42:23 11]: MCTS Generation Time: 234 ms
+[27-04-2013 23:42:23 87]: Chosen direction is Down
+[27-04-2013 23:42:24 18]: MCTS Generation Time: 281 ms
+[27-04-2013 23:42:24 45]: Chosen direction is Up
+[27-04-2013 23:42:24 80]: MCTS Generation Time: 312 ms
+[27-04-2013 23:42:25 41]: Chosen direction is Up
+[27-04-2013 23:42:25 71]: MCTS Generation Time: 281 ms
+[27-04-2013 23:42:25 95]: Chosen direction is Down
+[27-04-2013 23:42:26 26]: MCTS Generation Time: 281 ms
+[27-04-2013 23:42:26 38]: New State: Ambush
+[27-04-2013 23:42:26 88]: Power pill eaten!
+[27-04-2013 23:42:26 89]: New State: Hunt
+[27-04-2013 23:42:29 78]: RETURNING TO WANDER
+[27-04-2013 23:42:29 78]: New State: Wander
+[27-04-2013 23:42:29 79]: New State: EndGame
+[27-04-2013 23:42:30 79]: New State: Wander
+[27-04-2013 23:42:31 09]: MCTS Generation Time: 234 ms
+[27-04-2013 23:42:31 56]: Chosen direction is Up
+[27-04-2013 23:42:31 83]: MCTS Generation Time: 234 ms
+[27-04-2013 23:42:33 53]: New State: EndGame
+[27-04-2013 23:42:33 66]: New State: Wander
+[27-04-2013 23:42:33 93]: MCTS Generation Time: 250 ms
+[27-04-2013 23:42:36 55]: Chosen direction is Right
+[27-04-2013 23:42:36 88]: MCTS Generation Time: 297 ms
+[27-04-2013 23:42:37 82]: Chosen direction is Up
+[27-04-2013 23:42:38 08]: MCTS Generation Time: 203 ms
+[27-04-2013 23:42:38 44]: New State: Flee
+[27-04-2013 23:42:38 52]: New State: EndGame
+[27-04-2013 23:42:38 59]: New State: Wander
+[27-04-2013 23:42:38 60]: New State: Flee
+[27-04-2013 23:42:39 80]: Eaten by a ghost!
+[27-04-2013 23:42:39 83]: New State: Wander
+[27-04-2013 23:42:39 84]: New State: EndGame
+[27-04-2013 23:42:41 13]: New State: Wander
+[27-04-2013 23:42:41 51]: MCTS Generation Time: 312 ms
+[27-04-2013 23:42:42 68]: Chosen direction is Up
+[27-04-2013 23:42:43 04]: MCTS Generation Time: 328 ms
+[27-04-2013 23:42:43 97]: Chosen direction is Down
+[27-04-2013 23:42:44 28]: MCTS Generation Time: 281 ms
+[27-04-2013 23:42:44 99]: Chosen direction is Up
+[27-04-2013 23:42:45 33]: MCTS Generation Time: 312 ms
+[27-04-2013 23:42:46 29]: Chosen direction is Left
+[27-04-2013 23:42:46 62]: MCTS Generation Time: 297 ms
+[27-04-2013 23:42:47 32]: New State: Flee
+[27-04-2013 23:42:47 37]: Eaten by a ghost!
+[27-04-2013 23:42:47 38]: New State: Wander
+[27-04-2013 23:42:47 39]: New State: Flee
+[27-04-2013 23:42:47 39]: New State: Wander
+[27-04-2013 23:42:47 66]: MCTS Generation Time: 250 ms
+[27-04-2013 23:42:48 02]: Chosen direction is Down
+[27-04-2013 23:42:48 36]: MCTS Generation Time: 312 ms
+[27-04-2013 23:42:51 36]: Chosen direction is Left
+[27-04-2013 23:42:51 65]: MCTS Generation Time: 250 ms
+[27-04-2013 23:42:52 72]: Chosen direction is Left
+[27-04-2013 23:42:53 03]: MCTS Generation Time: 265 ms
+[27-04-2013 23:42:53 90]: New State: Ambush
+[27-04-2013 23:42:54 22]: Power pill eaten!
+[27-04-2013 23:42:54 23]: New State: Hunt
+[27-04-2013 23:42:54 77]: RETURNING TO WANDER
+[27-04-2013 23:42:54 77]: New State: Wander
+[27-04-2013 23:42:55 11]: MCTS Generation Time: 296 ms
+[27-04-2013 23:42:56 45]: Chosen direction is Up
+[27-04-2013 23:42:56 77]: MCTS Generation Time: 296 ms
+[27-04-2013 23:42:57 81]: Chosen direction is Left
+[27-04-2013 23:42:58 15]: MCTS Generation Time: 280 ms
+[27-04-2013 23:43:00 48]: Chosen direction is Right
+[27-04-2013 23:43:00 77]: MCTS Generation Time: 249 ms
+[27-04-2013 23:43:01 01]: Chosen direction is Down
+[27-04-2013 23:43:01 37]: MCTS Generation Time: 328 ms
+[27-04-2013 23:43:02 33]: Chosen direction is Down
+[27-04-2013 23:43:02 65]: MCTS Generation Time: 297 ms
+[27-04-2013 23:43:04 82]: Chosen direction is Right
+[27-04-2013 23:43:05 12]: MCTS Generation Time: 250 ms
+[27-04-2013 23:43:06 12]: New State: EndGame
+[27-04-2013 23:43:06 22]: New State: Wander
+[27-04-2013 23:43:06 52]: MCTS Generation Time: 281 ms
+[27-04-2013 23:43:07 14]: Chosen direction is Down
+[27-04-2013 23:43:07 41]: MCTS Generation Time: 250 ms
+[27-04-2013 23:43:08 43]: Chosen direction is Left
+[27-04-2013 23:43:08 70]: MCTS Generation Time: 234 ms
+[27-04-2013 23:43:09 77]: Chosen direction is Right
+[27-04-2013 23:43:10 08]: MCTS Generation Time: 280 ms
+[27-04-2013 23:43:11 08]: Chosen direction is Right
+[27-04-2013 23:43:11 40]: MCTS Generation Time: 265 ms
+[27-04-2013 23:43:11 79]: New State: Ambush
+[27-04-2013 23:43:11 98]: Power pill eaten!
+[27-04-2013 23:43:11 99]: New State: Hunt
+[27-04-2013 23:43:12 45]: RETURNING TO WANDER
+[27-04-2013 23:43:12 46]: New State: Wander
+[27-04-2013 23:43:12 46]: New State: Flee
+[27-04-2013 23:43:12 53]: Eaten by a ghost!
+[27-04-2013 23:43:12 54]: New State: Wander
+[27-04-2013 23:43:12 54]: New State: Flee
+[27-04-2013 23:43:12 55]: New State: Wander
+[27-04-2013 23:43:12 86]: MCTS Generation Time: 281 ms
+[27-04-2013 23:43:13 23]: Chosen direction is Left
+[27-04-2013 23:43:13 58]: MCTS Generation Time: 312 ms
+[27-04-2013 23:43:14 32]: Chosen direction is Left
+[27-04-2013 23:43:14 63]: MCTS Generation Time: 281 ms
+[27-04-2013 23:43:15 40]: Chosen direction is Left
+[27-04-2013 23:43:15 71]: MCTS Generation Time: 281 ms
+[27-04-2013 23:43:16 46]: Chosen direction is Up
+[27-04-2013 23:43:16 74]: MCTS Generation Time: 250 ms
+[27-04-2013 23:43:17 79]: Chosen direction is Down
+[27-04-2013 23:43:18 11]: MCTS Generation Time: 296 ms
+[27-04-2013 23:43:19 14]: Chosen direction is Left
+[27-04-2013 23:43:19 39]: MCTS Generation Time: 219 ms
+[27-04-2013 23:43:20 59]: New State: EndGame
+[27-04-2013 23:43:20 61]: New State: Wander
+[27-04-2013 23:43:20 62]: New State: EndGame
+[27-04-2013 23:43:20 73]: Eaten by a ghost!
+[27-04-2013 23:43:20 75]: New State: Wander
+[27-04-2013 23:43:20 75]: New State: Flee
+[27-04-2013 23:43:20 76]: New State: Wander
+[27-04-2013 23:43:21 02]: MCTS Generation Time: 234 ms
+[27-04-2013 23:43:21 36]: Chosen direction is Down
+[27-04-2013 23:43:21 72]: MCTS Generation Time: 296 ms
+[27-04-2013 23:43:22 09]: New State: EndGame
+[27-04-2013 23:43:22 17]: New State: Wander
+[27-04-2013 23:43:22 48]: MCTS Generation Time: 265 ms
+[27-04-2013 23:43:23 46]: Chosen direction is Right
+[27-04-2013 23:43:23 77]: MCTS Generation Time: 266 ms
+[27-04-2013 23:43:24 72]: Chosen direction is Right
+[27-04-2013 23:43:25 08]: MCTS Generation Time: 296 ms
+[27-04-2013 23:43:25 84]: Chosen direction is Up
+[27-04-2013 23:43:26 17]: MCTS Generation Time: 265 ms
+[27-04-2013 23:43:27 05]: Chosen direction is Down
+[27-04-2013 23:43:27 37]: MCTS Generation Time: 281 ms
+[27-04-2013 23:43:28 35]: Chosen direction is Down
+[27-04-2013 23:43:28 67]: MCTS Generation Time: 281 ms
+[27-04-2013 23:43:28 91]: Chosen direction is Left
+[27-04-2013 23:43:29 23]: MCTS Generation Time: 265 ms
+[27-04-2013 23:43:29 88]: New State: Flee
+[27-04-2013 23:43:29 93]: New State: Wander
+[27-04-2013 23:43:30 22]: MCTS Generation Time: 249 ms
+[27-04-2013 23:43:31 40]: Chosen direction is Left
+[27-04-2013 23:43:31 66]: MCTS Generation Time: 218 ms
+[27-04-2013 23:43:32 67]: Chosen direction is Left
+[27-04-2013 23:43:32 99]: MCTS Generation Time: 265 ms
+[27-04-2013 23:43:35 40]: New State: EndGame
+[27-04-2013 23:43:35 43]: New State: Wander
+[27-04-2013 23:43:35 43]: New State: EndGame
+[27-04-2013 23:43:35 53]: New State: Wander
+[27-04-2013 23:43:35 80]: MCTS Generation Time: 234 ms
+[27-04-2013 23:43:36 86]: New State: EndGame
+[27-04-2013 23:43:36 88]: New State: Wander
+[27-04-2013 23:43:36 89]: New State: EndGame
+[27-04-2013 23:43:37 06]: New State: Wander
+[27-04-2013 23:43:37 34]: MCTS Generation Time: 250 ms
+[27-04-2013 23:43:37 99]: Chosen direction is Up
+[27-04-2013 23:43:38 24]: MCTS Generation Time: 219 ms
+[27-04-2013 23:43:39 33]: Chosen direction is Right
+[27-04-2013 23:43:39 62]: MCTS Generation Time: 234 ms
+[27-04-2013 23:43:40 54]: Chosen direction is Right
+[27-04-2013 23:43:40 84]: MCTS Generation Time: 249 ms
+[27-04-2013 23:43:41 87]: Chosen direction is Right
+[27-04-2013 23:43:42 19]: MCTS Generation Time: 280 ms
+[27-04-2013 23:43:42 20]: New State: EndGame
+[27-04-2013 23:43:42 26]: Eaten by a ghost!
+[27-04-2013 23:43:42 27]: New State: Wander
+[27-04-2013 23:43:42 28]: New State: Flee
+[27-04-2013 23:43:42 28]: New State: Wander
+[27-04-2013 23:43:42 55]: MCTS Generation Time: 234 ms
+[27-04-2013 23:43:42 92]: Chosen direction is Down
+[27-04-2013 23:43:43 27]: MCTS Generation Time: 297 ms
+[27-04-2013 23:43:46 48]: Chosen direction is Left
+[27-04-2013 23:43:46 75]: MCTS Generation Time: 234 ms
+[27-04-2013 23:43:47 82]: Chosen direction is Left
+[27-04-2013 23:43:48 17]: MCTS Generation Time: 312 ms
+[27-04-2013 23:43:48 97]: New State: Ambush
+[27-04-2013 23:43:49 27]: Power pill eaten!
+[27-04-2013 23:43:49 27]: New State: Hunt
+[27-04-2013 23:43:49 80]: RETURNING TO WANDER
+[27-04-2013 23:43:49 80]: New State: Wander
+[27-04-2013 23:43:50 11]: MCTS Generation Time: 281 ms
+[27-04-2013 23:43:50 12]: New State: EndGame
+[27-04-2013 23:43:50 13]: New State: Flee
+[27-04-2013 23:43:50 25]: New State: Wander
+[27-04-2013 23:43:50 56]: MCTS Generation Time: 281 ms
+[27-04-2013 23:43:51 50]: Chosen direction is Up
+[27-04-2013 23:43:51 84]: MCTS Generation Time: 296 ms
+[27-04-2013 23:43:52 85]: Chosen direction is Right
+[27-04-2013 23:43:53 14]: MCTS Generation Time: 250 ms
+[27-04-2013 23:43:55 16]: Chosen direction is Down
+[27-04-2013 23:43:55 44]: MCTS Generation Time: 249 ms
+[27-04-2013 23:43:56 46]: Chosen direction is Down
+[27-04-2013 23:43:56 78]: MCTS Generation Time: 281 ms
+[27-04-2013 23:43:57 01]: Chosen direction is Left
+[27-04-2013 23:43:57 31]: MCTS Generation Time: 265 ms
+[27-04-2013 23:43:58 00]: Chosen direction is Down
+[27-04-2013 23:43:58 35]: MCTS Generation Time: 312 ms
+[27-04-2013 23:44:00 42]: Chosen direction is Left
+[27-04-2013 23:44:00 80]: MCTS Generation Time: 327 ms
+[27-04-2013 23:44:01 83]: Chosen direction is Up
+[27-04-2013 23:44:02 10]: MCTS Generation Time: 250 ms
+[27-04-2013 23:44:05 11]: Chosen direction is Right
+[27-04-2013 23:44:05 41]: MCTS Generation Time: 249 ms
+[27-04-2013 23:44:06 45]: Chosen direction is Left
+[27-04-2013 23:44:06 73]: MCTS Generation Time: 249 ms
+[27-04-2013 23:44:07 64]: Chosen direction is Down
+[27-04-2013 23:44:07 93]: MCTS Generation Time: 250 ms
+[27-04-2013 23:44:07 94]: New State: EndGame
+[27-04-2013 23:44:08 01]: New State: Wander
+[27-04-2013 23:44:08 33]: MCTS Generation Time: 296 ms
+[27-04-2013 23:44:08 33]: New State: EndGame
+[27-04-2013 23:44:08 34]: New State: Wander
+[27-04-2013 23:44:08 35]: New State: EndGame
+[27-04-2013 23:44:08 40]: New State: Wander
+[27-04-2013 23:44:08 68]: MCTS Generation Time: 249 ms
+[27-04-2013 23:44:08 69]: New State: Ambush
+[27-04-2013 23:44:08 94]: Power pill eaten!
+[27-04-2013 23:44:08 94]: New State: Hunt
+[27-04-2013 23:44:09 35]: RETURNING TO WANDER
+[27-04-2013 23:44:09 35]: New State: Wander
+[27-04-2013 23:44:09 36]: New State: EndGame
+[27-04-2013 23:44:09 43]: New State: Wander
+[27-04-2013 23:44:09 68]: MCTS Generation Time: 234 ms
+[27-04-2013 23:44:09 90]: Chosen direction is Right
+[27-04-2013 23:44:10 24]: MCTS Generation Time: 296 ms
+[27-04-2013 23:44:11 10]: Chosen direction is Up
+[27-04-2013 23:44:11 40]: MCTS Generation Time: 280 ms
+[27-04-2013 23:44:12 65]: Chosen direction is Up
+[27-04-2013 23:44:13 01]: MCTS Generation Time: 327 ms
+[27-04-2013 23:44:13 20]: Chosen direction is Right
+[27-04-2013 23:44:13 56]: MCTS Generation Time: 327 ms
+[27-04-2013 23:44:14 07]: New State: Ambush
+[27-04-2013 23:44:14 28]: Power pill eaten!
+[27-04-2013 23:44:14 28]: New State: Hunt
+[27-04-2013 23:44:14 75]: RETURNING TO WANDER
+[27-04-2013 23:44:14 76]: New State: Wander
+[27-04-2013 23:44:15 06]: MCTS Generation Time: 265 ms
+[27-04-2013 23:44:15 25]: Chosen direction is Right
+[27-04-2013 23:44:15 54]: MCTS Generation Time: 265 ms
+[27-04-2013 23:44:16 17]: Chosen direction is Down
+[27-04-2013 23:44:16 47]: MCTS Generation Time: 265 ms
+[27-04-2013 23:44:16 47]: New State: EndGame
+[27-04-2013 23:44:16 54]: New State: Wander
+[27-04-2013 23:44:16 83]: MCTS Generation Time: 250 ms
+[27-04-2013 23:44:17 44]: Chosen direction is Left
+[27-04-2013 23:44:17 75]: MCTS Generation Time: 281 ms
+[27-04-2013 23:44:18 47]: Chosen direction is Up
+[27-04-2013 23:44:18 73]: MCTS Generation Time: 218 ms
+[27-04-2013 23:44:19 73]: Chosen direction is Down
+[27-04-2013 23:44:19 74]: New State: Flee
+[27-04-2013 23:44:19 98]: Eaten by a ghost!
+[27-04-2013 23:44:19 99]: New State: Wander
+[27-04-2013 23:44:19 99]: New State: EndGame
+[27-04-2013 23:44:20 12]: New State: Wander
+[27-04-2013 23:44:20 43]: MCTS Generation Time: 265 ms
+[27-04-2013 23:44:21 34]: New State: EndGame
+[27-04-2013 23:44:21 36]: New State: Wander
+[27-04-2013 23:44:21 36]: New State: EndGame
+[27-04-2013 23:44:21 43]: New State: Wander
+[27-04-2013 23:44:21 67]: MCTS Generation Time: 218 ms
+[27-04-2013 23:44:23 69]: New State: EndGame
+[27-04-2013 23:44:23 71]: New State: Wander
+[27-04-2013 23:44:23 72]: New State: EndGame
+[27-04-2013 23:44:23 80]: New State: Wander
+[27-04-2013 23:44:24 05]: MCTS Generation Time: 218 ms
+[27-04-2013 23:44:25 34]: Chosen direction is Left
+[27-04-2013 23:44:25 61]: MCTS Generation Time: 250 ms
+[27-04-2013 23:44:25 77]: New State: EndGame
+[27-04-2013 23:44:25 79]: New State: Wander
+[27-04-2013 23:44:25 79]: New State: EndGame
+[27-04-2013 23:44:25 88]: Eaten by a ghost!
+[27-04-2013 23:44:25 89]: New State: Wander
+[27-04-2013 23:44:25 89]: New State: EndGame
+[27-04-2013 23:44:25 99]: New State: Wander
+[27-04-2013 23:44:26 34]: MCTS Generation Time: 312 ms
+[27-04-2013 23:44:27 99]: Chosen direction is Down
+[27-04-2013 23:44:28 30]: MCTS Generation Time: 281 ms
+[27-04-2013 23:44:29 12]: Chosen direction is Up
+[27-04-2013 23:44:29 39]: MCTS Generation Time: 234 ms
+[27-04-2013 23:44:30 38]: Chosen direction is Right
+[27-04-2013 23:44:30 68]: MCTS Generation Time: 265 ms
+[27-04-2013 23:44:31 09]: New State: Flee
+[27-04-2013 23:44:31 14]: Eaten by a ghost!
+[27-04-2013 23:44:31 15]: New State: Wander
+[27-04-2013 23:44:31 15]: New State: EndGame
+[27-04-2013 23:44:31 17]: New State: Wander
+[27-04-2013 23:44:31 51]: MCTS Generation Time: 312 ms
+[27-04-2013 23:44:32 45]: Chosen direction is Left
+[27-04-2013 23:44:32 74]: MCTS Generation Time: 250 ms
+[27-04-2013 23:44:33 77]: Chosen direction is Left
+[27-04-2013 23:44:34 09]: MCTS Generation Time: 281 ms
+[27-04-2013 23:44:34 79]: Chosen direction is Up
+[27-04-2013 23:44:35 09]: MCTS Generation Time: 265 ms
+[27-04-2013 23:44:36 05]: Chosen direction is Down
+[27-04-2013 23:44:36 36]: MCTS Generation Time: 297 ms
+[27-04-2013 23:44:37 36]: Chosen direction is Down
+[27-04-2013 23:44:37 60]: MCTS Generation Time: 203 ms
+[27-04-2013 23:44:37 84]: Chosen direction is Left
+[27-04-2013 23:44:38 14]: MCTS Generation Time: 281 ms
+[27-04-2013 23:44:38 41]: New State: Ambush
+[27-04-2013 23:44:38 58]: Power pill eaten!
+[27-04-2013 23:44:38 58]: New State: Hunt
+[27-04-2013 23:44:39 01]: RETURNING TO WANDER
+[27-04-2013 23:44:39 01]: New State: Wander
+[27-04-2013 23:44:39 34]: MCTS Generation Time: 296 ms
+[27-04-2013 23:44:40 44]: Chosen direction is Down
+[27-04-2013 23:44:40 78]: MCTS Generation Time: 312 ms
+[27-04-2013 23:44:41 13]: New State: Flee
+[27-04-2013 23:44:41 17]: New State: Wander
+[27-04-2013 23:44:41 46]: MCTS Generation Time: 249 ms
+[27-04-2013 23:44:41 97]: Chosen direction is Down
+[27-04-2013 23:44:42 28]: MCTS Generation Time: 281 ms
+[27-04-2013 23:44:43 30]: Chosen direction is Down
+[27-04-2013 23:44:43 62]: MCTS Generation Time: 281 ms
+[27-04-2013 23:44:44 60]: Chosen direction is Up
+[27-04-2013 23:44:44 90]: MCTS Generation Time: 265 ms
+[27-04-2013 23:44:45 88]: Chosen direction is Up
+[27-04-2013 23:44:46 16]: MCTS Generation Time: 234 ms
+[27-04-2013 23:44:47 10]: Chosen direction is Up
+[27-04-2013 23:44:47 40]: MCTS Generation Time: 265 ms
+[27-04-2013 23:44:47 41]: New State: EndGame
+[27-04-2013 23:44:47 48]: New State: Wander
+[27-04-2013 23:44:47 78]: MCTS Generation Time: 250 ms
+[27-04-2013 23:44:48 88]: Chosen direction is Down
+[27-04-2013 23:44:49 15]: MCTS Generation Time: 250 ms
+[27-04-2013 23:44:50 17]: Chosen direction is Right
+[27-04-2013 23:44:50 43]: MCTS Generation Time: 234 ms
+[27-04-2013 23:44:51 47]: Chosen direction is Left
+[27-04-2013 23:44:51 83]: MCTS Generation Time: 296 ms
+[27-04-2013 23:44:52 81]: Chosen direction is Up
+[27-04-2013 23:44:53 08]: MCTS Generation Time: 234 ms
+[27-04-2013 23:44:53 79]: Chosen direction is Left
+[27-04-2013 23:44:53 79]: New State: Flee
+[27-04-2013 23:44:54 71]: New State: Wander
+[27-04-2013 23:44:55 00]: MCTS Generation Time: 250 ms
+[27-04-2013 23:44:55 79]: Chosen direction is Up
+[27-04-2013 23:44:56 05]: MCTS Generation Time: 234 ms
+[27-04-2013 23:44:56 30]: Chosen direction is Up
+[27-04-2013 23:44:56 58]: MCTS Generation Time: 249 ms
+[27-04-2013 23:44:57 49]: New State: Ambush
+[27-04-2013 23:44:57 58]: Power pill eaten!
+[27-04-2013 23:44:57 58]: New State: Hunt
+[27-04-2013 23:44:58 13]: RETURNING TO WANDER
+[27-04-2013 23:44:58 13]: New State: Wander
+[27-04-2013 23:44:58 13]: New State: EndGame
+[27-04-2013 23:44:58 23]: New State: Flee
+[27-04-2013 23:44:58 26]: Eaten by a ghost!
+[27-04-2013 23:44:58 28]: New State: Wander
+[27-04-2013 23:44:58 28]: New State: Flee
+[27-04-2013 23:44:58 28]: New State: EndGame
+[27-04-2013 23:44:58 40]: New State: Wander
+[27-04-2013 23:44:58 71]: MCTS Generation Time: 265 ms
+[27-04-2013 23:45:00 28]: Chosen direction is Right
+[27-04-2013 23:45:00 58]: MCTS Generation Time: 265 ms
+[27-04-2013 23:45:01 48]: Chosen direction is Right
+[27-04-2013 23:45:01 78]: MCTS Generation Time: 265 ms
+[27-04-2013 23:45:01 78]: New State: EndGame
+[27-04-2013 23:45:01 88]: New State: Wander
+[27-04-2013 23:45:02 13]: MCTS Generation Time: 234 ms
+[27-04-2013 23:45:03 35]: Chosen direction is Right
+[27-04-2013 23:45:03 62]: MCTS Generation Time: 234 ms
+[27-04-2013 23:45:04 56]: New State: EndGame
+[27-04-2013 23:45:04 64]: New State: Wander
+[27-04-2013 23:45:04 65]: New State: EndGame
+[27-04-2013 23:45:04 72]: Eaten by a ghost!
+[27-04-2013 23:45:04 74]: New State: Wander
+[27-04-2013 23:45:04 74]: New State: EndGame
+[27-04-2013 23:45:04 94]: New State: Wander
+[27-04-2013 23:45:05 27]: MCTS Generation Time: 297 ms
+[27-04-2013 23:45:05 92]: Chosen direction is Up
+[27-04-2013 23:45:06 24]: MCTS Generation Time: 297 ms
+[27-04-2013 23:45:08 12]: Chosen direction is Up
+[27-04-2013 23:45:08 43]: MCTS Generation Time: 265 ms
+[27-04-2013 23:45:08 68]: Chosen direction is Down
+[27-04-2013 23:45:08 98]: MCTS Generation Time: 280 ms
+[27-04-2013 23:45:10 86]: Chosen direction is Up
+[27-04-2013 23:45:11 14]: MCTS Generation Time: 249 ms
+[27-04-2013 23:45:13 34]: Chosen direction is Up
+[27-04-2013 23:45:13 65]: MCTS Generation Time: 281 ms
+[27-04-2013 23:45:13 90]: Chosen direction is Down
+[27-04-2013 23:45:14 20]: MCTS Generation Time: 265 ms
+[27-04-2013 23:45:16 16]: Chosen direction is Up
+[27-04-2013 23:45:16 44]: MCTS Generation Time: 249 ms
+[27-04-2013 23:45:18 51]: Chosen direction is Up
+[27-04-2013 23:45:18 78]: MCTS Generation Time: 234 ms
+[27-04-2013 23:45:18 79]: New State: Flee
+[27-04-2013 23:45:18 87]: New State: EndGame
+[27-04-2013 23:45:18 98]: New State: Wander
+[27-04-2013 23:45:19 23]: MCTS Generation Time: 219 ms
+[27-04-2013 23:45:19 58]: New State: Flee
+[27-04-2013 23:45:19 63]: Eaten by a ghost!
+[27-04-2013 23:45:19 64]: New State: Wander
+[27-04-2013 23:45:19 64]: New State: Flee
+[27-04-2013 23:45:19 65]: New State: Wander
+[27-04-2013 23:45:19 92]: MCTS Generation Time: 250 ms
+[27-04-2013 23:45:20 29]: Chosen direction is Down
+[27-04-2013 23:45:20 67]: MCTS Generation Time: 297 ms
+[27-04-2013 23:45:23 69]: Chosen direction is Left
+[27-04-2013 23:45:23 96]: MCTS Generation Time: 234 ms
+[27-04-2013 23:45:24 90]: Chosen direction is Left
+[27-04-2013 23:45:25 21]: MCTS Generation Time: 280 ms
+[27-04-2013 23:45:26 03]: New State: Ambush
+[27-04-2013 23:45:26 41]: Power pill eaten!
+[27-04-2013 23:45:26 41]: New State: Hunt
+[27-04-2013 23:45:26 94]: RETURNING TO WANDER
+[27-04-2013 23:45:26 94]: New State: Wander
+[27-04-2013 23:45:27 23]: MCTS Generation Time: 265 ms
+[27-04-2013 23:45:27 43]: Chosen direction is Up
+[27-04-2013 23:45:27 71]: MCTS Generation Time: 249 ms
+[27-04-2013 23:45:27 96]: Chosen direction is Down
+[27-04-2013 23:45:28 27]: MCTS Generation Time: 281 ms
+[27-04-2013 23:45:29 22]: Chosen direction is Up
+[27-04-2013 23:45:29 52]: MCTS Generation Time: 265 ms
+[27-04-2013 23:45:30 50]: Chosen direction is Left
+[27-04-2013 23:45:30 82]: MCTS Generation Time: 296 ms
+[27-04-2013 23:45:32 63]: New State: EndGame
+[27-04-2013 23:45:32 76]: New State: Wander
+[27-04-2013 23:45:33 07]: MCTS Generation Time: 265 ms
+[27-04-2013 23:45:34 74]: Chosen direction is Up
+[27-04-2013 23:45:35 03]: MCTS Generation Time: 234 ms
+[27-04-2013 23:45:36 05]: Chosen direction is Right
+[27-04-2013 23:45:36 38]: MCTS Generation Time: 296 ms
+[27-04-2013 23:45:37 18]: New State: EndGame
+[27-04-2013 23:45:37 25]: New State: Wander
+[27-04-2013 23:45:37 55]: MCTS Generation Time: 281 ms
+[27-04-2013 23:45:37 81]: Chosen direction is Down
+[27-04-2013 23:45:38 11]: MCTS Generation Time: 265 ms
+[27-04-2013 23:45:38 78]: New State: Flee
+[27-04-2013 23:45:38 83]: Eaten by a ghost!
+[27-04-2013 23:45:38 84]: New State: Wander
+[27-04-2013 23:45:38 85]: New State: Flee
+[27-04-2013 23:45:38 85]: New State: Wander
+[27-04-2013 23:45:39 14]: MCTS Generation Time: 265 ms
+[27-04-2013 23:45:39 50]: Chosen direction is Down
+[27-04-2013 23:45:39 80]: MCTS Generation Time: 250 ms
+[27-04-2013 23:45:42 86]: Chosen direction is Left
+[27-04-2013 23:45:43 16]: MCTS Generation Time: 265 ms
+[27-04-2013 23:45:44 18]: Chosen direction is Right
+[27-04-2013 23:45:44 44]: MCTS Generation Time: 219 ms
+[27-04-2013 23:45:45 51]: Chosen direction is Right
+[27-04-2013 23:45:45 76]: MCTS Generation Time: 219 ms
+[27-04-2013 23:45:48 74]: Chosen direction is Right
+[27-04-2013 23:45:49 04]: MCTS Generation Time: 250 ms
+[27-04-2013 23:45:50 06]: Chosen direction is Up
+[27-04-2013 23:45:50 37]: MCTS Generation Time: 265 ms
+[27-04-2013 23:45:52 03]: New State: Flee
+[27-04-2013 23:45:52 08]: Eaten by a ghost!
+[27-04-2013 23:45:52 09]: New State: Wander
+[27-04-2013 23:45:52 10]: New State: Flee
+[27-04-2013 23:45:52 10]: New State: Wander
+[27-04-2013 23:45:52 36]: MCTS Generation Time: 234 ms
+[27-04-2013 23:45:52 67]: Chosen direction is Down
+[27-04-2013 23:45:53 00]: MCTS Generation Time: 281 ms
+[27-04-2013 23:45:54 70]: New State: EndGame
+[27-04-2013 23:45:54 84]: New State: Wander
+[27-04-2013 23:45:55 10]: MCTS Generation Time: 234 ms
+[27-04-2013 23:45:55 78]: Chosen direction is Left
+[27-04-2013 23:45:56 05]: MCTS Generation Time: 234 ms
+[27-04-2013 23:45:57 10]: Chosen direction is Left
+[27-04-2013 23:45:57 46]: MCTS Generation Time: 328 ms
+[27-04-2013 23:45:58 16]: Chosen direction is Up
+[27-04-2013 23:45:58 46]: MCTS Generation Time: 265 ms
+[27-04-2013 23:45:58 88]: New State: Flee
+[27-04-2013 23:45:58 93]: Eaten by a ghost!
+[27-04-2013 23:45:58 94]: New State: Wander
+[27-04-2013 23:45:58 95]: New State: Flee
+[27-04-2013 23:45:58 95]: New State: Wander
+[27-04-2013 23:45:59 24]: MCTS Generation Time: 249 ms
+[27-04-2013 23:45:59 63]: Chosen direction is Down
+[27-04-2013 23:45:59 96]: MCTS Generation Time: 296 ms

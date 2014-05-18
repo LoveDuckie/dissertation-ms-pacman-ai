@@ -1,0 +1,48 @@
+[02-05-2013 17:20:44 98]: ======= AI STARTED =======
+[02-05-2013 17:20:45 21]: MCTS Generation Time: 78 ms
+[02-05-2013 17:20:45 44]: Chosen direction is Left
+[02-05-2013 17:20:45 54]: MCTS Generation Time: 62 ms
+[02-05-2013 17:20:46 48]: Chosen direction is Left
+[02-05-2013 17:20:46 58]: MCTS Generation Time: 63 ms
+[02-05-2013 17:20:47 41]: Chosen direction is Left
+[02-05-2013 17:20:47 56]: MCTS Generation Time: 124 ms
+[02-05-2013 17:20:48 42]: Chosen direction is Left
+[02-05-2013 17:20:48 52]: MCTS Generation Time: 78 ms
+[02-05-2013 17:20:48 91]: New State: Ambush
+[02-05-2013 17:20:49 35]: Power pill eaten!
+[02-05-2013 17:20:49 35]: New State: Hunt
+[02-05-2013 17:20:54 44]: RETURNING TO WANDER
+[02-05-2013 17:20:54 44]: New State: Wander
+[02-05-2013 17:20:54 44]: New State: EndGame
+[02-05-2013 17:20:55 15]: New State: Wander
+[02-05-2013 17:20:55 29]: MCTS Generation Time: 78 ms
+[02-05-2013 17:20:55 34]: Chosen direction is Left
+[02-05-2013 17:20:55 45]: MCTS Generation Time: 62 ms
+[02-05-2013 17:20:56 22]: Chosen direction is Up
+[02-05-2013 17:20:56 33]: MCTS Generation Time: 78 ms
+[02-05-2013 17:20:57 42]: Chosen direction is Up
+[02-05-2013 17:20:57 52]: MCTS Generation Time: 78 ms
+[02-05-2013 17:20:57 67]: Chosen direction is Left
+[02-05-2013 17:20:57 78]: MCTS Generation Time: 78 ms
+[02-05-2013 17:20:58 37]: New State: Ambush
+[02-05-2013 17:20:58 55]: Power pill eaten!
+[02-05-2013 17:20:58 56]: New State: Hunt
+[02-05-2013 17:21:03 09]: RETURNING TO WANDER
+[02-05-2013 17:21:03 09]: New State: Wander
+[02-05-2013 17:21:03 09]: New State: EndGame
+[02-05-2013 17:21:04 20]: New State: Wander
+[02-05-2013 17:21:04 36]: MCTS Generation Time: 110 ms
+[02-05-2013 17:21:04 78]: New State: Flee
+[02-05-2013 17:21:06 53]: Eaten by a ghost!
+[02-05-2013 17:21:06 55]: New State: Wander
+[02-05-2013 17:21:06 55]: New State: EndGame
+[02-05-2013 17:21:06 69]: New State: Wander
+[02-05-2013 17:21:06 80]: MCTS Generation Time: 78 ms
+[02-05-2013 17:21:07 57]: Chosen direction is Right
+[02-05-2013 17:21:07 67]: MCTS Generation Time: 62 ms
+[02-05-2013 17:21:07 73]: Chosen direction is Down
+[02-05-2013 17:21:07 84]: MCTS Generation Time: 78 ms
+[02-05-2013 17:21:08 43]: Chosen direction is Right
+[02-05-2013 17:21:08 58]: MCTS Generation Time: 124 ms
+[02-05-2013 17:21:08 65]: Chosen direction is Up
+[02-05-2013 17:21:08 75]: MCTS Generation Time: 62 ms

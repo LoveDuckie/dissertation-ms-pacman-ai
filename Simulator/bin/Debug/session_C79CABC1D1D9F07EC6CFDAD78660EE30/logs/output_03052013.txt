@@ -1,0 +1,18 @@
+[03-05-2013 18:29:23 09]: ======= AI STARTED =======
+[03-05-2013 18:29:23 32]: MCTS Generation Time: 78 ms
+[03-05-2013 18:29:23 60]: Chosen direction is Left
+[03-05-2013 18:29:23 70]: MCTS Generation Time: 78 ms
+[03-05-2013 18:29:24 60]: Chosen direction is Left
+[03-05-2013 18:29:24 71]: MCTS Generation Time: 62 ms
+[03-05-2013 18:29:25 59]: Chosen direction is Left
+[03-05-2013 18:29:25 75]: MCTS Generation Time: 125 ms
+[03-05-2013 18:29:26 64]: Chosen direction is Left
+[03-05-2013 18:29:26 78]: MCTS Generation Time: 109 ms
+[03-05-2013 18:29:27 17]: New State: Ambush
+[03-05-2013 18:29:27 51]: Power pill eaten!
+[03-05-2013 18:29:27 52]: New State: Hunt
+[03-05-2013 18:29:32 54]: RETURNING TO WANDER
+[03-05-2013 18:29:32 54]: New State: Wander
+[03-05-2013 18:29:32 65]: MCTS Generation Time: 78 ms
+[03-05-2013 18:29:33 24]: Chosen direction is Down
+[03-05-2013 18:29:33 36]: MCTS Generation Time: 78 ms
