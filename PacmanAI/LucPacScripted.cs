@@ -31,7 +31,6 @@ namespace PacmanAI
         // A public accessor to the object.
         private static LucPacScripted instance = null;
 
-
         public static int WanderChangeCount = 0;
         public static int FleeChangeCount = 0;
         public static int EndgameChangeCount = 0;
@@ -39,16 +38,16 @@ namespace PacmanAI
         public static int HuntChangeCount = 0;
 
         // What manhattan distasnce does the AI have to be before we activate the ambush?
-        private const int AMBUSH_THRESHOLD = 4;
-        private const int FLEE_CHANGE_THRESHOLD = 3;
-        private const int FLEE_THRESHOLD = 5; // How far ghosts must be before we resume
-        private const int ENDGAME_DISTANCE_THRESHOLD = 4;
+        private const int AmbushThreshold = 4;
+        private const int FleeChangeThreshold = 3;
+        private const int FleeThreshold = 5; // How far ghosts must be before we resume
+        private const int EndgameDistanceThreshold = 4;
 
 
         // Used for determining if we're at junctions or any new corner within the map.
-        protected List<Direction> m_PreviousPossibleDirections;
+        protected List<Direction> _previousPossibleDirections;
         
-        protected List<Direction> m_CurrentPossibleDirections;
+        protected List<Direction> _currentPossibleDirections;
 
         public static bool RemainQuiet = false;
 
@@ -78,12 +77,9 @@ namespace PacmanAI
         {
             _currentAgentState = FiniteState.Wander;
             _previousAgentState = _currentAgentState;
-            
-            // Initiate a new object of the test stats.
             _testStats = new TestStats();
 
             #region State Initialization
-            /// States that are involved.
             _states.Add(FiniteState.Wander, new State() 
             { 
                 Action = this.Wander, 
@@ -451,7 +447,7 @@ namespace PacmanAI
             // Make sure that we haven't eaten the last pill before progressing!
             if (_nearestPill != null)
             {
-                if (_nearestPill.ManhattenDistance(gameState.Pacman.Node) > ENDGAME_DISTANCE_THRESHOLD)
+                if (_nearestPill.ManhattenDistance(gameState.Pacman.Node) > EndgameDistanceThreshold)
                 {
                     return ChangeState(FiniteState.EndGame, true, gameState);
                 }
@@ -460,7 +456,7 @@ namespace PacmanAI
             /// FLEE
             if (_ghost != null)
             {
-                if (_ghost.Node.ManhattenDistance(gameState.Pacman.Node) < FLEE_CHANGE_THRESHOLD)
+                if (_ghost.Node.ManhattenDistance(gameState.Pacman.Node) < FleeChangeThreshold)
                 {
                     return ChangeState(FiniteState.Flee, true, gameState);
                 }
@@ -470,7 +466,7 @@ namespace PacmanAI
             foreach (Node item in gameState.Map.PillNodes)
             {
                 // Determine that we are looking at a power pill, if so then change to Ambush
-                if (item.ManhattenDistance(gameState.Pacman.Node) < AMBUSH_THRESHOLD && item.Type == Node.NodeType.PowerPill)
+                if (item.ManhattenDistance(gameState.Pacman.Node) < AmbushThreshold && item.Type == Node.NodeType.PowerPill)
                 {
                     return ChangeState(FiniteState.Ambush, true, gameState);
                 }
@@ -795,7 +791,7 @@ namespace PacmanAI
             {
                 if (_nearestPill.Target != null)
                 {
-                    if (_nearestPill.Target.ManhattenDistance(gs.Pacman.Node) < ENDGAME_DISTANCE_THRESHOLD)
+                    if (_nearestPill.Target.ManhattenDistance(gs.Pacman.Node) < EndgameDistanceThreshold)
                     {
                         return ChangeState(FiniteState.Wander, true, gs);
                     }
@@ -929,7 +925,7 @@ namespace PacmanAI
             if (m_NearestGhost != null)
             {
                 // Determine whether or not the nearest ghost is further away than the flee threshold
-                if (m_NearestGhost.Node.ManhattenDistance(gs.Pacman.Node) > FLEE_THRESHOLD)
+                if (m_NearestGhost.Node.ManhattenDistance(gs.Pacman.Node) > FleeThreshold)
                 {
                     return ChangeState(FiniteState.Wander, true, gs);
                 }
@@ -976,11 +972,11 @@ namespace PacmanAI
         {
             Direction _returnDirection = Direction.None;
 
-            m_CurrentPossibleDirections = gs.Pacman.PossibleDirections();
+            _currentPossibleDirections = gs.Pacman.PossibleDirections();
             _gameState = gs;
                 _returnDirection = CallState(_currentAgentState, gs);
             _previousGameState = gs;
-            m_PreviousPossibleDirections = gs.Pacman.PossibleDirections();
+            _previousPossibleDirections = gs.Pacman.PossibleDirections();
 
             _milliseconds += GameState.MSPF;
 
