@@ -178,7 +178,7 @@ namespace PacmanAI
         
         #endregion
 
-        public static void SaveStateAsImage(GameState pGameState, LucPacScripted pController, string pImageName, bool pRenderMCTS)
+        public static void SaveStateAsImage(GameState gameState, LucPacScripted controller, string imageName, bool renderMcts)
         {
             if (Visualizer.RenderingImage != null)
             {
@@ -188,49 +188,49 @@ namespace PacmanAI
                 //          _drawingObject.DrawImage(m_RedBlock, new Point(50, 50));
 
                 // Draw the map, pacman and the ghosts to the image
-                pGameState.Map.Draw(_drawingObject);
-                pGameState.Pacman.Draw(_drawingObject, Visualizer.RenderingSprites);
-                foreach (var item in pGameState.Ghosts)
+                gameState.Map.Draw(_drawingObject);
+                gameState.Pacman.Draw(_drawingObject, Visualizer.RenderingSprites);
+                foreach (Ghost item in gameState.Ghosts)
                 {
                     item.Draw(_drawingObject, Visualizer.RenderingSprites);
                 }
 
-                string _filename = "";
-                if (pImageName != string.Empty)
+                string _fileName;
+                if (imageName != string.Empty)
                 {
-                    _filename = pImageName;
+                    _fileName = imageName;
                 }
                 else
                 {
-                    _filename = "screengrab";
+                    _fileName = "screengrab";
                 }
 
                 // Save the image out so that we can observe it
-                _newimage.Save(string.Format("{2}\\{0}_{1}_{3}.bmp", DateTime.Now.ToString("ddMMyyyyHHmmssff"), _filename, pController._testImagesFolder.FullName, pController._testStats.TotalGames));
+                _newimage.Save(string.Format("{2}\\{0}_{1}_{3}.bmp", DateTime.Now.ToString("ddMMyyyyHHmmssff"), _fileName, controller._testImagesFolder.FullName, controller._testStats.TotalGames));
                 _newimage.Dispose();
             }
         }
 
 
         // For when the game restarts.
-        public override void Restart(GameState gs)
+        public override void Restart(GameState gameState)
         {
             // Don't update the stats more than 100 times.
             // That's only the amount of games that we want simulated.
             if (_testStats.TotalGames < MaxTestGames)
             {
-                Utility.SerializeGameState(gs, this);
+                Utility.SerializeGameState(gameState, this);
 
                 // Save the image to the same directory as the simulator
-                SaveStateAsImage(gs, this, string.Format("endofround_{0}_{1}_",
+                SaveStateAsImage(gameState, this, string.Format("endofround_{0}_{1}_",
                                                          _testStats.TotalGames.ToString(),
                                                          this.Name.ToString()), true);
 
                 // Set the stats.
-                _testStats.TotalGhostsEaten += gs._ghostsEaten;
-                _testStats.TotalPillsTaken += gs._pillsEaten;
-                _testStats.TotalScore += gs.Pacman.Score;
-                _testStats.TotalLevelsCleared += gs.Level;
+                _testStats.TotalGhostsEaten += gameState._ghostsEaten;
+                _testStats.TotalPillsTaken += gameState._pillsEaten;
+                _testStats.TotalScore += gameState.Pacman.Score;
+                _testStats.TotalLevelsCleared += gameState.Level;
                 _testStats.TotalGames++;
 
                 if (_milliseconds - _lastRoundMilliseconds > _testStats.LongestRoundTime)
@@ -249,47 +249,47 @@ namespace PacmanAI
                 _lastRoundMilliseconds = _milliseconds;
 
                 /// LEVELS
-                if (gs.Level < _testStats.MinLevelsCleared)
+                if (gameState.Level < _testStats.MinLevelsCleared)
                 {
-                    this._testStats.MinLevelsCleared = gs.Level;
+                    this._testStats.MinLevelsCleared = gameState.Level;
                 }
 
-                if (gs.Level > _testStats.MaxLevelsCleared)
+                if (gameState.Level > _testStats.MaxLevelsCleared)
                 {
-                    this._testStats.MaxLevelsCleared = gs.Level;
+                    this._testStats.MaxLevelsCleared = gameState.Level;
                 }
 
                 /// SCORE
-                if (gs.Pacman.Score < _testStats.MinScore)
+                if (gameState.Pacman.Score < _testStats.MinScore)
                 {
-                    _testStats.MinScore = gs.Pacman.Score;
+                    _testStats.MinScore = gameState.Pacman.Score;
                 }
 
-                if (gs.Pacman.Score > _testStats.MaxScore)
+                if (gameState.Pacman.Score > _testStats.MaxScore)
                 {
-                    _testStats.MaxScore = gs.Pacman.Score;
+                    _testStats.MaxScore = gameState.Pacman.Score;
                 }
 
                 /// PILLS
-                if (gs._pillsEaten < _testStats.MinPillsTaken)
+                if (gameState._pillsEaten < _testStats.MinPillsTaken)
                 {
-                    _testStats.MinPillsTaken = gs._pillsEaten;
+                    _testStats.MinPillsTaken = gameState._pillsEaten;
                 }
 
-                if (gs._pillsEaten > _testStats.MaxPillsTaken)
+                if (gameState._pillsEaten > _testStats.MaxPillsTaken)
                 {
-                    _testStats.MaxPillsTaken = gs._pillsEaten;
+                    _testStats.MaxPillsTaken = gameState._pillsEaten;
                 }
 
                 /// SCORE DIFFERENCE
-                if (gs._ghostsEaten < _testStats.MinGhostsEaten)
+                if (gameState._ghostsEaten < _testStats.MinGhostsEaten)
                 {
-                    _testStats.MinGhostsEaten = gs._ghostsEaten;
+                    _testStats.MinGhostsEaten = gameState._ghostsEaten;
                 }
 
-                if (gs._ghostsEaten > _testStats.MaxGhostsEaten)
+                if (gameState._ghostsEaten > _testStats.MaxGhostsEaten)
                 {
-                    _testStats.MaxGhostsEaten = gs._ghostsEaten;
+                    _testStats.MaxGhostsEaten = gameState._ghostsEaten;
                 }
             }
             else
@@ -310,7 +310,7 @@ namespace PacmanAI
                 }
             }
 
-            base.Restart(gs);
+            base.Restart(gameState);
         }
 
         /// <summary>
