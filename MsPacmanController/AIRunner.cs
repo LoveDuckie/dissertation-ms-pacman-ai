@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.Threading;
 using System.Diagnostics;
@@ -14,7 +12,7 @@ using System.IO;
 
 namespace MsPacmanController
 {
-	public unsafe partial class Form1 : Form
+    public unsafe partial class Form1 : Form
 	{
 		Stopwatch watch = new Stopwatch();
 		Queue<long> runningAvg = new Queue<long>();

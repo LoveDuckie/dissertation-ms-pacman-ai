@@ -24,10 +24,6 @@ namespace PacmanAI
         #endregion
 
         #region Members
-        // The min and max values for the random generation
-        public const float RANDOM_INTERVAL_MIN = 5000f;
-        public const float RANDOM_INTERVAL_MAX = 7000f;
-        
         // A public accessor to the object.
         private static LucPacScripted instance = null;
 
@@ -206,7 +202,6 @@ namespace PacmanAI
                 _newimage.Dispose();
             }
         }
-
 
         // For when the game restarts.
         public override void Restart(GameState gameState)
