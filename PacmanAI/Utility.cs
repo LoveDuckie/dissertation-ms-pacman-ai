@@ -71,8 +71,8 @@ namespace PacmanAI
             StreamWriter _writer = new StreamWriter(string.Format("{3}\\gamestate_{0}_{1}_{2}.txt", 
                 pController.Name.ToString(), 
                 DateTime.Now.ToString("hhmmddss"), 
-                pController.m_TestStats.TotalGames.ToString(),
-                pController.m_TestLogFolder.FullName.ToString()), false);
+                pController._testStats.TotalGames.ToString(),
+                pController._testLogFolder.FullName.ToString()), false);
             _writer.WriteLine(_output);
 
             _writer.Flush();

@@ -14,10 +14,9 @@ namespace Pacman.Simulator
 		private static Thread visualizerThread;
 
         // For argument based modifications ot the game state
-        private static string AGENT_NAME = "";
-        private static List<string> GHOSTS_AVAILABLE = new List<string>();
-        private static bool TAKEN_ARGUMENTS = false;
-
+        private static string AgentName = "";
+        private static List<string> GhostsAvailable = new List<string>();
+        
         // For checking that the ghosts placed in the arguments are valid.
         private readonly static string[] GHOST_ALLOWED = { "bl", "br", "p", "r" };
 
@@ -30,7 +29,7 @@ namespace Pacman.Simulator
             // If more than one argument has been set, then do something
             if (args.Length > 0)
             {
-                TAKEN_ARGUMENTS = true;
+                
                 Console.WriteLine("Arguments found!");
                 for (int i = 0; i < args.Length; i++)
                 {
@@ -43,7 +42,7 @@ namespace Pacman.Simulator
                                 if (!args[i + 1].Contains("-"))
                                 {
                                     // Take in the name argument as the name of the agent to load
-                                    AGENT_NAME = args[i + 1];
+                                    AgentName = args[i + 1];
                                 }
                             }
                         break;
@@ -59,7 +58,7 @@ namespace Pacman.Simulator
                                     if (!args[j].Contains("-") &&
                                         Array.IndexOf(GHOST_ALLOWED, args[j]) > -1)
                                     {
-                                        GHOSTS_AVAILABLE.Add(args[j]);
+                                        GhostsAvailable.Add(args[j]);
                                     }
                                 }
                             }
@@ -67,20 +66,15 @@ namespace Pacman.Simulator
                     }
                 }
             }
-            else
-            {
-                TAKEN_ARGUMENTS = false;
-                Console.WriteLine("No arguments found.");
-            }
             #endregion
 
-            if (AGENT_NAME == "")
+            if (AgentName == "")
             {
-                while (AGENT_NAME == "")
+                while (AgentName == "")
                 {
                     Console.Clear();
                     Console.WriteLine("What is the name of the agent?");
-                    AGENT_NAME = Console.ReadLine();
+                    AgentName = Console.ReadLine();
                 }
             }
 
@@ -107,9 +101,9 @@ namespace Pacman.Simulator
 				visualizer = new Visualizer();
                 
                 // Set the visualizer form title to the agent class name
-                if (AGENT_NAME != "")
+                if (AgentName != "")
                 {
-                    visualizer.Text = AGENT_NAME;
+                    visualizer.Text = AgentName;
                 }
                 System.Windows.Forms.Application.Run(visualizer);
 			});

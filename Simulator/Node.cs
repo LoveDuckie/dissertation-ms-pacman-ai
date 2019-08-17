@@ -1,11 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Text;
 
 // Used for serialization
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Pacman.Simulator
 {
@@ -77,19 +74,15 @@ namespace Pacman.Simulator
             {
                 case Direction.Down:
                     return Down;
-                break;
 
                 case Direction.Left:
                     return Left;
-                break;
 
                 case Direction.Up:
                     return Up;
-                break;
 
                 case Direction.Right:
                     return Right;
-                break;
             }
 
             return null;

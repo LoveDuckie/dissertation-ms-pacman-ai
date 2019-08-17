@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Drawing;
 using System.IO;
 using System.Diagnostics;
@@ -33,11 +32,11 @@ namespace PacmanAI
         private static LucPacScripted instance = null;
 
 
-        public static int WANDER_CHANGE_COUNT = 0;
-        public static int FLEE_CHANGE_COUNT = 0;
-        public static int ENDGAME_CHANGE_COUNT = 0;
-        public static int AMBUSH_CHANGE_COUNT = 0;
-        public static int HUNT_CHANGE_COUNT = 0;
+        public static int WanderChangeCount = 0;
+        public static int FleeChangeCount = 0;
+        public static int EndgameChangeCount = 0;
+        public static int AmbushChangeCount = 0;
+        public static int HuntChangeCount = 0;
 
         // What manhattan distasnce does the AI have to be before we activate the ambush?
         private const int AMBUSH_THRESHOLD = 4;
@@ -51,65 +50,65 @@ namespace PacmanAI
         
         protected List<Direction> m_CurrentPossibleDirections;
 
-        public static bool REMAIN_QUIET = false;
+        public static bool RemainQuiet = false;
 
-        protected FiniteState m_CurrentState;
-        protected FiniteState m_PreviousFSMState = FiniteState.Wander;
+        protected FiniteState _currentAgentState;
+        protected FiniteState _previousAgentState = FiniteState.Wander;
         // Useful for the likes of MCTS and calling other states
-        public static GameState m_GameState;
-        public static GameState m_PreviousGameState;
+        public static GameState _gameState;
+        public static GameState _previousGameState;
 
-        protected Stopwatch m_RoundDuration = new Stopwatch();
+        protected Stopwatch _roundDuration = new Stopwatch();
 
         // The finite state machine in action
-        protected Dictionary<FiniteState, State> m_States = new Dictionary<FiniteState,State>();
+        protected Dictionary<FiniteState, State> _states = new Dictionary<FiniteState,State>();
 
         // Used by the stop watch to record how long each game round took to complete
-        public long m_LastRoundMS = 0;
-        public long m_MS = 0;
-        public long m_LastLifeMS = 0;
+        public long _lastRoundMilliseconds = 0;
+        public long _milliseconds = 0;
+        public long _lastLifeMilliseconds = 0;
 
-        public const int MAX_LOG_ITEMS_DISPLAY = 10;
-        public List<string> m_LogOutput = new List<string>();
+        public const int MaxLogItemsDisplay = 10;
+        public List<string> _logOutput = new List<string>();
         #endregion
 
         #region Constructors
         public LucPacScripted()
             : base("LucPacScripted")
         {
-            m_CurrentState = FiniteState.Wander;
-            m_PreviousFSMState = m_CurrentState;
+            _currentAgentState = FiniteState.Wander;
+            _previousAgentState = _currentAgentState;
             
             // Initiate a new object of the test stats.
-            m_TestStats = new TestStats();
+            _testStats = new TestStats();
 
             #region State Initialization
             /// States that are involved.
-            m_States.Add(FiniteState.Wander, new State() 
+            _states.Add(FiniteState.Wander, new State() 
             { 
                 Action = this.Wander, 
                 OnSuspend = this.Wander_OnSuspend, 
                 OnBegin = this.Wander_OnBegin 
             });
-            m_States.Add(FiniteState.Ambush, new State()
+            _states.Add(FiniteState.Ambush, new State()
             {
                 Action = this.Ambush,
                 OnSuspend = this.Ambush_OnSuspend,
                 OnBegin = this.Ambush_OnBegin
             });
-            m_States.Add(FiniteState.EndGame, new State()
+            _states.Add(FiniteState.EndGame, new State()
             {
                 Action = EndGame,
                 OnSuspend = EndGame_OnSuspend,
                 OnBegin = EndGame_OnBegin
             });
-            m_States.Add(FiniteState.Hunt, new State()
+            _states.Add(FiniteState.Hunt, new State()
             {
                 Action = Hunt,
                 OnSuspend = Hunt_OnSuspend,
                 OnBegin = Hunt_OnBegin
             });
-            m_States.Add(FiniteState.Flee, new State()
+            _states.Add(FiniteState.Flee, new State()
             {
                 Action = Flee,
                 OnSuspend = Flee_OnSuspend,
@@ -118,18 +117,18 @@ namespace PacmanAI
             #endregion
 
             // Create the session ID that will be used for testing 
-            this.m_TestSessionID = GenerateSessionID();
-            this.m_TestStats.SessionID = m_TestSessionID;
+            this._testSessionId = GenerateSessionID();
+            this._testStats.SessionID = _testSessionId;
 
             // Create the directory that the data is going to be stored in 
-            m_TestDataFolder = Directory.CreateDirectory(Environment.CurrentDirectory + string.Format("/{0}", m_TestSessionID));
-            m_TestImagesFolder = m_TestDataFolder.CreateSubdirectory("images");
-            m_TestLogFolder = m_TestDataFolder.CreateSubdirectory("logs");
+            _testDataFolder = Directory.CreateDirectory(Environment.CurrentDirectory + string.Format("/{0}", _testSessionId));
+            _testImagesFolder = _testDataFolder.CreateSubdirectory("images");
+            _testLogFolder = _testDataFolder.CreateSubdirectory("logs");
 
             instance = this;
 
-            m_RoundDuration.Start();
-            m_Stopwatch.Start();
+            _roundDuration.Start();
+            _stopWatch.Start();
         }
         #endregion
 
@@ -137,7 +136,7 @@ namespace PacmanAI
         public override void EatPowerPill()
         {
             OutputLog("Power pill eaten!", true, true);
-            ChangeState(FiniteState.Hunt, true, m_GameState);
+            ChangeState(FiniteState.Hunt, true, _gameState);
 
             base.EatPowerPill();
         }
@@ -146,34 +145,34 @@ namespace PacmanAI
         {
             OutputLog("Eaten by a ghost!", true, true);
 
-            SaveStateAsImage(m_GameState, this, "eatenbyghost", true);
+            SaveStateAsImage(_gameState, this, "eatenbyghost", true);
 
-            if (m_GameState.Pacman.Lives >= 0)
+            if (_gameState.Pacman.Lives >= 0)
             {
-                Utility.SerializeGameState(m_GameState, this);
+                Utility.SerializeGameState(_gameState, this);
             }
             // Change the state to somewhere else
-            ChangeState(FiniteState.Wander, true, m_GameState);
+            ChangeState(FiniteState.Wander, true, _gameState);
 
-            if (m_MS - m_LastLifeMS > m_TestStats.MaxLifeTime)
+            if (_milliseconds - _lastLifeMilliseconds > _testStats.MaxLifeTime)
             {
-                m_TestStats.MaxLifeTime = m_MS - m_LastLifeMS;
+                _testStats.MaxLifeTime = _milliseconds - _lastLifeMilliseconds;
             }
 
-            if (m_MS - m_LastLifeMS < m_TestStats.MinLifeTime)
+            if (_milliseconds - _lastLifeMilliseconds < _testStats.MinLifeTime)
             {
-                m_TestStats.MinLifeTime = m_MS - m_LastLifeMS;
+                _testStats.MinLifeTime = _milliseconds - _lastLifeMilliseconds;
             }
 
-            m_TestStats.TotalLifeTime += m_MS - m_LastLifeMS;
-            m_TestStats.TotalLives++;
+            _testStats.TotalLifeTime += _milliseconds - _lastLifeMilliseconds;
+            _testStats.TotalLives++;
 
-            m_TestStats.AverageLifeTime = m_TestStats.TotalLifeTime / m_TestStats.TotalLives;
+            _testStats.AverageLifeTime = _testStats.TotalLifeTime / _testStats.TotalLives;
 
-            m_LastLifeMS = m_MS;
+            _lastLifeMilliseconds = _milliseconds;
 
             // Return back to the Wandering state if we haven't already
-            ChangeState(FiniteState.Wander, true, m_GameState);
+            ChangeState(FiniteState.Wander, true, _gameState);
             base.EatenByGhost();
         }
         
@@ -207,7 +206,7 @@ namespace PacmanAI
                 }
 
                 // Save the image out so that we can observe it
-                _newimage.Save(string.Format("{2}\\{0}_{1}_{3}.bmp", DateTime.Now.ToString("ddMMyyyyHHmmssff"), _filename, pController.m_TestImagesFolder.FullName, pController.m_TestStats.TotalGames));
+                _newimage.Save(string.Format("{2}\\{0}_{1}_{3}.bmp", DateTime.Now.ToString("ddMMyyyyHHmmssff"), _filename, pController._testImagesFolder.FullName, pController._testStats.TotalGames));
                 _newimage.Dispose();
             }
         }
@@ -218,96 +217,96 @@ namespace PacmanAI
         {
             // Don't update the stats more than 100 times.
             // That's only the amount of games that we want simulated.
-            if (m_TestStats.TotalGames < MAX_TEST_GAMES)
+            if (_testStats.TotalGames < MaxTestGames)
             {
                 Utility.SerializeGameState(gs, this);
 
                 // Save the image to the same directory as the simulator
                 SaveStateAsImage(gs, this, string.Format("endofround_{0}_{1}_",
-                                                         m_TestStats.TotalGames.ToString(),
+                                                         _testStats.TotalGames.ToString(),
                                                          this.Name.ToString()), true);
 
                 // Set the stats.
-                m_TestStats.TotalGhostsEaten += gs.m_GhostsEaten;
-                m_TestStats.TotalPillsTaken += gs.m_PillsEaten;
-                m_TestStats.TotalScore += gs.Pacman.Score;
-                m_TestStats.TotalLevelsCleared += gs.Level;
-                m_TestStats.TotalGames++;
+                _testStats.TotalGhostsEaten += gs._ghostsEaten;
+                _testStats.TotalPillsTaken += gs._pillsEaten;
+                _testStats.TotalScore += gs.Pacman.Score;
+                _testStats.TotalLevelsCleared += gs.Level;
+                _testStats.TotalGames++;
 
-                if (m_MS - m_LastRoundMS > m_TestStats.LongestRoundTime)
+                if (_milliseconds - _lastRoundMilliseconds > _testStats.LongestRoundTime)
                 {
-                    m_TestStats.LongestRoundTime = m_MS - m_LastRoundMS;
+                    _testStats.LongestRoundTime = _milliseconds - _lastRoundMilliseconds;
                 }
 
-                if (m_MS - m_LastRoundMS < m_TestStats.ShortestRoundTime)
+                if (_milliseconds - _lastRoundMilliseconds < _testStats.ShortestRoundTime)
                 {
-                    m_TestStats.ShortestRoundTime = m_MS - m_LastRoundMS;
+                    _testStats.ShortestRoundTime = _milliseconds - _lastRoundMilliseconds;
                 }
 
-                m_TestStats.TotalRoundTime += m_MS - m_LastRoundMS;
-                m_TestStats.AverageRoundTime = m_TestStats.TotalRoundTime / m_TestStats.TotalGames;
+                _testStats.TotalRoundTime += _milliseconds - _lastRoundMilliseconds;
+                _testStats.AverageRoundTime = _testStats.TotalRoundTime / _testStats.TotalGames;
 
-                m_LastRoundMS = m_MS;
+                _lastRoundMilliseconds = _milliseconds;
 
                 /// LEVELS
-                if (gs.Level < m_TestStats.MinLevelsCleared)
+                if (gs.Level < _testStats.MinLevelsCleared)
                 {
-                    this.m_TestStats.MinLevelsCleared = gs.Level;
+                    this._testStats.MinLevelsCleared = gs.Level;
                 }
 
-                if (gs.Level > m_TestStats.MaxLevelsCleared)
+                if (gs.Level > _testStats.MaxLevelsCleared)
                 {
-                    this.m_TestStats.MaxLevelsCleared = gs.Level;
+                    this._testStats.MaxLevelsCleared = gs.Level;
                 }
 
                 /// SCORE
-                if (gs.Pacman.Score < m_TestStats.MinScore)
+                if (gs.Pacman.Score < _testStats.MinScore)
                 {
-                    m_TestStats.MinScore = gs.Pacman.Score;
+                    _testStats.MinScore = gs.Pacman.Score;
                 }
 
-                if (gs.Pacman.Score > m_TestStats.MaxScore)
+                if (gs.Pacman.Score > _testStats.MaxScore)
                 {
-                    m_TestStats.MaxScore = gs.Pacman.Score;
+                    _testStats.MaxScore = gs.Pacman.Score;
                 }
 
                 /// PILLS
-                if (gs.m_PillsEaten < m_TestStats.MinPillsTaken)
+                if (gs._pillsEaten < _testStats.MinPillsTaken)
                 {
-                    m_TestStats.MinPillsTaken = gs.m_PillsEaten;
+                    _testStats.MinPillsTaken = gs._pillsEaten;
                 }
 
-                if (gs.m_PillsEaten > m_TestStats.MaxPillsTaken)
+                if (gs._pillsEaten > _testStats.MaxPillsTaken)
                 {
-                    m_TestStats.MaxPillsTaken = gs.m_PillsEaten;
+                    _testStats.MaxPillsTaken = gs._pillsEaten;
                 }
 
                 /// SCORE DIFFERENCE
-                if (gs.m_GhostsEaten < m_TestStats.MinGhostsEaten)
+                if (gs._ghostsEaten < _testStats.MinGhostsEaten)
                 {
-                    m_TestStats.MinGhostsEaten = gs.m_GhostsEaten;
+                    _testStats.MinGhostsEaten = gs._ghostsEaten;
                 }
 
-                if (gs.m_GhostsEaten > m_TestStats.MaxGhostsEaten)
+                if (gs._ghostsEaten > _testStats.MaxGhostsEaten)
                 {
-                    m_TestStats.MaxGhostsEaten = gs.m_GhostsEaten;
+                    _testStats.MaxGhostsEaten = gs._ghostsEaten;
                 }
             }
             else
             {
                 // Test has terminated, display and save the final results.
-                if (!m_TestComplete)
+                if (!TestComplete)
                 {
-                    m_Stopwatch.Stop();
-                    m_TestStats.ElapsedMillisecondsTotal = m_Stopwatch.ElapsedMilliseconds;
+                    _stopWatch.Stop();
+                    _testStats.ElapsedMillisecondsTotal = _stopWatch.ElapsedMilliseconds;
 
-                    m_TestStats.AveragePillsTaken = m_TestStats.TotalPillsTaken / m_TestStats.TotalGames;
-                    m_TestStats.AverageScore = m_TestStats.TotalScore / m_TestStats.TotalGames;
-                    m_TestStats.AverageGhostsEaten = m_TestStats.TotalGhostsEaten / m_TestStats.TotalGames;
-                    m_TestStats.AverageLevelsCleared = m_TestStats.TotalLevelsCleared / m_TestStats.TotalGames;
+                    _testStats.AveragePillsTaken = _testStats.TotalPillsTaken / _testStats.TotalGames;
+                    _testStats.AverageScore = _testStats.TotalScore / _testStats.TotalGames;
+                    _testStats.AverageGhostsEaten = _testStats.TotalGhostsEaten / _testStats.TotalGames;
+                    _testStats.AverageLevelsCleared = _testStats.TotalLevelsCleared / _testStats.TotalGames;
 
-                    SerializeTestStats(m_TestStats);
-                    m_TestComplete = true;
+                    SerializeTestStats(_testStats);
+                    TestComplete = true;
                 }
             }
 
@@ -323,27 +322,27 @@ namespace PacmanAI
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("================== LUCPAC-SCRIPTED ==================");
             Console.ForegroundColor = ConsoleColor.Gray;
-            string _pacmanPosition = string.Format("Pacman: {0},{1}", m_GameState.Pacman.Node.X, m_GameState.Pacman.Node.Y);
+            string _pacmanPosition = string.Format("Pacman: {0},{1}", _gameState.Pacman.Node.X, _gameState.Pacman.Node.Y);
 
             //m_GameState.Pacman.ImgX.ToString(),m_GameState.Pacman.ImgY.ToString()
 
-            foreach (var ghost in m_GameState.Ghosts)
+            foreach (var ghost in _gameState.Ghosts)
             {
-                Console.WriteLine(String.Format("{0}: {1},{2}", ghost.GetType().ToString(),
+                Console.WriteLine(string.Format("{0}: {1},{2}", ghost.GetType().ToString(),
                                                                 ghost.Node.X,
                                                                 ghost.Node.Y));
             }
 
             Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine(string.Format("PILLS REMAINING: {0}", m_GameState.Map.PillNodes.Where(n => n.Type != Node.NodeType.None && n.Type != Node.NodeType.Wall).Count().ToString()));
-            Console.WriteLine(string.Format("PILLS LEFT(INT): {0}", m_GameState.Map.PillsLeft.ToString()));
-            Console.WriteLine(string.Format("PREVIOUS STATE: {0}", m_PreviousFSMState.ToString()));
-            Console.WriteLine(string.Format("STATE: {0}", m_CurrentState.ToString()));
+            Console.WriteLine(string.Format("PILLS REMAINING: {0}", _gameState.Map.PillNodes.Where(n => n.Type != Node.NodeType.None && n.Type != Node.NodeType.Wall).Count().ToString()));
+            Console.WriteLine(string.Format("PILLS LEFT(INT): {0}", _gameState.Map.PillsLeft.ToString()));
+            Console.WriteLine(string.Format("PREVIOUS STATE: {0}", _previousAgentState.ToString()));
+            Console.WriteLine(string.Format("STATE: {0}", _currentAgentState.ToString()));
 
             Console.ForegroundColor = ConsoleColor.Gray;
 
             Console.WriteLine("=================== TEST DATA ==============");
-            if (m_TestStats.TotalGames >= MAX_TEST_GAMES)
+            if (_testStats.TotalGames >= MaxTestGames)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("** TEST COMPLETE **");
@@ -356,25 +355,25 @@ namespace PacmanAI
 
             Console.ForegroundColor = ConsoleColor.Gray;
             // Output the test information as it goes a long
-            Console.WriteLine(string.Format("SESSION ID: {0}", m_TestSessionID));
-            Console.WriteLine(string.Format("MAX PILLS EATEN: {0}", m_TestStats.MaxPillsTaken));
-            Console.WriteLine(string.Format("MIN PILLS EATEN: {0}", m_TestStats.MinPillsTaken));
-            Console.WriteLine(string.Format("GAMES PLAYED: {0}", m_TestStats.TotalGames));
-            Console.WriteLine(string.Format("HIGHEST SCORE: {0}", m_TestStats.MaxScore));
-            Console.WriteLine(string.Format("AVERAGE SCORE: {0}", m_TestStats.AverageScore));
-            Console.WriteLine(string.Format("LOWEST SCORE: {0}", m_TestStats.MinScore));
-            Console.WriteLine(string.Format("MINIMUM GHOSTS EATEN: {0}", m_TestStats.MinGhostsEaten));
-            Console.WriteLine(string.Format("AVERAGE GHOSTS EATEN: {0}", m_TestStats.AverageGhostsEaten));
-            Console.WriteLine(string.Format("MAXIMUM GHOSTS EATEN: {0}", m_TestStats.MaxGhostsEaten));
+            Console.WriteLine(string.Format("SESSION ID: {0}", _testSessionId));
+            Console.WriteLine(string.Format("MAX PILLS EATEN: {0}", _testStats.MaxPillsTaken));
+            Console.WriteLine(string.Format("MIN PILLS EATEN: {0}", _testStats.MinPillsTaken));
+            Console.WriteLine(string.Format("GAMES PLAYED: {0}", _testStats.TotalGames));
+            Console.WriteLine(string.Format("HIGHEST SCORE: {0}", _testStats.MaxScore));
+            Console.WriteLine(string.Format("AVERAGE SCORE: {0}", _testStats.AverageScore));
+            Console.WriteLine(string.Format("LOWEST SCORE: {0}", _testStats.MinScore));
+            Console.WriteLine(string.Format("MINIMUM GHOSTS EATEN: {0}", _testStats.MinGhostsEaten));
+            Console.WriteLine(string.Format("AVERAGE GHOSTS EATEN: {0}", _testStats.AverageGhostsEaten));
+            Console.WriteLine(string.Format("MAXIMUM GHOSTS EATEN: {0}", _testStats.MaxGhostsEaten));
             
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("=================== LOG ====================");
             Console.ForegroundColor = ConsoleColor.White;
 
             // Output the items that have been sorted in the list.
-            for (int i = 0; i < m_LogOutput.Count; i++)
+            for (int i = 0; i < _logOutput.Count; i++)
             {
-                Console.WriteLine(m_LogOutput[i]);
+                Console.WriteLine(_logOutput[i]);
             }
         }
 
@@ -385,8 +384,8 @@ namespace PacmanAI
 
         #region Ambush
         Node _nearestPowerPill = null;
-        bool m_GoingToPowerPill = false;
-        public const int AMBUSH_DISTANCE_THRESHOLD = 5;
+        bool _goingToPowerPill = false;
+        public const int AmbushDistanceThreshold = 5;
         protected Direction Ambush(object sender, EventArgs e, GameState gs)
         {
             var _ghost = StateInfo.NearestGhost(gs);
@@ -394,17 +393,17 @@ namespace PacmanAI
             if (_ghost != null)
             {
                 if (_ghost.Node.ManhattenDistance(gs.Pacman.Node) <
-                    AMBUSH_DISTANCE_THRESHOLD)
+                    AmbushDistanceThreshold)
                 {
                     // Small value that will send the controller towards the power pill
-                    m_GoingToPowerPill = true;
+                    _goingToPowerPill = true;
                 }
 
             }
            
 
             // Keep spamming directions if we're still not going to the power pill
-            if (!m_GoingToPowerPill)
+            if (!_goingToPowerPill)
             {
                 return Direction.Stall;
             }
@@ -426,7 +425,7 @@ namespace PacmanAI
         protected Direction Ambush_OnBegin(object sender, EventArgs e, GameState gs)
         {
             _nearestPowerPill = null;
-            m_GoingToPowerPill = false;
+            _goingToPowerPill = false;
             return Direction.None;
         }
 
@@ -434,10 +433,9 @@ namespace PacmanAI
         {
             return Direction.None;
         }
-        #endregion
 
+        #endregion
         #region Wander State
-        Node _nearestPillNode = null;
         /// <summary>
         /// This is the default state that is entered into when the agent is started
         /// </summary>
@@ -445,58 +443,58 @@ namespace PacmanAI
         /// <param name="e">The arguments that are passed along</param>
         /// <param name="gs">The game state object.</param>
         /// <returns>The direction that we want to head in</returns>
-        protected Direction Wander(object sender, EventArgs e, GameState gs)
+        protected Direction Wander(object sender, EventArgs e, GameState gameState)
         {
-            Ghost _ghost = StateInfo.NearestGhost(gs);
-            Node _nearestPill = StateInfo.NearestPill(gs.Pacman.Node, gs).Target;
+            Ghost _ghost = StateInfo.NearestGhost(gameState);
+            Node _nearestPill = StateInfo.NearestPill(gameState.Pacman.Node, gameState).Target;
 
             // Make sure that we haven't eaten the last pill before progressing!
             if (_nearestPill != null)
             {
-                if (_nearestPill.ManhattenDistance(gs.Pacman.Node) > ENDGAME_DISTANCE_THRESHOLD)
+                if (_nearestPill.ManhattenDistance(gameState.Pacman.Node) > ENDGAME_DISTANCE_THRESHOLD)
                 {
-                    return ChangeState(FiniteState.EndGame, true, gs);
+                    return ChangeState(FiniteState.EndGame, true, gameState);
                 }
             }
 
             /// FLEE
             if (_ghost != null)
             {
-                if (_ghost.Node.ManhattenDistance(gs.Pacman.Node) < FLEE_CHANGE_THRESHOLD)
+                if (_ghost.Node.ManhattenDistance(gameState.Pacman.Node) < FLEE_CHANGE_THRESHOLD)
                 {
-                    return ChangeState(FiniteState.Flee, true, gs);
+                    return ChangeState(FiniteState.Flee, true, gameState);
                 }
             }
 
             /// AMBUSH
-            foreach (var item in gs.Map.PillNodes)
+            foreach (Node item in gameState.Map.PillNodes)
             {
                 // Determine that we are looking at a power pill, if so then change to Ambush
-                if (item.ManhattenDistance(gs.Pacman.Node) < AMBUSH_THRESHOLD && item.Type == Node.NodeType.PowerPill)
+                if (item.ManhattenDistance(gameState.Pacman.Node) < AMBUSH_THRESHOLD && item.Type == Node.NodeType.PowerPill)
                 {
-                    return ChangeState(FiniteState.Ambush, true, gs);
+                    return ChangeState(FiniteState.Ambush, true, gameState);
                 }
             }
 
             /// WANDER
-            if (LucPac.IsJunction(gs.Pacman.Node.X, gs.Pacman.Node.Y, gs))
+            if (LucPac.IsJunction(gameState.Pacman.Node.X, gameState.Pacman.Node.Y, gameState))
             {
                 Direction _bestDirection = Direction.None;
                 int _highestPillCount = 0;
 
-                foreach (var item in gs.Pacman.PossibleDirections())
+                foreach (Direction item in gameState.Pacman.PossibleDirections())
                 {
                     // Set the new value if we have found something that is of a higher value.
-                    if (LucPac.CountPillsDirection(item, gs) > _highestPillCount)
+                    if (LucPac.CountPillsDirection(item, gameState) > _highestPillCount)
                     {
-                        _highestPillCount = LucPac.CountPillsDirection(item, gs);
+                        _highestPillCount = LucPac.CountPillsDirection(item, gameState);
                         _bestDirection = item;
                     }
                 }
 
                 if (_bestDirection == Direction.None)
                 {
-                    return TryGoDirection(gs.Pacman.Direction, gs);
+                    return TryGoDirection(gameState.Pacman.Direction, gameState);
                 }
                 else
                 {
@@ -506,27 +504,31 @@ namespace PacmanAI
             }
             else
             {
-                return TryGoDirection(gs.Pacman.Direction,gs);
+                return TryGoDirection(gameState.Pacman.Direction,gameState);
             }
-
-            return Direction.None;
         }
 
         /// <summary>
         /// Return whether or not the node in question has hit a wall
         /// </summary>
-        /// <param name="pCurrentPosition">The position that we are checking</param>
+        /// <param name="currentPosition">The position that we are checking</param>
         /// <param name="pGameState">The state of the game</param>
         /// <param name="pDirection"></param>
         /// <returns>Return whether or not we have actually hit a wall</returns>
-        public static bool HitWall(Node pCurrentPosition, GameState pGameState, Direction pDirection)
+        public static bool HitWall(Node currentPosition,
+                                   GameState gameState,
+                                   Direction direction)
         {
+            if (gameState is null)
+            {
+                throw new ArgumentNullException(nameof(gameState));
+            }
             // Loop through the possible directions at the give node
             // If a direction is the same as the one that Pacman is going in
             // then we've hit a wall
-            foreach (var item in Node.GetAllPossibleDirections(pCurrentPosition))
+            foreach (Direction item in Node.GetAllPossibleDirections(currentPosition))
             {
-                if (item == pDirection)
+                if (item == direction)
                     return false;
             }
             return true;
@@ -588,14 +590,14 @@ namespace PacmanAI
         /// <param name="gs">The GameState object.</param>
         /// <param name="pDirection">The direction that we are checking in.</param>
         /// <returns>Returns the distance in which the ghost is in a given direction</returns>
-        private int IsGhostDistance(GameState gs, Direction pDirection, bool pIsDangerous)
+        private int IsGhostDistance(GameState gameState, Direction direction, bool isDangerous)
         {
-            Node _currentNode = gs.Pacman.Node;
+            Node _currentNode = gameState.Pacman.Node;
             int _distance = 0;
 
-            while (!HitWall(_currentNode, gs, pDirection))
+            while (!HitWall(_currentNode, gameState, direction))
             {
-                Node _checknode = gs.Map.GetNodeDirection(_currentNode.X, _currentNode.Y, pDirection);
+                Node _checknode = gameState.Map.GetNodeDirection(_currentNode.X, _currentNode.Y, direction);
 
                 if (_checknode == null)
                     return -1;
@@ -603,16 +605,16 @@ namespace PacmanAI
                 _distance++;
 
                 // Loop through all the ghosts in the map and detemrine if they are behind
-                foreach (var ghost in gs.Ghosts)
+                foreach (Ghost ghost in gameState.Ghosts)
                 {
                     if (ghost.Node.X == _checknode.X &&
                         ghost.Node.Y == _checknode.Y)
                     {
-                        if (pIsDangerous && !ghost.Fleeing)
+                        if (isDangerous && !ghost.Fleeing)
                         {
                             return _distance;
                         }
-                        else if (!pIsDangerous)
+                        else if (!isDangerous)
                         {
                             return _distance;
                         }
@@ -632,31 +634,31 @@ namespace PacmanAI
         /// <param name="pLogMessage">The message that we want to emit</param>
         /// <param name="pVerbose">Whether or not we want to display it as a console message</param>
         /// <param name="pDisplayDate">Output a time stamp?</param>
-        public void OutputLog(string pLogMessage, bool pVerbose, bool pDisplayDate)
+        public void OutputLog(string logMessage, bool verbose, bool displayDate)
         {
             StreamWriter _writer = new StreamWriter(string.Format("{0}/output_{1}.txt", Environment.CurrentDirectory, DateTime.Now.ToString("ddMMyyyy")), true);
             string _currentdate = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss ff");
             string _output = "";
 
             // Determine whether or not we want to display the date.
-            if (pDisplayDate)
-                _output = string.Format("[{0}]: {1}", _currentdate, pLogMessage);
+            if (displayDate)
+                _output = string.Format("[{0}]: {1}", _currentdate, logMessage);
             else
-                _output = pLogMessage;
+                _output = logMessage;
 
             _writer.WriteLine(_output);
 
             // Make sure whether or not adding one more message would cause problems.
 
-            if (pVerbose && !REMAIN_QUIET)
+            if (verbose && !RemainQuiet)
             {
-                if (m_LogOutput.Count + 1 > MAX_LOG_ITEMS_DISPLAY)
+                if (_logOutput.Count + 1 > MaxLogItemsDisplay)
                 {
-                    m_LogOutput.Remove(m_LogOutput.Last());
+                    _logOutput.Remove(_logOutput.Last());
                 }
 
                 // Insert the message to the front
-                m_LogOutput.Insert(0, _output);
+                _logOutput.Insert(0, _output);
             }
 
             // Clean up the writer afterwards.
@@ -666,7 +668,7 @@ namespace PacmanAI
         }
 
         #region State Handling
-        protected Direction CallState(FiniteState pState, GameState gs)
+        protected Direction CallState(FiniteState state, GameState gameState)
         {
             #region Old Code
             //Type _type = this.GetType();
@@ -687,7 +689,7 @@ namespace PacmanAI
             // this.m_States[pState].Action.Invoke(this, new object[] { null, null, null },null);
             #endregion
 
-            return m_States[pState].Action(this, null, gs);
+            return _states[state].Action(this, null, gameState);
 
         }
 
@@ -703,34 +705,34 @@ namespace PacmanAI
             switch (pNewState)
             {
                 case FiniteState.Wander:
-                    WANDER_CHANGE_COUNT++;
+                    WanderChangeCount++;
                 break;
 
                 case FiniteState.Ambush:
-                    AMBUSH_CHANGE_COUNT++;
+                    AmbushChangeCount++;
                 break;
 
                 case FiniteState.EndGame:
-                    ENDGAME_CHANGE_COUNT++;
+                    EndgameChangeCount++;
                 break;
 
                 case FiniteState.Hunt:
-                    HUNT_CHANGE_COUNT++;
+                    HuntChangeCount++;
                 break;
 
                 case FiniteState.Flee:
-                    FLEE_CHANGE_COUNT++;
+                    FleeChangeCount++;
                 break;
             }
 
             // Store the previous FSM state.
-            m_PreviousFSMState = m_CurrentState;
+            _previousAgentState = _currentAgentState;
 
             // Call the functions that are defined for the respective states.
-            m_States[m_CurrentState].OnSuspend(this, null, gs);
-            m_States[pNewState].OnBegin(this, null, gs);
-            m_CurrentState = pNewState;
-            return CallState(m_CurrentState, gs);
+            _states[_currentAgentState].OnSuspend(this, null, gs);
+            _states[pNewState].OnBegin(this, null, gs);
+            _currentAgentState = pNewState;
+            return CallState(_currentAgentState, gs);
         }
         #endregion
 
@@ -975,14 +977,14 @@ namespace PacmanAI
             Direction _returnDirection = Direction.None;
 
             m_CurrentPossibleDirections = gs.Pacman.PossibleDirections();
-            m_GameState = gs;
-                _returnDirection = CallState(m_CurrentState, gs);
-            m_PreviousGameState = gs;
+            _gameState = gs;
+                _returnDirection = CallState(_currentAgentState, gs);
+            _previousGameState = gs;
             m_PreviousPossibleDirections = gs.Pacman.PossibleDirections();
 
-            m_MS += GameState.MSPF;
+            _milliseconds += GameState.MSPF;
 
-            if (!REMAIN_QUIET)
+            if (!RemainQuiet)
             {
                 UpdateConsole();
             }

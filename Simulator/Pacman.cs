@@ -1,10 +1,5 @@
 using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Text;
-
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Pacman.Simulator
 {
@@ -82,7 +77,7 @@ namespace Pacman.Simulator
 		public void EatGhost() {		
 			score += eatGhostBonus;
 
-            GameState.m_GhostsEaten++;
+            GameState._ghostsEaten++;
 
 			eatGhostBonus *= 2;
 			if( GameState.Controller != null ) {
@@ -118,7 +113,7 @@ namespace Pacman.Simulator
                         GameState.Controller.EatPill();
                     }
                 }
-                GameState.m_PillsEaten++;
+                GameState._pillsEaten++;
                 GameState.Map.NodeData[Node.X,Node.Y] = Node.NodeType.None;
                 GameState.Map.Nodes[Node.X, Node.Y].Type = Node.NodeType.None;
                 GameState.Map.PillsLeft--;
@@ -150,7 +145,7 @@ namespace Pacman.Simulator
 					}
 				}
 				Node.Type = Node.NodeType.None;
-                GameState.m_PillsEaten++;
+                GameState._pillsEaten++;
 				GameState.Map.PillsLeft--;				
 				if( score >= 10000 && !gotExtraLife ) {
 					gotExtraLife = true;

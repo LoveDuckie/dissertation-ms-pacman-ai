@@ -15,46 +15,45 @@ namespace PacmanAI
     /// </summary>
     public class LucPacMCTS : BasePacman
     {
-        private static LucPacMCTS instance = null;
+        private static LucPacMCTS _instance = null;
 
-        public static LucPacMCTS INSTANCE
+        public static LucPacMCTS Instance
         {
-            get { return instance; }
-            set { instance = value; }
+            get { return _instance; }
+            set { _instance = value; }
         }
 
-        private TreeNode m_TreeRoot = null;
+        private TreeNode _treeRoot = null;
 
         public TreeNode TreeRoot
         {
-            get { return m_TreeRoot; }
-            set { m_TreeRoot = value; }
+            get { return _treeRoot; }
+            set { _treeRoot = value; }
         }
 
-        private bool m_IsAtJunction = true;
+        private bool _isAtJunction = true;
         // Don't bother outputting any logs to the console if this is active.
         // Want to make sure that this is false before we display anything
-        public static bool REMAIN_QUIET = false;
+        public static bool RemainQuiet = false;
 
-        public const int MAX_LOG_ITEMS_DISPLAY = 10;
-        public List<string> m_LogOutput = new List<string>();
+        public const int MaxLogItemsDisplay = 10;
 
-        private Direction m_CurrentDirection;
+        public List<string> _logOutput = new List<string>();
 
         /// <summary>
         /// Used for rendering the tree branches on the screen.
         /// </summary>
-        private Graphics m_GraphicsDevice;
+        private Graphics _graphicsDevice;
 
-        private Node m_Junction = null;
+        private Node _junction = null;
 
         // Useful for the likes of MCTS and calling other states
-        public static GameState m_GameState;
-        public static GameState m_PreviousGameState;
+        public static GameState _gameState;
+        public static GameState _previousGameState;
 
-        public static Image m_GreenBlock = null;
-        public static Image m_RedBlock = null;
-        public static Image m_BlueBlock = null;
+        public static Image _greenBlock = null;
+        public static Image _redBlock = null;
+        public static Image _blueBlock = null;
 
         private int m_MCTSTimeBegin = 0;
         private int m_MCTSTimeEnd = 0;
@@ -62,32 +61,32 @@ namespace PacmanAI
         #region Constructor
         public LucPacMCTS() : base("LucPacMCTS")
         {
-            m_GreenBlock = Image.FromFile("green_block.png");
-            m_RedBlock = Image.FromFile("red_block.png");
-            m_BlueBlock = Image.FromFile("blue_block.png");
+            _greenBlock = Image.FromFile("green_block.png");
+            _redBlock = Image.FromFile("red_block.png");
+            _blueBlock = Image.FromFile("blue_block.png");
 
-            LucPac.m_GreenBlock = m_GreenBlock = Image.FromFile("green_block.png");
-            LucPac.m_RedBlock = Image.FromFile("red_block.png");
-            LucPac.m_BlueBlock = Image.FromFile("blue_block.png");
-            instance = this;
+            LucPac._greenBlock = _greenBlock = Image.FromFile("green_block.png");
+            LucPac._redBlock = Image.FromFile("red_block.png");
+            LucPac._blueBlock = Image.FromFile("blue_block.png");
+            _instance = this;
 
             // Create the session ID that will be used for testing 
-            this.m_TestSessionID = GenerateSessionID();
-            this.m_TestStats.SessionID = m_TestSessionID;
+            this._testSessionId = GenerateSessionID();
+            this._testStats.SessionID = _testSessionId;
 
             // Create the directory that the data is going to be stored in 
-            m_TestDataFolder = Directory.CreateDirectory(Environment.CurrentDirectory + string.Format("/{0}", m_TestSessionID));
-            m_TestImagesFolder = m_TestDataFolder.CreateSubdirectory("images");
-            m_TestLogFolder = m_TestDataFolder.CreateSubdirectory("logs");
+            _testDataFolder = Directory.CreateDirectory(Environment.CurrentDirectory + string.Format("/{0}", _testSessionId));
+            _testImagesFolder = _testDataFolder.CreateSubdirectory("images");
+            _testLogFolder = _testDataFolder.CreateSubdirectory("logs");
 
-            m_Stopwatch.Start();
+            _stopWatch.Start();
 
-            this.m_MS = 0;
-            this.m_LastLifeMS = 0;
-            this.m_LastRoundMS = 0;
+            this.Milliseconds = 0;
+            this.LastLifeMilliseconds = 0;
+            this.LastRoundMilliseconds = 0;
 
-            m_GameStart = DateTime.Now; // For determining how long it took to complete level.
-            m_LifeStart = m_GameStart;
+            this.GameStartTimestamp = DateTime.Now; // For determining how long it took to complete level.
+            this.LifeStartTimestamp = GameStartTimestamp;
         }
         #endregion
 
@@ -161,27 +160,27 @@ namespace PacmanAI
         /// When we want to exploit the best nodes within the tree
         /// </summary>
         /// <param name="pGameState">The game state that we are performing work on</param>
-        public void RunSimulation(GameState pGameState)
+        public void RunSimulation(GameState gameState)
         {
             // Determine first that there is a tree root that we can use
-            if (m_TreeRoot != null)
+            if (_treeRoot != null)
             {
                 // Find the tree node with the best average value to use
-                TreeNode _toevaluate = m_TreeRoot.UCT();
-                _toevaluate.AddScore(EvaluateNode(_toevaluate, pGameState));
+                TreeNode _toevaluate = _treeRoot.UCT();
+                _toevaluate.AddScore(EvaluateNode(_toevaluate, gameState));
 
-                if (m_TreeRoot.CountLayers() < TreeNode.LAYER_THRESHOLD)
+                if (_treeRoot.CountLayers() < TreeNode.LAYER_THRESHOLD)
                 {
                     if (_toevaluate.SampleSize == TreeNode.EXPANSION_THRESHOLD)
                     {
                         // Generate a new set of children for us to look at
-                        _toevaluate.Expand(false, pGameState);
+                        _toevaluate.Expand(false, gameState);
                         if (_toevaluate.Children != null)
                         {
                             // Loop through the children of the new tree node that we used
                             for (int i = 0; i < _toevaluate.Children.Length; i++)
                             {
-                                _toevaluate.Children[i].AddScore(EvaluateNode(_toevaluate.Children[i], pGameState));
+                                _toevaluate.Children[i].AddScore(EvaluateNode(_toevaluate.Children[i], gameState));
                             }
                         }
                     }
@@ -220,7 +219,7 @@ namespace PacmanAI
         /// <returns>The newly updated game state.</returns>
         public GameState UpdateToRoot(GameState pGameState)
         {
-            return m_TreeRoot.CPathAdvanceGame((GameState)pGameState.Clone(), pGameState.Pacman.Direction);
+            return _treeRoot.CPathAdvanceGame((GameState)pGameState.Clone(), pGameState.Pacman.Direction);
         }
 
         public static int CountPillsDirection(Direction pDirection, GameState pGameState)
@@ -249,17 +248,17 @@ namespace PacmanAI
         public void PrepareRoot(GameState pGameState)
         {
             // Grab the score from the performance of the tree node that we are evaluating
-            m_TreeRoot = new TreeNode(pGameState,
+            _treeRoot = new TreeNode(pGameState,
                                       this,
                                       null,
                                       new TreeNode().CPathAdvanceGame((GameState)pGameState.Clone(), pGameState.Pacman.Direction).Pacman.Node,
                                       new Direction[] { pGameState.Pacman.Direction }); // Generate a new array of directions
 
             // Return the score value for advancing in the given direction
-            m_TreeRoot.AddScore(EvaluateNode(m_TreeRoot, pGameState));
+            _treeRoot.AddScore(EvaluateNode(_treeRoot, pGameState));
 
             // Expand the tree root so that adjacent junctions are generated
-            m_TreeRoot.Expand(false, pGameState);
+            _treeRoot.Expand(false, pGameState);
         }
 
 
@@ -270,27 +269,27 @@ namespace PacmanAI
         /// <returns>Direction</returns>
         public override Direction Think(GameState gs)
         {
-            m_GameState = gs;
+            _gameState = gs;
 
             // Only output information to the console if this has been set to true.
-            if (!REMAIN_QUIET)
+            if (!RemainQuiet)
             {
                 UpdateConsole();
             }
 
             // Keep adding this on at every tick
-            m_MS += GameState.MSPF;
+            Milliseconds += GameState.MSPF;
 
-            if (m_IsAtJunction)
+            if (_isAtJunction)
             {
-                m_IsAtJunction = false;
+                _isAtJunction = false;
                 PrepareRoot(gs);
                 int _completedsimulations = 0;
                 int _timetaken = 0;
                 
                 m_MCTSTimeBegin = Environment.TickCount;
                 
-                while (_completedsimulations < TreeNode.MAX_SIMULATIONS)
+                while (_completedsimulations < TreeNode.MaxSimulations)
                 {
                     RunSimulation(UpdateToRoot((GameState)gs));
                     _completedsimulations++;
@@ -301,38 +300,38 @@ namespace PacmanAI
                 // Return the value for the time that has taken to generate it
                 _timetaken = m_MCTSTimeEnd - m_MCTSTimeBegin;
 
-                m_TestStats.MCTSTotalTime += _timetaken;
-                m_TestStats.MCTSTotalGenerations++;
+                _testStats.MCTSTotalTime += _timetaken;
+                _testStats.MCTSTotalGenerations++;
 
-                if (_timetaken > m_TestStats.MCTSMaximum)
+                if (_timetaken > _testStats.MCTSMaximum)
                 {
-                    m_TestStats.MCTSMaximum = _timetaken;
+                    _testStats.MCTSMaximum = _timetaken;
                 }
 
-                if (_timetaken < m_TestStats.MCTSMinimum)
+                if (_timetaken < _testStats.MCTSMinimum)
                 {
-                    m_TestStats.MCTSMinimum = _timetaken;
+                    _testStats.MCTSMinimum = _timetaken;
                 }
 
                 // Generate the new average based on the total MCTS generations done
                 // and the total amount of time it's taken
-                m_TestStats.MCTSAverage = m_TestStats.MCTSTotalTime / m_TestStats.MCTSTotalGenerations;
+                _testStats.MCTSAverage = _testStats.MCTSTotalTime / _testStats.MCTSTotalGenerations;
 
                 OutputLog(string.Format("MCTS Generation Time: {0} ms", _timetaken.ToString()), true, true);
 
 
-                m_PreviousGameState = gs;
+                _previousGameState = gs;
                 return Direction.None;
             }
-            else if (IsJunction(gs.Pacman.Node.X, gs.Pacman.Node.Y, gs) || m_TreeRoot.CurrentPosition == gs.Pacman.Node)
+            else if (IsJunction(gs.Pacman.Node.X, gs.Pacman.Node.Y, gs) || _treeRoot.CurrentPosition == gs.Pacman.Node)
             {
-                m_IsAtJunction = true;
+                _isAtJunction = true;
 
                 int _completedsimulations = 0;
                 int _timetaken = 0;
                 m_MCTSTimeBegin = Environment.TickCount;
 
-                while (_completedsimulations < TreeNode.MAX_SIMULATIONS)
+                while (_completedsimulations < TreeNode.MaxSimulations)
                 {
                     RunSimulation((GameState)gs);
                     _completedsimulations++;
@@ -341,20 +340,20 @@ namespace PacmanAI
                 m_MCTSTimeEnd = Environment.TickCount;
                 _timetaken = m_MCTSTimeEnd - m_MCTSTimeBegin;
 
-                m_PreviousGameState = gs;
-                return GetNextDirectionFromTree(m_TreeRoot, false, gs, SelectionParameter.HighestUCB);
+                _previousGameState = gs;
+                return GetNextDirectionFromTree(_treeRoot, false, gs, SelectionParameter.HighestUcb);
             }
             else
             {
                 int _completedsimulations = 0;
 
-                while (_completedsimulations < TreeNode.SHALLOW_SIMULATIONS)
+                while (_completedsimulations < TreeNode.ShallowSimulations)
                 {
                     RunSimulation(UpdateToRoot((GameState)gs));
                     _completedsimulations++;
                 }
 
-                m_PreviousGameState = gs;
+                _previousGameState = gs;
 
                 // Carry on as normal.
                 return TryGoDirection(gs, gs.Pacman.Direction);
@@ -369,11 +368,11 @@ namespace PacmanAI
             Console.WriteLine("================== LUCPAC-MCTS ==================");
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Gray;
-            string _pacmanPosition = string.Format("Pacman: {0},{1}", m_GameState.Pacman.Node.X, m_GameState.Pacman.Node.Y);
+            string _pacmanPosition = string.Format("Pacman: {0},{1}", _gameState.Pacman.Node.X, _gameState.Pacman.Node.Y);
 
             //m_GameState.Pacman.ImgX.ToString(),m_GameState.Pacman.ImgY.ToString()
 
-            foreach (var ghost in m_GameState.Ghosts)
+            foreach (var ghost in _gameState.Ghosts)
             {
                 Console.WriteLine(String.Format("{0}: {1},{2}", ghost.GetType().ToString(),
                                                                 ghost.Node.X,
@@ -381,12 +380,12 @@ namespace PacmanAI
             }
 
             Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine(string.Format("PILLS REMAINING: {0}", m_GameState.Map.PillNodes.Where(n => n.Type != Node.NodeType.None && n.Type != Node.NodeType.Wall).Count().ToString()));
-            Console.WriteLine(string.Format("PILLS LEFT(INT): {0}", m_GameState.Map.PillsLeft.ToString()));
+            Console.WriteLine(string.Format("PILLS REMAINING: {0}", _gameState.Map.PillNodes.Where(n => n.Type != Node.NodeType.None && n.Type != Node.NodeType.Wall).Count().ToString()));
+            Console.WriteLine(string.Format("PILLS LEFT(INT): {0}", _gameState.Map.PillsLeft.ToString()));
 
             Console.WriteLine("=================== TEST DATA ==============");
 
-            if (m_TestStats.TotalGames >= MAX_TEST_GAMES)
+            if (_testStats.TotalGames >= MaxTestGames)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("** TEST COMPLETE **");
@@ -398,27 +397,27 @@ namespace PacmanAI
             }
 
             Console.ForegroundColor = ConsoleColor.Gray;
-            Console.WriteLine(string.Format("SESSION ID: {0}", m_TestSessionID));
-            Console.WriteLine(string.Format("MAX PILLS EATEN: {0}", m_TestStats.MaxPillsTaken));
-            Console.WriteLine(string.Format("MIN PILLS EATEN: {0}", m_TestStats.MinPillsTaken));
-            Console.WriteLine(string.Format("GAMES PLAYED: {0}", m_TestStats.TotalGames));
-            Console.WriteLine(string.Format("HIGHEST SCORE: {0}", m_TestStats.MaxScore));
-            Console.WriteLine(string.Format("AVERAGE SCORE: {0}", m_TestStats.AverageScore));
-            Console.WriteLine(string.Format("LOWEST SCORE: {0}", m_TestStats.MinScore));
-            Console.WriteLine(string.Format("MINIMUM GHOSTS EATEN: {0}", m_TestStats.MinGhostsEaten));
-            Console.WriteLine(string.Format("AVERAGE GHOSTS EATEN: {0}", m_TestStats.AverageGhostsEaten));
-            Console.WriteLine(string.Format("MAXIMUM GHOSTS EATEN: {0}", m_TestStats.MaxGhostsEaten));
-            Console.WriteLine(string.Format("MIN MCTS GENERATION TIME: {0}", m_TestStats.MCTSMinimum));
-            Console.WriteLine(string.Format("MAX MCTS GENERATION TIME: {0}", m_TestStats.MCTSMaximum));
-            Console.WriteLine(string.Format("AVERAGE MCTS GENERATION TIME: {0}", m_TestStats.MCTSAverage));
+            Console.WriteLine(string.Format("SESSION ID: {0}", _testSessionId));
+            Console.WriteLine(string.Format("MAX PILLS EATEN: {0}", _testStats.MaxPillsTaken));
+            Console.WriteLine(string.Format("MIN PILLS EATEN: {0}", _testStats.MinPillsTaken));
+            Console.WriteLine(string.Format("GAMES PLAYED: {0}", _testStats.TotalGames));
+            Console.WriteLine(string.Format("HIGHEST SCORE: {0}", _testStats.MaxScore));
+            Console.WriteLine(string.Format("AVERAGE SCORE: {0}", _testStats.AverageScore));
+            Console.WriteLine(string.Format("LOWEST SCORE: {0}", _testStats.MinScore));
+            Console.WriteLine(string.Format("MINIMUM GHOSTS EATEN: {0}", _testStats.MinGhostsEaten));
+            Console.WriteLine(string.Format("AVERAGE GHOSTS EATEN: {0}", _testStats.AverageGhostsEaten));
+            Console.WriteLine(string.Format("MAXIMUM GHOSTS EATEN: {0}", _testStats.MaxGhostsEaten));
+            Console.WriteLine(string.Format("MIN MCTS GENERATION TIME: {0}", _testStats.MCTSMinimum));
+            Console.WriteLine(string.Format("MAX MCTS GENERATION TIME: {0}", _testStats.MCTSMaximum));
+            Console.WriteLine(string.Format("AVERAGE MCTS GENERATION TIME: {0}", _testStats.MCTSAverage));
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("=================== LOG ====================");
             Console.ForegroundColor = ConsoleColor.White;
 
             // Loop through the list of messages and output them as well
-            for (int i = 0; i < m_LogOutput.Count; i++)
+            for (int i = 0; i < _logOutput.Count; i++)
             {
-                Console.WriteLine(m_LogOutput[i]);
+                Console.WriteLine(_logOutput[i]);
             }
         }
 
@@ -434,7 +433,7 @@ namespace PacmanAI
             // Clone the image that we are going to be rendering to
             Image _newimage = (Image)Visualizer.RenderingImage.Clone();
             Graphics _drawingObject = Graphics.FromImage(_newimage);
-            _drawingObject.DrawImage(m_RedBlock, new Point(50, 50));
+            _drawingObject.DrawImage(_redBlock, new Point(50, 50));
 
             // Draw the map, pacman and the ghosts to the image
             pGameState.Map.Draw(_drawingObject);
@@ -448,11 +447,11 @@ namespace PacmanAI
             // continuing
             if (pController.TreeRoot != null)
             {
-                _drawingObject.DrawImage(m_GreenBlock, new Point());
+                _drawingObject.DrawImage(_greenBlock, new Point());
 
                 // Draw the output accordingly.
                 pController.TreeRoot.Draw(_drawingObject);
-                _drawingObject.DrawImage(m_RedBlock, new Point(pController.TreeRoot.PathNode.CenterX, pController.TreeRoot.PathNode.CenterY));
+                _drawingObject.DrawImage(_redBlock, new Point(pController.TreeRoot.PathNode.CenterX, pController.TreeRoot.PathNode.CenterY));
             }
 
             string _filename = "";
@@ -466,108 +465,108 @@ namespace PacmanAI
             }
 
             // Save the image out so that we can observe it
-            _newimage.Save(string.Format("{2}\\{0}_{1}_{3}.bmp", DateTime.Now.ToString("ddMMyyyyHHmmssff"), _filename, pController.m_TestImagesFolder.FullName, pController.m_TestStats.TotalGames));
+            _newimage.Save(string.Format("{2}\\{0}_{1}_{3}.bmp", DateTime.Now.ToString("ddMMyyyyHHmmssff"), _filename, pController._testImagesFolder.FullName, pController._testStats.TotalGames));
             _newimage.Dispose();
         }
 
-        public override void Restart(GameState gs)
+        public override void Restart(GameState gameState)
         {
             // Don't update the stats more than 100 times.
             // That's only the amount of games that we want simulated.
-            if (m_TestStats.TotalGames < MAX_TEST_GAMES)
+            if (_testStats.TotalGames < MaxTestGames)
             {
-                Utility.SerializeGameState(gs,this);
+                Utility.SerializeGameState(gameState,this);
 
                 // Save the image to the same directory as the simulator
-                SaveStateAsImage(gs, this, string.Format("endofround_{0}_{1}_",
-                                                         m_TestStats.TotalGames.ToString(),
+                SaveStateAsImage(gameState, this, string.Format("endofround_{0}_{1}_",
+                                                         _testStats.TotalGames.ToString(),
                                                          this.Name.ToString()),true);
 
                 // Set the stats.
-                m_TestStats.TotalGhostsEaten += gs.m_GhostsEaten;
-                m_TestStats.TotalPillsTaken += gs.m_PillsEaten;
-                m_TestStats.TotalScore += gs.Pacman.Score;
-                m_TestStats.TotalLevelsCleared += gs.Level;
-                m_TestStats.TotalGames++;
+                _testStats.TotalGhostsEaten += gameState._ghostsEaten;
+                _testStats.TotalPillsTaken += gameState._pillsEaten;
+                _testStats.TotalScore += gameState.Pacman.Score;
+                _testStats.TotalLevelsCleared += gameState.Level;
+                _testStats.TotalGames++;
 
-                if (m_MS - m_LastRoundMS > m_TestStats.LongestRoundTime)
+                if (Milliseconds - LastRoundMilliseconds > _testStats.LongestRoundTime)
                 {
-                    m_TestStats.LongestRoundTime = m_MS - m_LastRoundMS;
+                    _testStats.LongestRoundTime = Milliseconds - LastRoundMilliseconds;
                 }
 
-                if (m_MS - m_LastRoundMS < m_TestStats.ShortestRoundTime)
+                if (Milliseconds - LastRoundMilliseconds < _testStats.ShortestRoundTime)
                 {
-                    m_TestStats.ShortestRoundTime = m_MS - m_LastRoundMS;
+                    _testStats.ShortestRoundTime = Milliseconds - LastRoundMilliseconds;
                 }
 
-                m_TestStats.TotalRoundTime += m_MS - m_LastRoundMS;
-                m_TestStats.AverageRoundTime = m_TestStats.TotalRoundTime / m_TestStats.TotalGames;
+                _testStats.TotalRoundTime += Milliseconds - LastRoundMilliseconds;
+                _testStats.AverageRoundTime = _testStats.TotalRoundTime / _testStats.TotalGames;
 
-                m_LastRoundMS = m_MS;
+                LastRoundMilliseconds = Milliseconds;
 
                 /// LEVELS
-                if (gs.Level < m_TestStats.MinLevelsCleared)
+                if (gameState.Level < _testStats.MinLevelsCleared)
                 {
-                    this.m_TestStats.MinLevelsCleared = gs.Level;
+                    this._testStats.MinLevelsCleared = gameState.Level;
                 }
 
-                if (gs.Level > m_TestStats.MaxLevelsCleared)
+                if (gameState.Level > _testStats.MaxLevelsCleared)
                 {
-                    this.m_TestStats.MaxLevelsCleared = gs.Level;
+                    this._testStats.MaxLevelsCleared = gameState.Level;
                 }
 
                 /// SCORE
-                if (gs.Pacman.Score < m_TestStats.MinScore)
+                if (gameState.Pacman.Score < _testStats.MinScore)
                 {
-                    m_TestStats.MinScore = gs.Pacman.Score;
+                    _testStats.MinScore = gameState.Pacman.Score;
                 }
 
-                if (gs.Pacman.Score > m_TestStats.MaxScore)
+                if (gameState.Pacman.Score > _testStats.MaxScore)
                 {
-                    m_TestStats.MaxScore = gs.Pacman.Score;
+                    _testStats.MaxScore = gameState.Pacman.Score;
                 }
 
                 /// PILLS
-                if (gs.m_PillsEaten < m_TestStats.MinPillsTaken)
+                if (gameState._pillsEaten < _testStats.MinPillsTaken)
                 {
-                    m_TestStats.MinPillsTaken = gs.m_PillsEaten;
+                    _testStats.MinPillsTaken = gameState._pillsEaten;
                 }
 
-                if (gs.m_PillsEaten > m_TestStats.MaxPillsTaken)
+                if (gameState._pillsEaten > _testStats.MaxPillsTaken)
                 {
-                    m_TestStats.MaxPillsTaken = gs.m_PillsEaten;
+                    _testStats.MaxPillsTaken = gameState._pillsEaten;
                 }
 
                 /// SCORE DIFFERENCE
-                if (gs.m_GhostsEaten < m_TestStats.MinGhostsEaten)
+                if (gameState._ghostsEaten < _testStats.MinGhostsEaten)
                 {
-                    m_TestStats.MinGhostsEaten = gs.m_GhostsEaten;
+                    _testStats.MinGhostsEaten = gameState._ghostsEaten;
                 }
 
-                if (gs.m_GhostsEaten > m_TestStats.MaxGhostsEaten)
+                if (gameState._ghostsEaten > _testStats.MaxGhostsEaten)
                 {
-                    m_TestStats.MaxGhostsEaten = gs.m_GhostsEaten;
+                    _testStats.MaxGhostsEaten = gameState._ghostsEaten;
                 }
             }
             else
             {
                 // Test has terminated, display and save the final results.
-                if (!m_TestComplete)
+                if (!TestComplete)
                 {
-                    m_Stopwatch.Stop();
-                    m_TestStats.ElapsedMillisecondsTotal = m_Stopwatch.ElapsedMilliseconds;
+                    _stopWatch.Stop();
+                    _testStats.ElapsedMillisecondsTotal = _stopWatch.ElapsedMilliseconds;
 
-                    m_TestStats.AveragePillsTaken = m_TestStats.TotalPillsTaken / m_TestStats.TotalGames;
-                    m_TestStats.AverageScore = m_TestStats.TotalScore / m_TestStats.TotalGames;
-                    m_TestStats.AverageGhostsEaten = m_TestStats.TotalGhostsEaten / m_TestStats.TotalGames;
-                    m_TestStats.AverageLevelsCleared = m_TestStats.TotalLevelsCleared / m_TestStats.TotalGames;
+                    _testStats.AveragePillsTaken = _testStats.TotalPillsTaken / _testStats.TotalGames;
+                    _testStats.AverageScore = _testStats.TotalScore / _testStats.TotalGames;
+                    _testStats.AverageGhostsEaten = _testStats.TotalGhostsEaten / _testStats.TotalGames;
+                    _testStats.AverageLevelsCleared = _testStats.TotalLevelsCleared / _testStats.TotalGames;
 
-                    SerializeTestStats(m_TestStats);
-                    m_TestComplete = true;
+                    SerializeTestStats(_testStats);
+                    TestComplete = true;
                 }
             }
             
-            base.Restart(gs);
+            base.Restart(gameState);
         }
 
         /// <summary>
@@ -576,31 +575,31 @@ namespace PacmanAI
         /// <param name="pLogMessage">Message to be displayed</param>
         /// <param name="pVerbose">Is this to be written to the console window?</param>
         /// <param name="pDisplayDate">Display the date with the text log message?</param>
-        public virtual void OutputLog(string pLogMessage, bool pVerbose, bool pDisplayDate)
+        public virtual void OutputLog(string logMessage, bool verbose, bool displayDate)
         {
-            StreamWriter _writer = new StreamWriter(string.Format("{0}\\output_{1}.txt", m_TestLogFolder.FullName.ToString(), DateTime.Now.ToString("ddMMyyyy")), true);
+            StreamWriter _writer = new StreamWriter(string.Format("{0}\\output_{1}.txt", _testLogFolder.FullName.ToString(), DateTime.Now.ToString("ddMMyyyy")), true);
             string _currentdate = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss ff");
-            string _output = "";
+            string _output;
 
             // Determine whether or not we want to display the date.
-            if (pDisplayDate)
-                _output = string.Format("[{0}]: {1}", _currentdate, pLogMessage);
+            if (displayDate)
+                _output = string.Format("[{0}]: {1}", _currentdate, logMessage);
             else
-                _output = pLogMessage;
+                _output = logMessage;
 
             _writer.WriteLine(_output);
 
             // Make sure whether or not adding one more message would cause problems.
 
-            if (pVerbose && !REMAIN_QUIET)
+            if (verbose && !RemainQuiet)
             {
-                if (m_LogOutput.Count + 1 > MAX_LOG_ITEMS_DISPLAY)
+                if (_logOutput.Count + 1 > MaxLogItemsDisplay)
                 {
-                    m_LogOutput.Remove(m_LogOutput.Last());
+                    _logOutput.Remove(_logOutput.Last());
                 }
 
                 // Insert the message to the front
-                m_LogOutput.Insert(0, _output);
+                _logOutput.Insert(0, _output);
             }
 
             // Clean up the writer afterwards.
@@ -648,24 +647,24 @@ namespace PacmanAI
 
         // Attempt to go within the provided direction. If it's not possible, then
         // return the next nearest direction.
-        private Direction TryGoDirection(GameState gs, Direction pDirection)
+        private Direction TryGoDirection(GameState gs, Direction newDirection)
         {
             var _directions = gs.Pacman.PossibleDirections();
 
             // Determine whether or not we are able to go in that direction
-            if (_directions.Contains(pDirection))
+            if (_directions.Contains(newDirection))
             {
-                return pDirection;
+                return newDirection;
             }
             else
             {
                 // Just return the first that is not the inverse of the direction
                 // that we are aiming to go in
-                foreach (var dir in _directions)
+                foreach (Direction direction in _directions)
                 {
-                    if (GameState.InverseDirection(dir) != pDirection)
+                    if (GameState.InverseDirection(direction) != newDirection)
                     {
-                        return dir;
+                        return direction;
                     }
                 }
             }
@@ -679,13 +678,13 @@ namespace PacmanAI
         /// <param name="pX">The X coordinate within the graph</param>
         /// <param name="pY">The Y coordinate within the graph</param>
         /// <returns>Return whether or not it's a junction at the given position</returns>
-        public static bool IsJunction(int pX, int pY, GameState pGameState)
+        public static bool IsJunction(int x, int y, GameState gameState)
         {
             // Check that the coordinates are valid
-            if (pX < pGameState.Map.Nodes.GetLength(0) && pX > 0 &&
-                pY < pGameState.Map.Nodes.GetLength(1) && pY > 0)
+            if (x < gameState.Map.Nodes.GetLength(0) && x > 0 &&
+                y < gameState.Map.Nodes.GetLength(1) && y > 0)
             {
-                return pGameState.Map.Nodes[pX, pY].PossibleDirections.Count > 2;
+                return gameState.Map.Nodes[x, y].PossibleDirections.Count > 2;
             }
 
             return false;
@@ -698,24 +697,24 @@ namespace PacmanAI
 
         public override void Draw(Graphics g)
         {
-            m_GraphicsDevice = g;
+            _graphicsDevice = g;
 
             // If a junction has been found, then draw a line
-            if (m_Junction != null)
+            if (_junction != null)
             {
-                g.DrawLine(Pens.Green, new Point(m_GameState.Pacman.Node.CenterX, m_GameState.Pacman.Node.CenterY),
-                                       new Point(m_Junction.CenterX, m_Junction.CenterY));
+                g.DrawLine(Pens.Green, new Point(_gameState.Pacman.Node.CenterX, _gameState.Pacman.Node.CenterY),
+                                       new Point(_junction.CenterX, _junction.CenterY));
             }
 
             // Draw the debug output if the tree has been generated.
-            if (m_TreeRoot != null)
+            if (_treeRoot != null)
             {
-                m_TreeRoot.Draw(g);
+                _treeRoot.Draw(g);
 
-                g.DrawImage(m_RedBlock, new Point(m_TreeRoot.PathNode.CenterX - 2, m_TreeRoot.PathNode.CenterY - 2));
+                g.DrawImage(_redBlock, new Point(_treeRoot.PathNode.CenterX - 2, _treeRoot.PathNode.CenterY - 2));
 
-                g.DrawString(m_TreeRoot.AverageScore.ToString(), new Font(FontFamily.GenericSansSerif, 10f), Brushes.White,
-                             m_TreeRoot.PathNode.CenterX, m_TreeRoot.PathNode.CenterY);
+                g.DrawString(_treeRoot.AverageScore.ToString(), new Font(FontFamily.GenericSansSerif, 10f), Brushes.White,
+                             _treeRoot.PathNode.CenterX, _treeRoot.PathNode.CenterY);
             }
             //            g.DrawImage(m_GreenBlock, new Point(m_GameState.Pacman.Node.CenterX, m_GameState.Pacman.Node.CenterY));
 

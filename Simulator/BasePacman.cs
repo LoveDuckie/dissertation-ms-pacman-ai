@@ -1,21 +1,11 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Drawing;
 using System.Security.Cryptography;
-using System.Security.Policy;
 using System.Diagnostics;
 
-using Pacman.Simulator;
-
 using Newtonsoft.Json;
-using Newtonsoft.Json.Schema;
-using Newtonsoft.Json.Serialization;
-using Newtonsoft.Json.Utilities;
-
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Pacman.Simulator
 {
@@ -23,32 +13,49 @@ namespace Pacman.Simulator
 	public abstract class BasePacman
 	{
 		public readonly string Name;
-        public TestStats m_TestStats = new TestStats();
-        public Stopwatch m_Stopwatch = new Stopwatch();
-        public bool m_TestComplete = false;
-        public bool m_RecordStats = false;
 
-        protected string m_TestSessionID = "";
+        public TestStats _testStats = new TestStats();
+        public Stopwatch _stopWatch = new Stopwatch();
+        private bool testComplete = false;
+        private bool recordStats = false;
 
-        protected DateTime m_GameStart;
-        protected DateTime m_GameEnd;
-        protected DateTime m_LifeStart;
+        protected string _testSessionId = "";
 
-        protected long m_LastRoundMS = 0;
-        protected long m_MS = 0;
-        protected long m_LastLifeMS = 0;
+        private DateTime gameStartTimestamp;
+        private DateTime gameEndTimestamp;
+        private DateTime lifeStartTimestamp;
+
+        private long lastRoundMilliseconds = 0;
+        private long milliseconds = 0;
+        private long lastLifeMilliseconds = 0;
 
         // Max games that are to be tested.
-        public const int MAX_TEST_GAMES = 100;
+        public const int MaxTestGames = 100;
 
-        public DirectoryInfo m_TestDataFolder = null;
-        public DirectoryInfo m_TestImagesFolder = null;
-        public DirectoryInfo m_TestLogFolder = null;
+        public DirectoryInfo _testDataFolder = null;
+        public DirectoryInfo _testImagesFolder = null;
+        public DirectoryInfo _testLogFolder = null;
 
-		public BasePacman(string name) {
-			this.Name = name;
-            this.m_TestStats = new TestStats();
-        }
+        public bool TestComplete { get => testComplete; set => testComplete = value; }
+        public bool RecordStats { get => recordStats; set => recordStats = value; }
+        protected long LastLifeMilliseconds { get => lastLifeMilliseconds; set => lastLifeMilliseconds = value; }
+        protected long Milliseconds { get => milliseconds; set => milliseconds = value; }
+        protected long LastRoundMilliseconds { get => lastRoundMilliseconds; set => lastRoundMilliseconds = value; }
+        protected DateTime LifeStartTimestamp { get => lifeStartTimestamp; set => lifeStartTimestamp = value; }
+        protected DateTime GameEndTimestamp { get => gameEndTimestamp; set => gameEndTimestamp = value; }
+        protected DateTime GameStartTimestamp { get => gameStartTimestamp; set => gameStartTimestamp = value; }
+
+        #region Constructors
+        /// <summary>
+        ///     
+        /// </summary>
+        /// <param name="name"></param>
+        public BasePacman(string name)
+        {
+            this.Name = name;
+            this._testStats = new TestStats();
+        } 
+        #endregion
 
         public virtual string GenerateSessionID()
         {
@@ -69,7 +76,7 @@ namespace Pacman.Simulator
         {
             StreamWriter _writer = new StreamWriter(
                 string.Format("{0}\\endoftest_{1}.txt", 
-                m_TestLogFolder.FullName, 
+                _testLogFolder.FullName, 
                 DateTime.Now.ToString("hhmmddss")));
             string _jsonoutput = JsonConvert.SerializeObject(pStats,Formatting.Indented);
 
@@ -78,7 +85,6 @@ namespace Pacman.Simulator
             _writer.Flush();
             _writer.Close();
         }
-
 
 		public abstract Direction Think(GameState gs);
 

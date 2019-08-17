@@ -1,26 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
-using System.Linq;
-
-using Pacman.Simulator;
-using Pacman.Simulator.Ghosts;
-
-using System.Reflection;
-using System.Threading;
-
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
-
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
-using Newtonsoft.Json.Utilities;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Bson;
-
-namespace Pacman.Simulator
+﻿namespace Pacman.Simulator
 {
     public class SimGreedyRandom : BasePacman
     {

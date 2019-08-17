@@ -1,0 +1,14 @@
+// Visual Studio Files
+*.suo
+*.csproj.user
+*.sln.user
+Debug
+Release
+obj
+bin
+.vs
+.vscode
+*.htm
+*.exe
+*.dll
+*.obj

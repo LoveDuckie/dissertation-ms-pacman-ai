@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29201.188
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsPacmanController", "MsPacmanController\MsPacmanController.csproj", "{0C114809-6EA7-43DE-9E39-8A1D49D6D4E1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureExtraction", "FeatureExtraction\FeatureExtraction.csproj", "{2A85AFDD-4459-4D9E-9790-7BA944B558F4}"
@@ -12,6 +14,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleSim", "ConsoleSim\ConsoleSim.csproj", "{84DF299D-89F2-40FC-9C47-EF45CF06BAA1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StateExamine", "StateExamine\StateExamine.csproj", "{DF09FA41-EC88-4AD6-8E59-377E6122A901}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OtherCode", "OtherCode", "{8B632059-BA40-4400-9C34-70578D7A7C89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuralNetwork", "OtherCode\NeuralNetwork\NeuralNetwork.csproj", "{D413B39B-88FD-41E2-9CF6-ADABA3E6E4BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,8 +49,18 @@ Global
 		{DF09FA41-EC88-4AD6-8E59-377E6122A901}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF09FA41-EC88-4AD6-8E59-377E6122A901}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF09FA41-EC88-4AD6-8E59-377E6122A901}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D413B39B-88FD-41E2-9CF6-ADABA3E6E4BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D413B39B-88FD-41E2-9CF6-ADABA3E6E4BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D413B39B-88FD-41E2-9CF6-ADABA3E6E4BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D413B39B-88FD-41E2-9CF6-ADABA3E6E4BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D413B39B-88FD-41E2-9CF6-ADABA3E6E4BE} = {8B632059-BA40-4400-9C34-70578D7A7C89}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D9FB3C00-D607-44CC-A74C-27330F770F42}
 	EndGlobalSection
 EndGlobal

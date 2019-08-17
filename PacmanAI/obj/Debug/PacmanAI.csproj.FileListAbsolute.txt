@@ -23,3 +23,13 @@ C:\Users\Luc\Desktop\Dissertation-Handin-Final\Source Code\MsPacmanController\bi
 C:\Users\Luc\Desktop\Dissertation-Handin-Final\Source Code\PacmanAI\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Luc\Desktop\Dissertation-Handin-Final\Source Code\PacmanAI\obj\Debug\PacmanAI.dll
 C:\Users\Luc\Desktop\Dissertation-Handin-Final\Source Code\PacmanAI\obj\Debug\PacmanAI.pdb
+D:\Repositories\GitHub\Dissertation-Ms.-Pac-Man-AI\PacmanAI\obj\Debug\PacmanAI.csprojAssemblyReference.cache
+D:\Repositories\GitHub\Dissertation-Ms.-Pac-Man-AI\PacmanAI\obj\Debug\PacmanAI.csproj.CoreCompileInputs.cache
+D:\Repositories\GitHub\Dissertation-Ms.-Pac-Man-AI\PacmanAI\obj\Debug\PacmanAI.dll
+D:\Repositories\GitHub\Dissertation-Ms.-Pac-Man-AI\PacmanAI\obj\Debug\PacmanAI.pdb
+D:\Repositories\GitHub\Dissertation-Ms.-Pac-Man-AI\MsPacmanController\bin\Controllers\blue_block.png
+D:\Repositories\GitHub\Dissertation-Ms.-Pac-Man-AI\MsPacmanController\bin\Controllers\green_block.png
+D:\Repositories\GitHub\Dissertation-Ms.-Pac-Man-AI\MsPacmanController\bin\Controllers\red_block.png
+D:\Repositories\GitHub\Dissertation-Ms.-Pac-Man-AI\MsPacmanController\bin\Controllers\PacmanAI.dll
+D:\Repositories\GitHub\Dissertation-Ms.-Pac-Man-AI\MsPacmanController\bin\Controllers\PacmanAI.pdb
+D:\Repositories\GitHub\Dissertation-Ms.-Pac-Man-AI\PacmanAI\obj\Debug\PacmanAI.csproj.CopyComplete

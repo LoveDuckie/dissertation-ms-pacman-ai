@@ -48,13 +48,9 @@ namespace PacmanAI
         // In regards to the ghosts within the game and the arguments that are 
         // applied.
         private static readonly string[] GHOST_CODES = { "bl", "br", "p", "r" };
-        private static int PLAY_GAMES = 0;
 
         // Ghosts that are going to be in the game
-        private static List<string> Ghosts = new List<string>();
-        
-        // The name of the agent that we are going to be simulating in this game state
-        private static string AgentName = "";
+        private static readonly List<string> Ghosts = new List<string>();
 
         // Bring the thread ID from the appropriate library
         [DllImport("kernel32")]
@@ -252,7 +248,6 @@ namespace PacmanAI
                 gamesToPlay = _result;
 
                 Console.Clear();
-                bool _silenceoutput = false;
                 string _consoleoutput = "";
 
                 while (_consoleoutput != "n" && _consoleoutput != "y")
@@ -296,12 +291,12 @@ namespace PacmanAI
             // Turn off the logging
             if (controller.GetType() == typeof(LucPac) && m_RemainQuiet)
             {
-                LucPac.REMAIN_QUIET = true;
+                LucPac.RemainQuiet = true;
             }
 
             if (controller.GetType() == typeof(LucPacScripted) && m_RemainQuiet)
             {
-                LucPacScripted.REMAIN_QUIET = true;
+                LucPacScripted.RemainQuiet = true;
             }
 
 			//BasePacman controller = new SmartDijkstraPac();
@@ -430,31 +425,31 @@ namespace PacmanAI
             
             totalScore += gs.Pacman.Score;
 
-            if (gs.m_PillsEaten > maxPillsEaten)
+            if (gs._pillsEaten > maxPillsEaten)
             {
-                maxPillsEaten = gs.m_PillsEaten;
+                maxPillsEaten = gs._pillsEaten;
             }
 
-            if (gs.m_PillsEaten < minPillsEaten)
+            if (gs._pillsEaten < minPillsEaten)
             {
-                minPillsEaten = gs.m_PillsEaten;
+                minPillsEaten = gs._pillsEaten;
             }
 
             /// GHOSTS EATEN
-            if (gs.m_GhostsEaten > maxGhostsEaten)
+            if (gs._ghostsEaten > maxGhostsEaten)
             {
-                maxGhostsEaten = gs.m_GhostsEaten;
+                maxGhostsEaten = gs._ghostsEaten;
             }
 
-            if (gs.m_GhostsEaten < minGhostsEaten)
+            if (gs._ghostsEaten < minGhostsEaten)
             {
-                minGhostsEaten = gs.m_GhostsEaten;
+                minGhostsEaten = gs._ghostsEaten;
             }
 
             // Total up the amount of pills that have been eaten.
-            pillsEatenTotal += gs.m_PillsEaten;
+            pillsEatenTotal += gs._pillsEaten;
             
-            totalGhostsEaten += gs.m_GhostsEaten;
+            totalGhostsEaten += gs._ghostsEaten;
 
 			scores.Add(gs.Pacman.Score);
 			currentGame = new MemoryStream();

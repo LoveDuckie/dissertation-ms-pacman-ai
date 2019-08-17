@@ -14,3 +14,13 @@ C:\Users\Luc\Documents\Visual Studio 2008\Projects\PacmanProject\FeatureExtracti
 C:\Users\Luc\Documents\Visual Studio 2008\Projects\PacmanProject\FeatureExtraction\obj\Debug\FeatureExtraction.csproj.GenerateResource.Cache
 C:\Users\Luc\Documents\Visual Studio 2008\Projects\PacmanProject\FeatureExtraction\obj\Debug\FeatureExtraction.exe
 C:\Users\Luc\Documents\Visual Studio 2008\Projects\PacmanProject\FeatureExtraction\obj\Debug\FeatureExtraction.pdb
+D:\Repositories\GitHub\Dissertation-Ms.-Pac-Man-AI\FeatureExtraction\bin\Debug\FeatureExtraction.exe.config
+D:\Repositories\GitHub\Dissertation-Ms.-Pac-Man-AI\FeatureExtraction\bin\Debug\FeatureExtraction.exe
+D:\Repositories\GitHub\Dissertation-Ms.-Pac-Man-AI\FeatureExtraction\bin\Debug\FeatureExtraction.pdb
+D:\Repositories\GitHub\Dissertation-Ms.-Pac-Man-AI\FeatureExtraction\obj\Debug\FeatureExtraction.csprojAssemblyReference.cache
+D:\Repositories\GitHub\Dissertation-Ms.-Pac-Man-AI\FeatureExtraction\obj\Debug\FeatureExtraction.Main.resources
+D:\Repositories\GitHub\Dissertation-Ms.-Pac-Man-AI\FeatureExtraction\obj\Debug\FeatureExtraction.Properties.Resources.resources
+D:\Repositories\GitHub\Dissertation-Ms.-Pac-Man-AI\FeatureExtraction\obj\Debug\FeatureExtraction.csproj.GenerateResource.cache
+D:\Repositories\GitHub\Dissertation-Ms.-Pac-Man-AI\FeatureExtraction\obj\Debug\FeatureExtraction.csproj.CoreCompileInputs.cache
+D:\Repositories\GitHub\Dissertation-Ms.-Pac-Man-AI\FeatureExtraction\obj\Debug\FeatureExtraction.exe
+D:\Repositories\GitHub\Dissertation-Ms.-Pac-Man-AI\FeatureExtraction\obj\Debug\FeatureExtraction.pdb

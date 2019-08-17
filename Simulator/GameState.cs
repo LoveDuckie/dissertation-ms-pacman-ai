@@ -99,10 +99,6 @@ namespace Pacman.Simulator
         [field: NonSerializedAttribute()]
 		public event EventHandler GameOver;
 
-        public event EventHandler PillsEaten;
-
-        public event EventHandler GhostEaten;
-
         public int CloneTimeBegin = 0;
         public int CloneTimeEnd = 0;
 
@@ -114,10 +110,9 @@ namespace Pacman.Simulator
         public event EventHandler PacmanDead = new EventHandler(delegate(object sender, EventArgs e) {  });
 
         // For registering how many pills have been eaten within the environment.
-        public int m_PillsEaten = 0;
-        public int m_GhostsEaten = 0;
-
-        public int m_TotalRoundScore = 0;
+        public int _pillsEaten = 0;
+        public int _ghostsEaten = 0;
+        public int _totalRoundScore = 0;
 
         #region Constructors
         public GameState() {
@@ -526,19 +521,19 @@ namespace Pacman.Simulator
                                 switch (g.Name)
                                 {
                                     case "Blue":
-                                        Controller.m_TestStats.BlueKills++;
+                                        Controller._testStats.BlueKills++;
                                     break;
 
                                     case "Red":
-                                        Controller.m_TestStats.RedKills++;
+                                        Controller._testStats.RedKills++;
                                     break;
 
                                     case "Pink":
-                                        Controller.m_TestStats.PinkKills++;
+                                        Controller._testStats.PinkKills++;
                                     break;
 
                                     case "Brown":
-                                        Controller.m_TestStats.BrownKills++;
+                                        Controller._testStats.BrownKills++;
                                     break;
                                 }
 
@@ -569,9 +564,9 @@ namespace Pacman.Simulator
             m_GameOverCount++;
 
             GameOver(this, null);
-            m_TotalRoundScore = 0;
-            m_PillsEaten = 0;
-            m_GhostsEaten = 0;
+            _totalRoundScore = 0;
+            _pillsEaten = 0;
+            _ghostsEaten = 0;
 			ElapsedTime = 0;
 			level = 0;
 			map = maps[Level];

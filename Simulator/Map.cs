@@ -101,8 +101,6 @@ namespace Pacman.Simulator
             {
                 return null;
             }
-
-            return null;
         }
 
 		public Node GetNode(int x, int y) {
