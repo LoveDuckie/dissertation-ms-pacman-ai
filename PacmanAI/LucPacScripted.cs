@@ -186,9 +186,9 @@ namespace PacmanAI
                 // Draw the map, pacman and the ghosts to the image
                 gameState.Map.Draw(_drawingObject);
                 gameState.Pacman.Draw(_drawingObject, Visualizer.RenderingSprites);
-                foreach (Ghost item in gameState.Ghosts)
+                foreach (Ghost ghost in gameState.Ghosts)
                 {
-                    item.Draw(_drawingObject, Visualizer.RenderingSprites);
+                    ghost.Draw(_drawingObject, Visualizer.RenderingSprites);
                 }
 
                 string _fileName;

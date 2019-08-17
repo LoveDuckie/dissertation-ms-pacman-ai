@@ -92,9 +92,9 @@ namespace MsPacmanController
 			comboBoxAI.AutoCompleteSource = AutoCompleteSource.ListItems;
 			comboBoxAI.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
 			comboBoxAI.Items.Add(new AIItem("None",null));						
-			comboBoxAI.Items.Add(new AIItem("RandomPac (Orig)", typeof(Pacman.Implementations.RandomPac)));
-			comboBoxAI.Items.Add(new AIItem("SmartPac (Orig)", typeof(Pacman.Implementations.SmartPac)));
-			comboBoxAI.Items.Add(new AIItem("SmartDijkstraPac (Orig)", typeof(Pacman.Implementations.SmartDijkstraPac)));
+			//comboBoxAI.Items.Add(new AIItem("RandomPac (Orig)", typeof(Pacman.Implementations.RandomPac)));
+			//comboBoxAI.Items.Add(new AIItem("SmartPac (Orig)", typeof(Pacman.Implementations.SmartPac)));
+			//comboBoxAI.Items.Add(new AIItem("SmartDijkstraPac (Orig)", typeof(Pacman.Implementations.SmartDijkstraPac)));
 
 			foreach( string s in Directory.GetFiles(@"../Controllers/") ) {
 				if( Path.GetExtension(s) == ".dll" ) {

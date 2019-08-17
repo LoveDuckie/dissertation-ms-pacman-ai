@@ -9,7 +9,6 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 using Pacman.Simulator;
-using Pacman.Implementations;
 using Pacman.Simulator.Ghosts;
 using System.IO;
 
