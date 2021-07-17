@@ -1,8 +1,8 @@
 ![MCTS Ms. Pac Man AI Impression Image](https://www.lucshelton.com/assets/Uploads/8e3f098fa3/LucPac-v2__FillWzIyNjQsNTEyXQ.jpg)
 
-# Monte Carlo Tree Search / Finite State Machine - Ms. Pac-Man AI Simulator
+# Monte Carlo Tree Search and Finite State Machine - Ms. Pac-Man AI Simulator
 
-A PacMan agent that I developed originally for a dissertation project.
+A Pac-Man agent that I developed originally for a dissertation project.
 
 Read more about this project, along with the supporting dissertation document at the link below.
 
